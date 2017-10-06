@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.header{
+	height:20vh;
+	display: flex;
+	width: 100%;
+	justify-content:space-around;
+	align-items: center;
+}
+
+.buttonHeader{
+	height:35px;
+	width:150px;
+	text-align: center;
+}
+
+.mainPresentation{
+	background-image: url(images/clouds.png);
+	background-position: 0px 0px;
+	background-size: cover;
+	animation:10s linear 0s normal none infinite backgroundAnime;
+}
+
+.contacts{
+	background-image:url(https://static.tumblr.com/03fbbc566b081016810402488936fbae/pqpk3dn/MRSmlzpj3/tumblr_static_bg3.png);
+	background-position: 0px 0px;
+	background-size: cover;
+	animation: 10s linear 0s normal none infinite backgroundAnime;
+}
+
+
+.main{
+	height: 80vh;
+	display: flex;
+	justify-content: center;
+}
+
+.label{
+	margin-top: 20px;
+	width: 80%;
+}
+
+.marginAuto{
+	margin:40px;
+}
+
+
+.fade-appear {
+  opacity:0.01;
+}
+.fade-appear.fade-appear-active{
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+.slide{
+	animation:slide 1s ease-in forwards;
+}
+
+.slide-down{
+	animation:slide-down 1s ease-in forwards;
+}
+
+.slide-up{
+	animation:slide-up 1s ease-in forwards;
+}
+.displayNone{
+	display: none;
+}
+
+@keyframes backgroundAnime{
+	from{
+		background-position: 0 0;
+	}
+	to{
+		background-position: 100vh 0;
+	}
+}
+
+@keyframes slide-up{
+	from{
+		opacity: 0;
+		transform:translateY(100px);
+	}
+	to{
+		opacity: 1;
+		transform: translateY(0%);
+	}
+}
+
+@keyframes slide-down{
+	from{
+		opacity: 0;
+		transform:translateY(-100px);
+	}
+	to{
+		opacity: 1;
+		transform: translateY(0%);
+	}
+}
+
+@keyframes slide{
+	from{
+		transform: translateX(-200px);
+	}
+	to{
+		transform:translateX(0%);
+	}
+}
+
