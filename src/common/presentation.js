@@ -14,7 +14,6 @@ export class Presentation extends React.Component{
 		this.onSlide();
 	}
 	onSlide(){
-		console.log('coucou');
 		setTimeout(()=>{
 			this.setState({
 				slide:true

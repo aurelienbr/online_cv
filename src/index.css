@@ -33,9 +33,16 @@ body {
 
 
 .main{
-	height: 80vh;
+	min-height: 80vh;
 	display: flex;
 	justify-content: center;
+}
+
+.main-column{
+	flex: 1;
+	flex-direction: column;
+	justify-content: space-around;
+	height: 40vh;
 }
 
 .label{
@@ -67,8 +74,71 @@ body {
 .slide-up{
 	animation:slide-up 1s ease-in forwards;
 }
+
+.slide-left{
+	animation:slide-Left 1s ease-in forwards;
+}
+
+.slide-right{
+	animation:slide-Right 1s ease-in forwards;
+}
+
+
 .displayNone{
 	display: none;
+}
+
+/*skills*/
+
+
+/*circle skills*/
+.skill{
+	background-color: #ecf0f1;
+}
+#app {
+  margin-top: 40px;
+}
+
+#progressInput {
+  margin: 20px auto;
+  width: 30%;
+}
+
+.circle-background,
+.circle-progress {
+  fill: none;
+}
+
+.circle-background {
+  stroke: #ddd;
+}
+
+.circle-progress {
+  stroke-linejoin: round;
+}
+
+.circle-text {
+  font-size: 2em;
+  font-weight: bold;
+  fill: red;
+}
+
+.circular-row {
+	display: flex;
+	margin-top: 40px;
+	justify-content: space-around;
+	align-items: center;
+}
+
+
+.progressBar{
+	border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-right: 16px solid #3498db;
+    border-bottom: 16px solid #3498db;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
 }
 
 @keyframes backgroundAnime{
@@ -105,6 +175,24 @@ body {
 @keyframes slide{
 	from{
 		transform: translateX(-200px);
+	}
+	to{
+		transform:translateX(0%);
+	}
+}
+
+@keyframes slide-Right{
+	from{
+		transform: translateX(-100px);
+	}
+	to{
+		transform:translateX(0%);
+	}
+}
+
+@keyframes slide-Left{
+	from{
+		transform: translateX(300px);
 	}
 	to{
 		transform:translateX(0%);

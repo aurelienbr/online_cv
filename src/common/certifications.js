@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import { Stages } from './parcoursSections';
 
 export const Certification = () =>{
 	return(
@@ -7,9 +8,18 @@ export const Certification = () =>{
 									transitionAppear={true}
 									transitionAppearTimeout={500}
             						transitionLeaveTimeout={300}>
-			<div style={{backgroundColor:'#8e44ad'}} className="main">
-				Certification
+			<div className="main">
+				<div style={style}>
+					<Stages/>
+				</div>
 			</div>
 		</ReactCSSTransitionGroup>
 	);
+}
+
+const style = {
+	width: '55%',
+	display: 'flex',
+	flexDirection: 'column',
+	padding: '20px',
 }
