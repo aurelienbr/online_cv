@@ -1,15 +1,25 @@
 import React,{Component} from 'react';
-import {Link} from 'react-router-dom';
+import Button from '../common/Button';
+
+const BUTTONS = [
+	{to: "/", text: "Home"},
+	{to: "/skill", text: "About me"},
+	{to: "/certifications", text: "Education"},
+	{to: "/projects", text: "Projects"},
+	{to: "/contact", text: "Contact"}
+]
 
 export default class Header extends Component{
 	render(){
+		const { location } = this.props;
 		return(
 			<header className="header">
-				<Link className="btn btn-primary buttonHeader" to="/">Presentation</Link>
-				<Link className="btn btn-primary buttonHeader" to="/skill">Skill</Link>
-				<Link className="btn btn-primary buttonHeader" to="/certifications">Certifications</Link>
-				<Link className="btn btn-primary buttonHeader" to="/projects">Projects</Link>
-				<Link className="btn btn-primary buttonHeader" to="/contact">Contact</Link>
+				<div className="headerName">
+					AURELIEN BRACHET
+				</div>
+				<div className="headerMenu">
+					{BUTTONS.map(button=> <Button location={location} route={button.to}>{button.text}</Button>)}
+				</div>
 			</header>
 		);
 	}
