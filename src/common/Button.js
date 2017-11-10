@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
+/* eslint-disable */
+import { FormattedMessage } from 'react-intl';
 
 class Button extends Component{
 	state = {
@@ -20,10 +22,10 @@ class Button extends Component{
 	}
 
 	render(){
-		const { children, route } = this.props;
+		const { children, route, defaultMessage } = this.props;
 		return(
 			<div onClick={()=> this.setState({active: !this.state.active})} style={this.getStyle()}>
-				<Link to={route}>{children}</Link>
+				<Link to={route}><FormattedMessage defaultMessage={defaultMessage} id={children}/></Link>
 			</div>
 		);
 	}

@@ -14,6 +14,7 @@ module.exports = {
     "import/first": 0, // Sorts by atom/sort-lines natural order.
     "no-use-before-define": 0, // It's nice to have styles on the botom.
     "import/no-duplicates": 2,
+    "no-undef":0,
     "import/prefer-default-export": 0, // No. Actions can have just one action.
     "no-class-assign": 0, // Class assign is used for higher order components.
     "no-confusing-arrow": 0, // This rule is super confusing.

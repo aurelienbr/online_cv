@@ -1,29 +1,19 @@
-import React,{Component} from 'react';
-import {
-  BrowserRouter as Router,
-  Route
-}from 'react-router-dom';
+import React, { Component } from "react";
+import { Provider } from "react-redux";
+import { applyMiddleware, createStore } from "redux";
 
-import{
-  Presentation,
-  Skill,
-  Certification,
-  Projects,
-  Contact
-}from './containers';
+import thunk from "redux-thunk";
 
-export default class App extends Component{
-  render(){
-    return(
-      <Router>
-        <div>
-          <Route exact path="/" component={Presentation}/>
-          <Route path="/skill" component={Skill}/>
-          <Route path="/certifications" component={Certification}/>
-          <Route path="/projects" component={Projects}/>
-          <Route path="/contact" component={Contact}/>
-        </div>
-      </Router>
-    );
-  }
+import Rooter from "./Rooter";
+import reducers from "./reducers";
+
+export default class App extends Component {
+	render() {
+		const store = createStore(reducers, applyMiddleware(thunk));
+		return (
+			<Provider store={store}>
+				<Rooter />
+			</Provider>
+		);
+	}
 }
