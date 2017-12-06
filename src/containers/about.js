@@ -1,18 +1,19 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
 
 import Header from "./header";
 import Title from "../common/Title";
 
 /* eslint-disable */
 export class About extends Component {
-  state = {
-    skillWidth: 0
+  static PropTypes = {
+    location: PropTypes.object.isRequired,
   };
 
   downloadCV() {
     window.open("http://localhost:3000/cv");
-  }
-  
+  };
+
   render() {
     const { location } = this.props;
     return (
@@ -54,7 +55,7 @@ export class About extends Component {
             </div>
             <div className="skill slide-up-skill" style={styles.skillContainer}>
               <p>HTML CSS</p>
-              <div style={[styles.skill, { width: this.state.skillWidth }]}>
+              <div style={styles.skill}>
                 <div style={styles.html} />
               </div>
               <p>React Native / ReactJS</p>
