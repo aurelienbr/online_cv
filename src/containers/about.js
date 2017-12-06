@@ -1,9 +1,18 @@
 import React, { Component } from "react";
-import ReactCSSTransitionGroup from "react-addons-css-transition-group";
+
 import Header from "./header";
 import Title from "../common/Title";
 
-export class Skill extends Component {
+/* eslint-disable */
+export class About extends Component {
+  state = {
+    skillWidth: 0
+  };
+
+  downloadCV() {
+    window.open("http://localhost:3000/cv");
+  }
+  
   render() {
     const { location } = this.props;
     return (
@@ -45,7 +54,7 @@ export class Skill extends Component {
             </div>
             <div className="skill slide-up-skill" style={styles.skillContainer}>
               <p>HTML CSS</p>
-              <div style={styles.skill}>
+              <div style={[styles.skill, { width: this.state.skillWidth }]}>
                 <div style={styles.html} />
               </div>
               <p>React Native / ReactJS</p>
@@ -62,7 +71,7 @@ export class Skill extends Component {
               </div>
             </div>
           </div>
-          <div className="imageProfil boum-boum" />
+          <div onClick={this.downloadCV} className="imageProfil boum-boum" />
         </div>
       </div>
     );

@@ -44,6 +44,10 @@ a, a:link, a:visited, a:active, a:hover {
 	background-size: cover;
 }
 
+.imageProfil:hover {
+	cursor: pointer;
+}
+
 
 .contacts{
 	background-image:url(https://static.tumblr.com/03fbbc566b081016810402488936fbae/pqpk3dn/MRSmlzpj3/tumblr_static_bg3.png);

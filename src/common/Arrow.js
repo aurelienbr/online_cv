@@ -1,19 +1,27 @@
-import React from 'react';
+import React from "react";
 /* eslint-disable */
-class Arrow extends React.Component{
+class Arrow extends React.Component {
 	state = {
-		animation: false,
+		animation: false
+	};
+	componentDidMount() {
+		setTimeout(() => {
+			this.setState({ animation: true });
+		}, 800);
 	}
-	componentDidMount(){
-		setTimeout(()=>{
-			this.setState({animation: true})
-		},800)
-	}
-	render(){
+	render() {
 		const { style } = this.props;
-		return(
-			<div className={this.state.animation ? "slide-up-presentation" : "none"} style={style}>
-				<img style={{alignSelf: 'center'}} src={require('../images/next.png')} />
+		return (
+			<div
+				className={
+					this.state.animation ? "slide-up-presentation" : "none"
+				}
+				style={style}
+			>
+				<img
+					style={{ alignSelf: "center" }}
+					src={require("../images/next.png")}
+				/>
 			</div>
 		);
 	}

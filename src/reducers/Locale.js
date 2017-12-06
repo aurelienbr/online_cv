@@ -1,6 +1,6 @@
 const INITIAL_STATE = {
   locale: "fr",
-  translations: {}
+  translations: []
 };
 
 export default (state = INITIAL_STATE, action) => {

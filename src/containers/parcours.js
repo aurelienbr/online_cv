@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from 'prop-types';
+
 import Header from "./header";
 import EducationCard from "../common/EducationCard";
 import Arrow from "../common/Arrow";
@@ -6,7 +8,7 @@ import Formation from "../text/Formation";
 import Internship from "../text/internship";
 import Title from "../common/Title";
 
-export const Certification = ({ location }) => {
+export const Parcours = ({ location }) => {
 	return (
 		<div>
 			<Header location={location} />
@@ -48,6 +50,10 @@ export const Certification = ({ location }) => {
 			</div>
 		</div>
 	);
+};
+
+Parcours.propTypes = {
+	location: PropTypes.array.isRequired,
 };
 
 const styles = {

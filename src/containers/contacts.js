@@ -1,16 +1,22 @@
 import React from "react";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
-import ContainerContacts from "../design_components/containerContacts";
 import {
 	FormGroup,
 	FormControl,
-	HelpBlock,
 	ControlLabel
 } from "react-bootstrap";
+import PropTypes from 'prop-types';
+
+
 import Header from "./header";
 import axios from "axios";
 
+/* eslint-disable */
 export class Contact extends React.Component {
+	static propTypes = {
+		location: PropTypes.array.isRequired,
+	};
+
 	constructor() {
 		super();
 		this.state = {
@@ -29,9 +35,21 @@ export class Contact extends React.Component {
 	handleTextAreaChange(e) {
 		this.setState({ textarea: e.target.value });
 	}
-	sendEmail() {
-		axios.post("http://");
+	sendEmail(event) {
+		event.preventDefault();
+		axios
+			.post("http://localhost:3000/mail", {
+				email: this.state.email,
+				subject: this.state.name,
+				text: this.state.textarea,
+				headers: {
+					"Content-type": "application/x-www-form-urlencoded"
+				}
+			})
+			.then(response => console.log(response))
+			.catch(error => console.log(error));
 	}
+
 	render() {
 		const { location } = this.props;
 		return (
@@ -44,54 +62,45 @@ export class Contact extends React.Component {
 					transitionLeaveTimeout={300}
 				>
 					<div className="main contacts">
-						<ContainerContacts>
-							<form>
-								<FormGroup
-									bsStyle="form-group label"
-									controlId="formBasicText"
-								>
-									<ControlLabel>Name :</ControlLabel>
-									<FormControl
-										bsSize="small"
-										type="text"
-										value={this.state.name}
-										placeholder="Enter your name"
-										onChange={this.handleNameChange.bind(
-											this
-										)}
-									/>
-								</FormGroup>
-								<FormGroup
+						<form>
+							<FormGroup
+								bsStyle="form-group label"
+								controlId="formBasicText"
+							>
+								<ControlLabel>Name :</ControlLabel>
+								<FormControl
 									bsSize="small"
-									controlId="formBasicText"
-								>
-									<ControlLabel>E-mail :</ControlLabel>
-									<FormControl
-										type="text"
-										value={this.state.email}
-										placeholder="Enter your email adress"
-										onChange={this.handleEmailChange.bind(
-											this
-										)}
-									/>
-								</FormGroup>
-								<FormGroup
-									bsSize="small"
-									controlId="formBasicText"
-								>
-									<ControlLabel>Content :</ControlLabel>
-									<FormControl
-										style={{ width: "90%" }}
-										componentClass="textarea"
-										value={this.state.textarea}
-										placeholder="Enter text"
-										onChange={this.handleTextAreaChange.bind(
-											this
-										)}
-									/>
-								</FormGroup>
-							</form>
-						</ContainerContacts>
+									type="text"
+									value={this.state.name}
+									placeholder="Enter your name"
+									onChange={this.handleNameChange.bind(this)}
+								/>
+							</FormGroup>
+							<FormGroup bsSize="small" controlId="formBasicText">
+								<ControlLabel>E-mail :</ControlLabel>
+								<FormControl
+									type="text"
+									value={this.state.email}
+									placeholder="Enter your email adress"
+									onChange={this.handleEmailChange.bind(this)}
+								/>
+							</FormGroup>
+							<FormGroup bsSize="small" controlId="formBasicText">
+								<ControlLabel>Content :</ControlLabel>
+								<FormControl
+									style={{ width: "90%" }}
+									componentClass="textarea"
+									value={this.state.textarea}
+									placeholder="Enter text"
+									onChange={this.handleTextAreaChange.bind(
+										this
+									)}
+								/>
+							</FormGroup>
+							<button onClick={this.sendEmail.bind(this)}>
+								send
+							</button>
+						</form>
 					</div>
 				</ReactCSSTransitionGroup>
 			</div>

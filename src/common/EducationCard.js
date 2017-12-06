@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FormattedMessage } from 'react-intl';
+
 /* eslint-disable */
 import MyModal from './Modal';
 class EducationCard extends Component{

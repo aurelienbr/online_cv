@@ -7,7 +7,7 @@ import ru from "react-intl/locale-data/ru";
 
 import { getTranslations } from "./actions";
 
-import { Presentation, Skill, Certification, Contact } from "./containers";
+import { Presentation, About, Parcours, Contact } from "./containers";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 addLocaleData([...fr, ...en, ...ru]);
@@ -17,8 +17,8 @@ class Rooter extends React.Component {
     this.props.getTranslations();
   }
   render() {
-    const { locale, translations, children } = this.props;
-    if (Object.keys(translations).length === 0) {
+    const { locale, translations } = this.props;
+    if (translations.length === 0) {
       return <div />;
     }
 
@@ -31,8 +31,8 @@ class Rooter extends React.Component {
         <Router>
           <div>
             <Route exact path="/" component={Presentation} />
-            <Route path="/skill" component={Skill} />
-            <Route path="/certifications" component={Certification} />
+            <Route path="/about" component={About} />
+            <Route path="/certifications" component={Parcours} />
             <Route path="/contact" component={Contact} />
           </div>
         </Router>

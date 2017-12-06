@@ -1,4 +1,4 @@
 export * from './presentation';
-export * from './Skill';
-export * from './certifications';
+export * from './about';
+export * from './parcours';
 export * from './contacts';

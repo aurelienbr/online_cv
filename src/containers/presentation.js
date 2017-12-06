@@ -1,14 +1,19 @@
-import React from "react";
-import ReactCSSTransitionGroup from "react-addons-css-transition-group";
-import presentation from "../text/presentation";
-import Container from "../design_components/container";
+import React, { Component } from "react";
 import { FormattedMessage } from "react-intl";
+import PropTypes from "prop-types";
+
 import Header from "./header";
+
 /* eslint-disable */
-export class Presentation extends React.Component {
+export class Presentation extends Component {
+	static propTypes = {
+		location: PropTypes.object.isRequired
+	};
+
 	state = {
 		slideFooter: false
 	};
+
 	componentDidMount() {
 		setTimeout(() => {
 			this.setState({ slideFooter: true });
@@ -17,6 +22,7 @@ export class Presentation extends React.Component {
 			this.setState({ slideTitle: true });
 		}, 50);
 	}
+
 	render() {
 		const { location } = this.props;
 		return (
