@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { FormattedMessage } from "react-intl";
 import PropTypes from "prop-types";
 
+import Text from "../common/Text";
 import Header from "./header";
 
 /* eslint-disable */
@@ -32,20 +32,20 @@ export class Presentation extends Component {
 					<h3 className="slide-down" style={styles.monograme}>
 						AB
 					</h3>
-					<h1
+					<Text
 						className={
 							this.state.slideFooter ? "slide-down" : "none"
 						}
+						size="h1"
+						id="home.name"
 						style={styles.title}
-					>
-						<FormattedMessage id="home.name" />
-					</h1>
-					<h2
+					/>
+					<Text
 						className={this.state.slideFooter ? "slide-up" : "none"}
+						size="h2"
+						id="home.fonction"
 						style={styles.pres}
-					>
-						<FormattedMessage id="home.fonction" />
-					</h2>
+					/>
 				</div>
 			</div>
 		);
@@ -66,7 +66,6 @@ const styles = {
 		boxShadow: "0 0 5px 5px #888"
 	},
 	title: {
-		fontSize: 70,
 		marginTop: 30
 	},
 	pres: {

@@ -6,14 +6,14 @@ import EducationCard from "../common/EducationCard";
 import Arrow from "../common/Arrow";
 import Formation from "../text/Formation";
 import Internship from "../text/internship";
-import Title from "../common/Title";
+import Text from "../common/Text";
 
 export const Parcours = ({ location }) => {
 	return (
 		<div>
 			<Header location={location} />
 			<div style={styles.container} className="main mainCertification">
-				<Title>EDUCATION</Title>
+				<Text id="education.education" size="title"/>
 				<div style={styles.formation}>
 					{Formation.map((item, i) => (
 						<div key={i} style={{ display: "flex" }}>
@@ -30,7 +30,7 @@ export const Parcours = ({ location }) => {
 						</div>
 					))}
 				</div>
-				<Title>INTERNSHIPS</Title>
+				<Text id="education.internship" size="title" />
 				<div style={styles.formation}>
 					{Internship.map((item, i) => (
 						<div key={i} style={{ display: "flex" }}>

@@ -1,18 +1,19 @@
-import React, { Component } from "react";
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 import Header from "./header";
-import Title from "../common/Title";
+import Text from "../common/Text";
+import { colors } from "../style/colors";
 
 /* eslint-disable */
-export class About extends Component {
+export class About extends React.Component {
   static PropTypes = {
-    location: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired
   };
 
   downloadCV() {
     window.open("http://localhost:3000/cv");
-  };
+  }
 
   render() {
     const { location } = this.props;
@@ -20,7 +21,7 @@ export class About extends Component {
       <div>
         <Header location={location} />
         <div className="main mainAbout">
-          <Title>ABOUT ME</Title>
+          <Text size="h2" size="title" className="slide-down-skill" id="about.title"/>
 
           <div style={styles.container}>
             <div style={styles.description}>
@@ -80,6 +81,9 @@ export class About extends Component {
 }
 
 const styles = {
+  title: {
+    
+  },
   container: {
     display: "flex",
     justifyContent: "center",
@@ -88,7 +92,7 @@ const styles = {
   html: {
     height: "100%",
     width: "90%",
-    backgroundColor: "#5D7F71"
+    backgroundColor: colors.greenFour
   },
   description: {
     flex: 1,
@@ -98,17 +102,17 @@ const styles = {
   react: {
     height: "100%",
     width: "80%",
-    backgroundColor: "#6A9181"
+    backgroundColor: colors.greenOne
   },
   nodeJS: {
     height: "100%",
     width: "50%",
-    backgroundColor: "#77A391"
+    backgroundColor: colors.greenTwo
   },
   java: {
     height: "100%",
     width: "70%",
-    backgroundColor: "#84B5A1"
+    backgroundColor: colors.greenThree
   },
   skill: {
     width: "90%",
