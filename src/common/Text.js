@@ -8,6 +8,9 @@ const styles = {
 	h2: {
 		fontSize: 50
 	},
+	h3: {
+		fontSize: 24
+	},
 	p: {
 		fontSize: 16
 	},
@@ -24,6 +27,7 @@ const styles = {
 const map = {
 	h1: styles.h1,
 	h2: styles.h2,
+	h3: styles.h3,
 	p: styles.p,
 	title: { ...styles.title, ...styles.h2 }
 };

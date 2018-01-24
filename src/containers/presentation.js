@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import MediaQuery from 'react-responsive';
+import { Element } from 'react-scroll'; 
 
 import Text from "../common/Text";
 import Header from "./header";
@@ -7,7 +9,7 @@ import Header from "./header";
 /* eslint-disable */
 export class Presentation extends Component {
 	static propTypes = {
-		location: PropTypes.object.isRequired
+		location: PropTypes.object
 	};
 
 	state = {
@@ -27,26 +29,49 @@ export class Presentation extends Component {
 		const { location } = this.props;
 		return (
 			<div>
-				<Header location={location} />
-				<div className="main mainPresentation">
-					<h3 className="slide-down" style={styles.monograme}>
-						AB
-					</h3>
-					<Text
-						className={
-							this.state.slideFooter ? "slide-down" : "none"
-						}
-						size="h1"
-						id="home.name"
-						style={styles.title}
-					/>
-					<Text
-						className={this.state.slideFooter ? "slide-up" : "none"}
-						size="h2"
-						id="home.fonction"
-						style={styles.pres}
-					/>
-				</div>
+				<MediaQuery query="(min-device-width: 1224px)">
+					<Header location={location} />
+					<div className="main mainPresentation">
+						<h3 className="slide-down" style={styles.monograme}>
+							AB
+						</h3>
+						<Text
+							className={
+								this.state.slideFooter ? "slide-down" : "none"
+							}
+							size="h1"
+							id="home.name"
+							style={styles.title}
+						/>
+						<Text
+							className={this.state.slideFooter ? "slide-up" : "none"}
+							size="h2"
+							id="home.fonction"
+							style={styles.pres}
+						/>
+					</div>
+				</MediaQuery>
+				<MediaQuery query="(max-device-width: 1224px)">
+					<div className="main mainPresentation">
+						<h3 className="slide-down" style={styles.monograme}>
+							AB
+						</h3>
+						<Text
+							className={
+								this.state.slideFooter ? "slide-down" : "none"
+							}
+							size="h3"
+							id="home.name"
+							style={styles.title}
+						/>
+						<Text
+							className={this.state.slideFooter ? "slide-up" : "none"}
+							size="p"
+							id="home.fonction"
+							style={styles.pres}
+						/>
+					</div>
+				</MediaQuery>
 			</div>
 		);
 	}

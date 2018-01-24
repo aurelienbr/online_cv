@@ -9,6 +9,8 @@ import { getTranslations } from "./actions";
 
 import { Presentation, About, Parcours, Contact } from "./containers";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import MediaQuery from 'react-responsive';
+import MobileScreen from './MobileScreen';
 
 addLocaleData([...fr, ...en, ...ru]);
 
@@ -28,14 +30,21 @@ class Rooter extends React.Component {
         locale={locale}
         messages={translations[locale]}
       >
-        <Router>
-          <div>
-            <Route exact path="/" component={Presentation} />
-            <Route path="/about" component={About} />
-            <Route path="/certifications" component={Parcours} />
-            <Route path="/contact" component={Contact} />
-          </div>
-        </Router>
+        <div>
+          <MediaQuery query="(min-device-width: 1224px)">
+            <Router>
+              <div>
+                <Route exact path="/" component={Presentation} />
+                <Route path="/about" component={About} />
+                <Route path="/certifications" component={Parcours} />
+                <Route path="/contact" component={Contact} />
+              </div>
+            </Router>
+          </MediaQuery>
+          <MediaQuery query="(max-device-width: 1224px)">
+            <MobileScreen />
+          </MediaQuery>
+        </div>
       </IntlProvider>
     );
   }

@@ -6,16 +6,7 @@ import Button from "../common/Button";
 
 import * as actions from "../actions";
 
-const BUTTONS = [
-	{ to: "/", id: "header.home", defaultMessage: "Home" },
-	{ to: "/about", id: "header.about", defaultMessage: "About" },
-	{
-		to: "/certifications",
-		id: "header.education",
-		defaultMessage: "Education"
-	},
-	{ to: "/contact", id: "header.contact", defaultMessage: "Contact" }
-];
+import BUTTONS from '../const/headerConsts';
 
 const options = [
 	{ value: "fr", label: "Fr" },

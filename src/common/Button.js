@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
 /* eslint-disable */
 import { FormattedMessage } from 'react-intl';
+import MediaQuery from 'react-responsive';
 
 class Button extends Component{
 	state = {
@@ -13,7 +15,7 @@ class Button extends Component{
 		styles.button.borderTop = '';
 		styles.button.paddingTop = 7;
 
-		if(location.pathname === route){
+		if(location && location.pathname === route){
 			styles.button.paddingTop = 0;
 			styles.button.borderTop = '10px solid #77A391';
 			return styles.button;
@@ -21,11 +23,27 @@ class Button extends Component{
 		return styles.button;
 	}
 
+	getMobileStyle = () => {
+		const { selected } = this.props;
+		return styles.button;
+	}
+
 	render(){
-		const { children, route, defaultMessage } = this.props;
+		const { children, route, defaultMessage, href } = this.props;
 		return(
-			<div onClick={()=> this.setState({active: !this.state.active})} style={this.getStyle()}>
-				<Link to={route}><FormattedMessage defaultMessage={defaultMessage} id={children}/></Link>
+			<div>
+				<MediaQuery query="(min-device-width: 1224px)">
+					<div onClick={()=> this.setState({active: !this.state.active})} style={this.getStyle()}>
+						<Link to={route}><FormattedMessage defaultMessage={defaultMessage} id={children}/></Link>
+					</div>
+				</MediaQuery>
+				<MediaQuery query="(max-device-width: 1224px)">
+					<div style={this.getMobileStyle()}>
+						<ScrollLink to={href} smooth={true}>
+							<FormattedMessage defaultMessage={defaultMessage} id={children} />
+						</ScrollLink>
+					</div>
+				</MediaQuery>
 			</div>
 		);
 	}
