@@ -9,8 +9,8 @@ import { getTranslations } from "./actions";
 
 import { Presentation, About, Parcours, Contact } from "./containers";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import MediaQuery from 'react-responsive';
-import MobileScreen from './MobileScreen';
+import MediaQuery from "react-responsive";
+import MobileScreen from "./MobileScreen";
 
 addLocaleData([...fr, ...en, ...ru]);
 
