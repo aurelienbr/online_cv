@@ -1,4 +1,4 @@
-# Project title
+# Aurelien resume Online
   Responsive CV in ReactJS
 
 # Getting Started

@@ -2,9 +2,9 @@ import React, { Component } from "react";
 
 class EducationCard extends Component {
   render() {
-    const { date, description, lieu, style, title } = this.props;
+    const { date, description, lieu, title } = this.props;
     return (
-      <div className="educationCard" style={[styles.container, style]}>
+      <div className="educationCard" style={styles.container}>
         <p style={styles.title}>{title}</p>
         <p style={styles.date}>{date}</p>
         <p>{lieu}</p>

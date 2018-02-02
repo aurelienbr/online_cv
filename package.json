@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.17.0",
     "prop-types": "^15.6.0",
+    "rc-progress": "^2.2.5",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-intl": "^2.4.0",

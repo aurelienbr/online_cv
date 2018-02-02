@@ -8,12 +8,12 @@ import Rooter from "./Rooter";
 import reducers from "./reducers";
 
 export default class App extends Component {
-	render() {
-		const store = createStore(reducers, applyMiddleware(thunk));
-		return (
-			<Provider store={store}>
-				<Rooter />
-			</Provider>
-		);
-	}
+  render() {
+    const store = createStore(reducers, applyMiddleware(thunk));
+    return (
+      <Provider store={store}>
+        <Rooter />
+      </Provider>
+    );
+  }
 }

@@ -57,7 +57,6 @@ const styles = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    minWidth: 150,
     paddingLeft: 10,
     paddingRight: 10
   }

@@ -65,6 +65,7 @@ export class Contact extends React.Component {
         </MediaQuery>
         <MediaQuery query="(max-device-width: 1224px)">
           <ContactMain
+            mobile
             handleNameChange={this.handleNameChange.bind(this)}
             handleEmailChange={this.handleEmailChange.bind(this)}
             handleTextAreaChange={this.handleTextAreaChange.bind(this)}

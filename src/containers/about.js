@@ -25,7 +25,7 @@ export class About extends React.Component {
           </div>
         </MediaQuery>
         <MediaQuery query="(max-device-width: 1224px)">
-          <AboutMain downloadCV={this.downloadCV} />
+          <AboutMain mobile downloadCV={this.downloadCV} />
         </MediaQuery>
       </div>
     );
