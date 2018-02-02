@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import ButtonContact from "./ButtonContact";
+
 const ContactMain = ({
   mobile,
   handleNameChange,
@@ -12,31 +14,7 @@ const ContactMain = ({
   textarea
 }) => (
   <div className="main">
-    <form>
-      <label>Name :</label>
-      <input
-        type="text"
-        value={name}
-        placeholder="Enter your name"
-        onChange={handleNameChange}
-      />
-      <label>E-mail :</label>
-      <input
-        type="text"
-        value={email}
-        placeholder="Enter your email adress"
-        onChange={handleEmailChange}
-      />
-      <label>Content :</label>
-      <input
-        style={{ width: "90%" }}
-        componentClass="textarea"
-        value={textarea}
-        placeholder="Enter text"
-        onChange={handleTextAreaChange}
-      />
-      <button onClick={sendEmail}>send</button>
-    </form>
+    <ButtonContact>Contact me</ButtonContact>
   </div>
 );
 
