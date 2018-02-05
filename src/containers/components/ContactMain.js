@@ -1,7 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
+import GoogleMapReact from "google-map-react";
 
 import ButtonContact from "./ButtonContact";
+
+import MapStyle from "../../const/mapCustom";
+import API_KEY from "../../const/googleMapAPI";
+
+const renderMarkers = (map, maps) => {
+  new maps.Marker({
+    position: { lat: 44.84044, lng: -0.5805 },
+    map
+  });
+};
 
 const ContactMain = ({
   mobile,
@@ -11,12 +22,36 @@ const ContactMain = ({
   sendEmail,
   name,
   email,
-  textarea
+  textarea,
+  location
 }) => (
-  <div className="main">
+  <div>
+    <GoogleMapReact
+      bootstrapURLKeys={{
+        key: API_KEY,
+        language: "fr",
+        region: "fr"
+      }}
+      style={styles.googleMap}
+      onGoogleApiLoaded={({ map, maps }) => renderMarkers(map, maps)}
+      defaultZoom={14}
+      options={{ styles: [...MapStyle] }}
+      defaultCenter={{ lat: 44.84044, lng: -0.5805 }} // Bordeaux
+    />
     <ButtonContact>Contact me</ButtonContact>
   </div>
 );
+
+const styles = {
+  googleMap: {
+    position: "absolute",
+    zIndex: -2,
+    width: "100%",
+    height: "100%",
+    top: 0,
+    left: 0
+  }
+};
 
 ContactMain.propTypes = {
   mobile: PropTypes.bool,

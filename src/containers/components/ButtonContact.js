@@ -5,7 +5,7 @@ import Text from "../../common/Text";
 
 const ButtonContact = ({ children, onClick }) => (
   <button onClick={onClick} style={styles.button} className="buttonContact">
-    <Text style={styles.textButton} size="p" id={children} />
+    <Text style={styles.textButton} size="p" id="Contact Me" />
   </button>
 );
 
@@ -30,7 +30,8 @@ const styles = {
     left: "50%"
   },
   textButton: {
-    marginTop: 10
+    marginTop: 10,
+    cursor: "pointer"
   }
 };
 

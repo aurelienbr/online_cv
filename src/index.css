@@ -22,6 +22,7 @@ p {
   display: flex;
   width: 100%;
   justify-content: space-around;
+  background-color: white;
   align-items: center;
   border-bottom: 1px solid grey;
 }
@@ -219,7 +220,6 @@ a:hover {
   -webkit-box-shadow: 0 10px 30px 0px rgba(255, 75, 90, 0.5);
   -o-box-shadow: 0 10px 30px 0px rgba(255, 75, 90, 0.5);
   -ms-box-shadow: 0 10px 30px 0px rgba(255, 75, 90, 0.5);
-
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
