@@ -2,6 +2,8 @@ import React from "react";
 import Modal from "react-modal";
 import PropTypes from "prop-types";
 
+import Text from "../../common/Text";
+
 class MyModal extends React.Component {
   componentWillMount() {
     Modal.setAppElement("body");
@@ -12,7 +14,8 @@ class MyModal extends React.Component {
       onAfterOpen,
       onRequestClose,
       closeTimeoutMS,
-      style
+      style,
+      sendEmail
     } = this.props;
     return (
       <Modal
@@ -28,12 +31,13 @@ class MyModal extends React.Component {
             <div className="wrap-input-contact" style={styles.containerInput}>
               <span style={styles.span}>Your Name</span>
               <input
+                className="input"
                 style={{ ...styles.input, ...styles.dimInput }}
                 type="text"
                 name="name"
                 placeholder="Enter your name"
               />
-              <span style={styles.focusInput} />
+              <span className="focus-input" style={styles.focusInput} />
             </div>
             <div
               style={styles.containerInput}
@@ -42,12 +46,13 @@ class MyModal extends React.Component {
             >
               <span style={styles.span}>Email</span>
               <input
+                className="input"
                 style={{ ...styles.input, ...styles.dimInput }}
                 type="text"
                 name="email"
                 placeholder="Enter your email addess"
               />
-              <span style={styles.focusInput} />
+              <span className="focus-input" style={styles.focusInput} />
             </div>
           </div>
           <div
@@ -57,12 +62,16 @@ class MyModal extends React.Component {
           >
             <span style={styles.span}>Message</span>
             <textarea
+              className="input"
               style={{ ...styles.input, ...styles.textArea }}
               name="message"
               placeholder="Your message here..."
             />
-            <span style={styles.focusInput} />
+            <span className="focus-input" style={styles.focusInput} />
           </div>
+          <button onClick={sendEmail} className="contactBtn">
+            <Text style={styles.textBtn} size="p" id="submit" />
+          </button>
         </form>
       </Modal>
     );
@@ -113,6 +122,10 @@ const styles = {
     paddingTop: 9,
     paddingBottom: 13
   },
+  textBtn: {
+    marginTop: 8,
+    color: "#fff"
+  },
   focusInput: {
     position: "absolute",
     display: "block",
@@ -120,8 +133,7 @@ const styles = {
     height: "100%",
     top: 0,
     left: 0,
-    pointerEvents: "none",
-    marginLeft: 5
+    pointerEvents: "none"
   }
 };
 
@@ -130,7 +142,8 @@ MyModal.propTypes = {
   onAfterOpen: PropTypes.func,
   onRequestClose: PropTypes.func,
   closeTimeoutMS: PropTypes.number,
-  style: PropTypes.array
+  style: PropTypes.array,
+  sendEmail: PropTypes.func.isRequired
 };
 
 export default MyModal;

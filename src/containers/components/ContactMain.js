@@ -46,7 +46,11 @@ class ContactMain extends React.Component {
           options={{ styles: [...MapStyle] }}
           defaultCenter={{ lat: 44.84044, lng: -0.5805 }} // Bordeaux
         />
-        <ModalContact onRequestClose={onRequestClose} isOpen={isModalOpen} />
+        <ModalContact
+          sendEmail={sendEmail}
+          onRequestClose={onRequestClose}
+          isOpen={isModalOpen}
+        />
         <ButtonContact onClick={openModal}>Contact me</ButtonContact>
       </div>
     );
