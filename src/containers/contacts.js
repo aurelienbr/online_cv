@@ -16,20 +16,21 @@ export class Contact extends React.Component {
     this.state = {
       name: "",
       email: "",
-      textarea: ""
+      textarea: "",
+      isModalOpen: false
     };
   }
 
-  handleNameChange(e) {
+  handleNameChange = e => {
     this.setState({ name: e.target.value });
-  }
-  handleEmailChange(e) {
+  };
+  handleEmailChange = e => {
     this.setState({ email: e.target.value });
-  }
-  handleTextAreaChange(e) {
+  };
+  handleTextAreaChange = e => {
     this.setState({ textarea: e.target.value });
-  }
-  sendEmail(event) {
+  };
+  sendEmail = event => {
     event.preventDefault();
     axios
       .post("http://localhost:3000/mail", {
@@ -42,11 +43,22 @@ export class Contact extends React.Component {
       })
       .then(response => console.log(response))
       .catch(error => console.log(error));
-  }
+  };
+  openModal = () => {
+    this.setState({
+      isModalOpen: true
+    });
+  };
+
+  closeModal = () => {
+    this.setState({
+      isModalOpen: false
+    });
+  };
 
   render() {
     const { location } = this.props;
-    const { name, email, textarea } = this.state;
+    const { name, email, textarea, isModalOpen } = this.state;
     return (
       <div id="contact">
         <MediaQuery query="(min-device-width: 1224px)">
@@ -60,6 +72,9 @@ export class Contact extends React.Component {
               name={name}
               email={email}
               textarea={textarea}
+              isModalOpen={isModalOpen}
+              openModal={this.openModal}
+              onRequestClose={this.closeModal}
             />
           </div>
         </MediaQuery>

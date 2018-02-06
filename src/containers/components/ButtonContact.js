@@ -27,11 +27,11 @@ const styles = {
     height: "120px",
     borderRadius: "50%",
     top: "50%",
-    left: "50%"
+    left: "50%",
+    cursor: "pointer"
   },
   textButton: {
-    marginTop: 10,
-    cursor: "pointer"
+    marginTop: 10
   }
 };
 
