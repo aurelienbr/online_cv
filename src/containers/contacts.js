@@ -8,7 +8,7 @@ import axios from "axios";
 
 export class Contact extends React.Component {
   static propTypes = {
-    location: PropTypes.array
+    location: PropTypes.object
   };
 
   constructor() {

@@ -2,18 +2,89 @@
   font-family: "OpenSans";
   src: url("assets/fonts/OpenSans-Semibold.ttf");
 }
+
 @font-face {
   font-family: "OpenSans-light";
   src: url("assets/fonts/OpenSans-Regular.ttf");
 }
+
 body {
   margin: 0;
   padding: 0;
   font-family: "OpenSans", sans-serif;
 }
+
 p {
   font-family: "OpenSans-light", sans-serif;
 }
+
+input {
+  outline: none;
+  border: none;
+}
+
+textarea {
+  outline: none;
+  border: none;
+}
+
+textarea:focus,
+input:focus {
+  border-color: transparent !important;
+}
+
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+input:focus:-moz-placeholder {
+  color: transparent;
+}
+input:focus::-moz-placeholder {
+  color: transparent;
+}
+input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+textarea:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+textarea:focus:-moz-placeholder {
+  color: transparent;
+}
+textarea:focus::-moz-placeholder {
+  color: transparent;
+}
+textarea:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+input::-webkit-input-placeholder {
+  color: #555555;
+}
+input:-moz-placeholder {
+  color: #555555;
+}
+input::-moz-placeholder {
+  color: #555555;
+}
+input:-ms-input-placeholder {
+  color: #555555;
+}
+
+textarea::-webkit-input-placeholder {
+  color: #555555;
+}
+textarea:-moz-placeholder {
+  color: #555555;
+}
+textarea::-moz-placeholder {
+  color: #555555;
+}
+textarea:-ms-input-placeholder {
+  color: #555555;
+}
+
 .none {
   opacity: 0;
 }
@@ -227,6 +298,12 @@ a:hover {
 
   -webkit-animation: beatbtn 0.9s ease-in-out infinite;
   animation: beatbtn 0.9s ease-in-out infinite;
+}
+
+/* form contact */
+
+wrap-input-contact: {
+  width: calc((100 % -30px) / 2);
 }
 
 @keyframes beatbtn {
