@@ -17,7 +17,7 @@ class About extends React.Component {
   render() {
     const { location } = this.props;
     return (
-      <div>
+      <div id="About">
         <MediaQuery query="(min-device-width: 1224px)">
           <div>
             <Header location={location} downloadCV={this.downloadCV} />

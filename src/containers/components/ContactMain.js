@@ -18,7 +18,6 @@ class ContactMain extends React.Component {
 
   render() {
     const {
-      mobile,
       handleNameChange,
       handleEmailChange,
       handleTextAreaChange,
@@ -26,7 +25,6 @@ class ContactMain extends React.Component {
       name,
       email,
       textarea,
-      location,
       isModalOpen,
       openModal,
       onRequestClose

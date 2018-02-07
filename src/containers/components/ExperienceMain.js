@@ -7,7 +7,6 @@ const getContainerStyle = mobile =>
   mobile === true ? styles.formationMobile : styles.formation;
 
 const ExperienceMain = ({ mobile, internship, formation }) => {
-  console.log(mobile);
   return (
     <div style={styles.container} className="main mainCertification">
       <Text id="education.education" size="title" />

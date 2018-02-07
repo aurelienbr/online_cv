@@ -28,7 +28,7 @@ class Presentation extends Component {
     const { slideFooter } = this.state;
 
     return (
-      <div>
+      <div id="Presentation">
         <MediaQuery query="(min-device-width: 1224px)">
           <div>
             <Header location={location} />

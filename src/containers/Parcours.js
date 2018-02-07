@@ -9,7 +9,7 @@ import Internship from "../text/internship";
 
 const Parcours = ({ location }) => {
   return (
-    <div>
+    <div id="Parcours">
       <MediaQuery query="(min-device-width: 1224px)">
         <div>
           <Header location={location} />
