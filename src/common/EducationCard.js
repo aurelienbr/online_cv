@@ -5,40 +5,23 @@ class EducationCard extends Component {
     const { date, description, lieu, title } = this.props;
     return (
       <div className="educationCard" style={styles.container}>
-        <p style={styles.title}>{title}</p>
-        <p style={styles.date}>{date}</p>
-        <p>{lieu}</p>
-        <p style={styles.description}>{description}</p>
+        <p style={{ ...styles.title, ...styles.whiteColor }}>{title}</p>
+        <p style={{ ...styles.date, ...styles.whiteColor }}>{date}</p>
+        <p style={styles.whiteColor}>{lieu}</p>
       </div>
     );
   }
 }
 
 const styles = {
-  btnMap: {
-    position: "absolute",
-    bottom: 0,
-    right: 0
-  },
   container: {
-    minHeight: 404,
-    height: "auto",
-    width: 268,
-    display: "flex",
-    flexDirection: "column",
-    backgroundColor: "#fff",
-    color: "#7f8c8d",
-    boxShadow: "0 10px 6px -6px #777",
-    textAlign: "center",
-    position: "relative"
+    border: "1px solid #89bbd3",
+    borderRadius: 10,
+    padding: 20,
+    marginBottom: 20
   },
-  date: {
-    marginTop: 30
-  },
-  description: {
-    textAlign: "justify",
-    textJustify: "inter-word",
-    padding: 10
+  whiteColor: {
+    color: "#fff"
   }
 };
 

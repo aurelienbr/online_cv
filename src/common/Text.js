@@ -22,8 +22,7 @@ const styles = {
     marginTop: 50,
     display: "flex",
     alignItems: "center",
-    borderTop: "1px solid grey",
-    borderBottom: "1px solid grey"
+    borderBottom: "5px solid #fff"
   }
 };
 

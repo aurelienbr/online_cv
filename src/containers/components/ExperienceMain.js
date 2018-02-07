@@ -1,7 +1,6 @@
 import React from "react";
 import Text from "../../common/Text";
 import EducationCard from "../../common/EducationCard";
-import Arrow from "../../common/Arrow";
 
 const getContainerStyle = mobile =>
   mobile === true ? styles.formationMobile : styles.formation;
@@ -9,38 +8,30 @@ const getContainerStyle = mobile =>
 const ExperienceMain = ({ mobile, internship, formation }) => {
   return (
     <div style={styles.container} className="main mainCertification">
-      <Text id="education.education" size="title" />
+      <Text id="education.education" style={styles.whiteColor} size="title" />
       <div style={getContainerStyle(mobile)}>
         {formation.map((item, i) => (
-          <div key={i} style={{ display: "flex" }}>
-            <EducationCard
-              date={item.duree}
-              style={styles.educationcard}
-              title={item.ecole}
-              description={item.description}
-              lieu={item.lieu}
-            />
-            {i === formation.length - 1 || mobile ? null : (
-              <Arrow style={styles.arrow} />
-            )}
-          </div>
+          <EducationCard
+            key={item.duree}
+            date={item.duree}
+            style={styles.educationcard}
+            title={item.ecole}
+            description={item.description}
+            lieu={item.lieu}
+          />
         ))}
       </div>
-      <Text id="education.internship" size="title" />
+      <Text id="education.internship" style={styles.whiteColor} size="title" />
       <div style={getContainerStyle(mobile)}>
         {internship.map((item, i) => (
-          <div key={i} style={{ display: "flex" }}>
-            <EducationCard
-              date={item.duree}
-              style={styles.educationcard}
-              title={item.titre}
-              description={item.description}
-              lieu={item.place}
-            />
-            {i === internship.length - 1 || mobile ? null : (
-              <Arrow style={styles.arrow} />
-            )}
-          </div>
+          <EducationCard
+            key={item.duree}
+            date={item.duree}
+            style={styles.educationcard}
+            title={item.titre}
+            description={item.description}
+            lieu={item.place}
+          />
         ))}
       </div>
     </div>
@@ -48,22 +39,16 @@ const ExperienceMain = ({ mobile, internship, formation }) => {
 };
 
 const styles = {
-  arrow: {
-    display: "flex",
-    justifyContent: "center",
-    width: 100,
-    alignSelf: "center",
-    height: 4,
-    backgroundColor: "black"
-  },
   container: {
-    backgroundColor: "#ecf0f1"
+    padding: 20
   },
   formation: {
     marginTop: 40,
     marginBottom: 20,
     display: "flex",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
+    flexDirection: "column",
+    width: "80%"
   },
   formationMobile: {
     marginTop: 40,
@@ -73,6 +58,9 @@ const styles = {
   },
   educationcard: {
     marginLeft: 20
+  },
+  whiteColor: {
+    color: "#fff"
   }
 };
 

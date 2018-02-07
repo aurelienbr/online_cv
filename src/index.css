@@ -117,6 +117,10 @@ a:hover {
   background-size: cover;
 }
 
+.backgroundParcoursContainer {
+  background: linear-gradient(#243b55, #243b55);
+}
+
 .imageProfil {
   height: 200px;
   width: 200px;
@@ -126,17 +130,14 @@ a:hover {
   background-image: url("images/myprofil.png");
   background-size: cover;
 }
-
 .imageProfil:hover {
   cursor: pointer;
 }
-
 .contacts {
   background-image: url(https://static.tumblr.com/03fbbc566b081016810402488936fbae/pqpk3dn/MRSmlzpj3/tumblr_static_bg3.png);
   background-position: 0px 0px;
   background-size: cover;
 }
-
 .main {
   min-height: 92vh;
   display: flex;
@@ -146,32 +147,26 @@ a:hover {
   color: #fff;
   box-shadow: 0 0 3px 3px #888;
 }
-
 .mainAbout {
   color: grey;
   justify-content: flex-start;
 }
-
 .main-column {
   flex: 1;
   flex-direction: column;
   justify-content: space-around;
   height: 40vh;
 }
-
 .mainCertification {
   color: black;
 }
-
 .label {
   margin-top: 20px;
   width: 80%;
 }
-
 .marginAuto {
   margin: 40px;
 }
-
 .fade-appear {
   opacity: 0.01;
 }
@@ -179,55 +174,47 @@ a:hover {
   opacity: 1;
   transition: opacity 0.5s ease-in;
 }
-
 .slide {
   animation: slide 1s ease-in forwards;
 }
-
 .slide-down {
   animation: slide-down 1s ease-in forwards;
 }
-
 .slide-up {
   animation: slide-up 1s ease-in forwards;
 }
-
 .slide-down-skill {
   animation: slide-down-skill 0.4s ease-in forwards;
 }
-
 .slide-up-presentation {
   animation: slide-up-presentation 0.6s ease-in forwards;
 }
-
 .slide-up-skill {
   animation: slide-up-skill 0.6s ease-in forwards;
 }
-
 .displayNone {
   display: none;
 }
-
 /*skills*/
 .skill p {
   font-size: 18px;
 }
-
 .educationCard {
   animation: educationCard 1s ease-in forwards;
+  transition: background-color 0.5s;
 }
 
+.educationCard:hover {
+  background-color: #34495e;
+}
 /*circle skills*/
-
 #app {
   margin-top: 40px;
 }
-
 #progressInput {
   margin: 20px auto;
   width: 30%;
 }
-
 .circle-background,
 .circle-progress {
   fill: none;
@@ -235,24 +222,20 @@ a:hover {
 .circle-background {
   stroke: #ddd;
 }
-
 .circle-progress {
   stroke-linejoin: round;
 }
-
 .circle-text {
   font-size: 2em;
   font-weight: bold;
   fill: red;
 }
-
 .circular-row {
   display: flex;
   margin-top: 40px;
   justify-content: space-around;
   align-items: center;
 }
-
 .progressBar {
   border: 16px solid #f3f3f3; /* Light grey */
   border-top: 16px solid #3498db; /* Blue */
@@ -262,9 +245,7 @@ a:hover {
   width: 120px;
   height: 120px;
 }
-
 /* button contact */
-
 .buttonContact {
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
@@ -272,7 +253,6 @@ a:hover {
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-
 .buttonContact::before {
   content: "";
   display: block;
@@ -282,10 +262,8 @@ a:hover {
   height: 100%;
   background-color: #ff4b5a;
   border-radius: 50%;
-
   top: 0;
   left: 0;
-
   box-shadow: 0 10px 30px 0px rgba(255, 75, 90, 0.5);
   -moz-box-shadow: 0 10px 30px 0px rgba(255, 75, 90, 0.5);
   -webkit-box-shadow: 0 10px 30px 0px rgba(255, 75, 90, 0.5);
@@ -295,17 +273,13 @@ a:hover {
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
   transition: all 0.4s;
-
   -webkit-animation: beatbtn 0.9s ease-in-out infinite;
   animation: beatbtn 0.9s ease-in-out infinite;
 }
-
 /* form contact */
-
 wrap-input-contact: {
   width: calc((100 % -30px) / 2);
 }
-
 .focus-input::before {
   content: "";
   display: block;
@@ -314,19 +288,15 @@ wrap-input-contact: {
   left: 0;
   width: 0;
   height: 2px;
-
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
   transition: all 0.4s;
-
   background: #ff4b5a;
 }
-
 .input:focus + .focus-input::before {
   width: 100%;
 }
-
 .contactBtn {
   display: -webkit-box;
   display: -webkit-flex;
@@ -339,19 +309,16 @@ wrap-input-contact: {
   height: 50px;
   background-color: #ff4b5a;
   border-radius: 25px;
-
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
   transition: all 0.4s;
-
   box-shadow: 0 10px 30px 0px rgba(255, 75, 90, 0.5);
   -moz-box-shadow: 0 10px 30px 0px rgba(255, 75, 90, 0.5);
   -webkit-box-shadow: 0 10px 30px 0px rgba(255, 75, 90, 0.5);
   -o-box-shadow: 0 10px 30px 0px rgba(255, 75, 90, 0.5);
   -ms-box-shadow: 0 10px 30px 0px rgba(255, 75, 90, 0.5);
 }
-
 .contactBtn:hover {
   background-color: #333333;
   box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
@@ -360,7 +327,6 @@ wrap-input-contact: {
   -o-box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
   -ms-box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
 }
-
 @keyframes beatbtn {
   0% {
     background-color: rgba(255, 75, 90, 1);
@@ -371,7 +337,6 @@ wrap-input-contact: {
     -o-transform: scale(1);
     transform: scale(1);
   }
-
   50% {
     background-color: rgba(255, 75, 90, 0.8);
     transform-origin: center;
@@ -382,7 +347,6 @@ wrap-input-contact: {
     transform: scale(1.1);
   }
 }
-
 @keyframes slide-up {
   from {
     opacity: 0;
@@ -393,7 +357,6 @@ wrap-input-contact: {
     transform: translateY(0%);
   }
 }
-
 @keyframes slide-down {
   from {
     opacity: 0;
@@ -404,7 +367,6 @@ wrap-input-contact: {
     transform: translateY(0%);
   }
 }
-
 @keyframes slide-down-skill {
   from {
     opacity: 0;
@@ -415,7 +377,6 @@ wrap-input-contact: {
     transform: translateY(0%);
   }
 }
-
 @keyframes slide-up-skill {
   from {
     opacity: 0;
@@ -426,7 +387,6 @@ wrap-input-contact: {
     transform: translateY(0%);
   }
 }
-
 @keyframes slide-up-presentation {
   from {
     opacity: 0;
@@ -437,7 +397,6 @@ wrap-input-contact: {
     transform: translateY(0%);
   }
 }
-
 @keyframes educationCard {
   from {
     opacity: 0;
