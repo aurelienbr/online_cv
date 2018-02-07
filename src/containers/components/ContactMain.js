@@ -48,6 +48,12 @@ class ContactMain extends React.Component {
         />
         <ModalContact
           sendEmail={sendEmail}
+          handleNameChange={handleNameChange}
+          handleEmailChang={handleEmailChange}
+          handleTextAreaChange={handleTextAreaChange}
+          name={name}
+          email={email}
+          textarea={textarea}
           onRequestClose={onRequestClose}
           isOpen={isModalOpen}
         />

@@ -15,7 +15,13 @@ class MyModal extends React.Component {
       onRequestClose,
       closeTimeoutMS,
       style,
-      sendEmail
+      handleNameChange,
+      handleEmailChange,
+      handleTextAreaChange,
+      sendEmail,
+      name,
+      email,
+      textarea
     } = this.props;
     return (
       <Modal
@@ -27,6 +33,7 @@ class MyModal extends React.Component {
         contentLabel="Modal"
       >
         <form style={styles.formContainer}>
+          <Text style={styles.titleContact} size="h3" id="Contact me" />
           <div style={styles.inputMain}>
             <div className="wrap-input-contact" style={styles.containerInput}>
               <span style={styles.span}>Your Name</span>
@@ -35,6 +42,8 @@ class MyModal extends React.Component {
                 style={{ ...styles.input, ...styles.dimInput }}
                 type="text"
                 name="name"
+                value={name}
+                onChange={handleNameChange}
                 placeholder="Enter your name"
               />
               <span className="focus-input" style={styles.focusInput} />
@@ -49,6 +58,8 @@ class MyModal extends React.Component {
                 className="input"
                 style={{ ...styles.input, ...styles.dimInput }}
                 type="text"
+                value={email}
+                onChange={handleEmailChange}
                 name="email"
                 placeholder="Enter your email addess"
               />
@@ -62,6 +73,8 @@ class MyModal extends React.Component {
           >
             <span style={styles.span}>Message</span>
             <textarea
+              value={textarea}
+              onChange={handleTextAreaChange}
               className="input"
               style={{ ...styles.input, ...styles.textArea }}
               name="message"
@@ -105,6 +118,14 @@ const styles = {
     lineHeight: 1.5,
     paddingLeft: 5
   },
+  titleContact: {
+    display: "block",
+    width: "100%",
+    color: "#333333",
+    lineHeight: 1.2,
+    textAlign: "left",
+    paddingBottom: 44
+  },
   dimInput: {
     height: 40,
     position: "relative"
@@ -143,7 +164,13 @@ MyModal.propTypes = {
   onRequestClose: PropTypes.func,
   closeTimeoutMS: PropTypes.number,
   style: PropTypes.array,
-  sendEmail: PropTypes.func.isRequired
+  handleNameChange: PropTypes.func.isRequired,
+  handleEmailChange: PropTypes.func.isRequired,
+  handleTextAreaChange: PropTypes.func.isRequired,
+  sendEmail: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  textarea: PropTypes.string.isRequired
 };
 
 export default MyModal;
