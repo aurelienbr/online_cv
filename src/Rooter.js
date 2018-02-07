@@ -7,7 +7,11 @@ import ru from "react-intl/locale-data/ru";
 
 import { getTranslations } from "./actions";
 
-import { Presentation, About, Parcours, Contact } from "./containers";
+import Presentation from "./containers/Presentation";
+import About from "./containers/About";
+import Parcours from "./containers/Parcours";
+import Contact from "./containers/Contact";
+
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import MediaQuery from "react-responsive";
 import MobileScreen from "./MobileScreen";

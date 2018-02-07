@@ -7,7 +7,7 @@ import Header from "./Header";
 import Formation from "../text/Formation";
 import Internship from "../text/internship";
 
-export const Parcours = ({ location }) => {
+const Parcours = ({ location }) => {
   return (
     <div>
       <MediaQuery query="(min-device-width: 1224px)">
@@ -26,3 +26,5 @@ export const Parcours = ({ location }) => {
 Parcours.propTypes = {
   location: PropTypes.array
 };
+
+export default Parcours;

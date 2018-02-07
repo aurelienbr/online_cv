@@ -5,7 +5,7 @@ import MediaQuery from "react-responsive";
 import PresentationMain from "./components/PresentationMain";
 import Header from "./Header";
 
-export class Presentation extends Component {
+class Presentation extends Component {
   static propTypes = {
     location: PropTypes.object
   };
@@ -42,3 +42,5 @@ export class Presentation extends Component {
     );
   }
 }
+
+export default Presentation;

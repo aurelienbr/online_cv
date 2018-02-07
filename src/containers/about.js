@@ -5,7 +5,7 @@ import MediaQuery from "react-responsive";
 import Header from "./Header";
 import AboutMain from "./components/AboutMain";
 
-export class About extends React.Component {
+class About extends React.Component {
   static PropTypes = {
     location: PropTypes.object
   };
@@ -31,3 +31,5 @@ export class About extends React.Component {
     );
   }
 }
+
+export default About;
