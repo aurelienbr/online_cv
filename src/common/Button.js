@@ -24,6 +24,7 @@ class Button extends Component {
 
   render() {
     const { children, route, defaultMessage, href } = this.props;
+
     return (
       <div>
         <MediaQuery query="(min-device-width: 1224px)">
