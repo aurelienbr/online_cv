@@ -1,20 +1,23 @@
 const Formation = [
   {
-    image_src: "../../images/formation/actum.png",
     ecole: "exia.ecole",
     duree: "exia.duree",
     lieu: "exia.lieu",
     description: "exia.description"
   },
   {
-    image_src: "../../images/formation/alizarine.jpg",
+    ecole: "erasmus.ecole",
+    duree: "erasmus.duree",
+    lieu: "erasmus.lieu",
+    description: `erasmus.description`
+  },
+  {
     ecole: "lemonnier.ecole",
     duree: "lemonnier.duree",
     lieu: "lemonnier.lieu",
     description: `lemonnier.description`
   },
   {
-    image_src: "../../images/formation/alizarine.jpg",
     ecole: "saintlo.ecole",
     duree: "saintlo.duree",
     lieu: "saintlo.lieu",

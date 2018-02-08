@@ -39,6 +39,11 @@ const TRANSLATIONS = {
     "lemonnier.description":
       "Two years technical degrees dedicated to computer sciences",
 
+    "erasmus.ecole": "University West of Scotland",
+    "erasmus.duree": "January 2018 - April 2018",
+    "erasmus.lieu": "Paisley, United Kingdom",
+    "erasmus.description": "One semester in erasmus spec. Mobile development",
+
     "exia.ecole": "Exia Cesi",
     "exia.duree": "September 2016 - January 2019",
     "exia.lieu": "Bordeaux, France",
@@ -83,6 +88,12 @@ const TRANSLATIONS = {
     "lemonnier.lieu": "Caen, France",
     "lemonnier.description": "BTS Scienes du numérique Informatique et réseau",
 
+    "erasmus.ecole": "University West of Scotland",
+    "erasmus.duree": "Janvier 2018 - Avril 2018",
+    "erasmus.lieu": "Paisley, Royaume Unis",
+    "erasmus.description":
+      "Un semestre en Erasmus avec spécialisation développement mobile",
+
     "exia.ecole": "Exia Cesi",
     "exia.duree": "Septembre 2016 - Janvier 2019",
     "exia.lieu": "Bordeaux, France",
@@ -98,7 +109,7 @@ const TRANSLATIONS = {
     "about.title": "Обо мне",
 
     "education.education": "Oбразование",
-    "education.internship": "Интернатура",
+    "education.internship": "Опыт работы",
 
     "internship.daltoner": "Trainee as a technician network",
     "daltoner.duree": "Mai 2015 - Juillet 2015",
@@ -127,6 +138,11 @@ const TRANSLATIONS = {
     "lemonnier.lieu": "Caen(Кан), Франция",
     "lemonnier.description":
       "двухгодичный технический диплом по специальности «Информатика»",
+
+    "erasmus.ecole": "University West of Scotland",
+    "erasmus.duree": "Январь 2018 г.-апрель 2018",
+    "erasmus.lieu": "Paisley, Великобритания",
+    "erasmus.description": "Erasmus по специальности «Мобильная разработка»",
 
     "exia.ecole": "Exia Cesi",
     "exia.duree": "Сентябрь 2016 г.-по настоящее время",
