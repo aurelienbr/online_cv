@@ -10,11 +10,6 @@ class MyModal extends React.Component {
   }
   render() {
     const {
-      isOpen,
-      onAfterOpen,
-      onRequestClose,
-      closeTimeoutMS,
-      style,
       handleNameChange,
       handleEmailChange,
       handleTextAreaChange,
@@ -24,69 +19,60 @@ class MyModal extends React.Component {
       textarea
     } = this.props;
     return (
-      <Modal
-        isOpen={isOpen}
-        onAfterOpen={onAfterOpen}
-        onRequestClose={onRequestClose}
-        closeTimeoutMS={closeTimeoutMS}
-        style={style}
-        contentLabel="Modal"
-      >
-        <form style={styles.formContainer}>
-          <Text style={styles.titleContact} size="h3" id="Contact me" />
-          <div style={styles.inputMain}>
-            <div className="wrap-input-contact" style={styles.containerInput}>
-              <span style={styles.span}>Your Name</span>
-              <input
-                className="input"
-                style={{ ...styles.input, ...styles.dimInput }}
-                type="text"
-                name="name"
-                value={name}
-                onChange={handleNameChange}
-                placeholder="Enter your name"
-              />
-              <span className="focus-input" style={styles.focusInput} />
-            </div>
-            <div
-              style={styles.containerInput}
-              className="wrap-input-contact"
-              data-validate="Valid email is required: ex@abc.xyz"
-            >
-              <span style={styles.span}>Email</span>
-              <input
-                className="input"
-                style={{ ...styles.input, ...styles.dimInput }}
-                type="text"
-                value={email}
-                onChange={handleEmailChange}
-                name="email"
-                placeholder="Enter your email addess"
-              />
-              <span className="focus-input" style={styles.focusInput} />
-            </div>
-          </div>
-          <div
-            className="wrap-input-contact"
-            style={styles.containerInput}
-            data-validate="Message is required"
-          >
-            <span style={styles.span}>Message</span>
-            <textarea
-              value={textarea}
-              onChange={handleTextAreaChange}
+      <form style={styles.formContainer}>
+        <Text style={styles.titleContact} size="h3" id="Contact me" />
+        <div style={styles.inputMain}>
+          <div className="wrap-input-contact" style={styles.containerInput}>
+            <span style={styles.span}>Your Name</span>
+            <input
               className="input"
-              style={{ ...styles.input, ...styles.textArea }}
-              name="message"
-              placeholder="Your message here..."
+              style={{ ...styles.input, ...styles.dimInput }}
+              type="text"
+              name="name"
+              value={name}
+              onChange={handleNameChange}
+              placeholder="Enter your name"
             />
             <span className="focus-input" style={styles.focusInput} />
           </div>
-          <button onClick={sendEmail} className="contactBtn">
-            <Text style={styles.textBtn} size="p" id="submit" />
-          </button>
-        </form>
-      </Modal>
+          <div
+            style={styles.containerInput}
+            className="wrap-input-contact"
+            data-validate="Valid email is required: ex@abc.xyz"
+          >
+            <span style={styles.span}>Email</span>
+            <input
+              className="input"
+              style={{ ...styles.input, ...styles.dimInput }}
+              type="text"
+              value={email}
+              onChange={handleEmailChange}
+              name="email"
+              placeholder="Enter your email addess"
+            />
+            <span className="focus-input" style={styles.focusInput} />
+          </div>
+        </div>
+        <div
+          className="wrap-input-contact"
+          style={styles.containerInput}
+          data-validate="Message is required"
+        >
+          <span style={styles.span}>Message</span>
+          <textarea
+            value={textarea}
+            onChange={handleTextAreaChange}
+            className="input"
+            style={{ ...styles.input, ...styles.textArea }}
+            name="message"
+            placeholder="Your message here..."
+          />
+          <span className="focus-input" style={styles.focusInput} />
+        </div>
+        <button onClick={sendEmail} className="contactBtn">
+          <Text style={styles.textBtn} size="p" id="submit" />
+        </button>
+      </form>
     );
   }
 }
@@ -159,7 +145,6 @@ const styles = {
 };
 
 MyModal.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
   onAfterOpen: PropTypes.func,
   onRequestClose: PropTypes.func,
   closeTimeoutMS: PropTypes.number,

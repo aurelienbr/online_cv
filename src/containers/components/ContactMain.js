@@ -3,16 +3,35 @@ import PropTypes from "prop-types";
 import GoogleMapReact from "google-map-react";
 
 import ButtonContact from "./ButtonContact";
+import MyModal from "../../common/MyModal";
 import ModalContact from "./ModalContact";
 
 import MapStyle from "../../const/mapCustom";
 import API_KEY from "../../const/googleMapAPI";
 
 class ContactMain extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      isModalOpen: false
+    };
+  }
+
   renderMarkers = (map, maps) => {
     new maps.Marker({
       position: { lat: 44.84044, lng: -0.5805 },
       map
+    });
+  };
+
+  openModal = () => {
+    this.setState({
+      isModalOpen: true
+    });
+  };
+  closeModal = () => {
+    this.setState({
+      isModalOpen: false
     });
   };
 
@@ -24,11 +43,10 @@ class ContactMain extends React.Component {
       sendEmail,
       name,
       email,
-      textarea,
-      isModalOpen,
-      openModal,
-      onRequestClose
+      textarea
     } = this.props;
+
+    const { isModalOpen } = this.state;
 
     return (
       <div>
@@ -44,18 +62,18 @@ class ContactMain extends React.Component {
           options={{ styles: [...MapStyle] }}
           defaultCenter={{ lat: 44.84044, lng: -0.5805 }} // Bordeaux
         />
-        <ModalContact
-          sendEmail={sendEmail}
-          handleNameChange={handleNameChange}
-          handleEmailChang={handleEmailChange}
-          handleTextAreaChange={handleTextAreaChange}
-          name={name}
-          email={email}
-          textarea={textarea}
-          onRequestClose={onRequestClose}
-          isOpen={isModalOpen}
-        />
-        <ButtonContact onClick={openModal}>Contact me</ButtonContact>
+        <MyModal isOpen={isModalOpen} onRequestClose={this.closeModal}>
+          <ModalContact
+            sendEmail={sendEmail}
+            handleNameChange={handleNameChange}
+            handleEmailChange={handleEmailChange}
+            handleTextAreaChange={handleTextAreaChange}
+            name={name}
+            email={email}
+            textarea={textarea}
+          />
+        </MyModal>
+        <ButtonContact onClick={this.openModal}>Contact me</ButtonContact>
       </div>
     );
   }
@@ -80,10 +98,7 @@ ContactMain.propTypes = {
   sendEmail: PropTypes.func.isRequired,
   name: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
-  textarea: PropTypes.string.isRequired,
-  openModal: PropTypes.func.isRequired,
-  onRequestClose: PropTypes.func.isRequired,
-  isModalOpen: PropTypes.bool.isRequired
+  textarea: PropTypes.string.isRequired
 };
 
 export default ContactMain;

@@ -16,8 +16,7 @@ class Contact extends React.Component {
     this.state = {
       name: "",
       email: "",
-      textarea: "",
-      isModalOpen: false
+      textarea: ""
     };
   }
 
@@ -30,6 +29,7 @@ class Contact extends React.Component {
   handleTextAreaChange = e => {
     this.setState({ textarea: e.target.value });
   };
+
   sendEmail = event => {
     event.preventDefault();
     axios
@@ -43,17 +43,6 @@ class Contact extends React.Component {
       })
       .then(response => console.log(response))
       .catch(error => console.log(error));
-  };
-  openModal = () => {
-    this.setState({
-      isModalOpen: true
-    });
-  };
-
-  closeModal = () => {
-    this.setState({
-      isModalOpen: false
-    });
   };
 
   render() {

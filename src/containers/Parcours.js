@@ -24,7 +24,7 @@ const Parcours = ({ location }) => {
 };
 
 Parcours.propTypes = {
-  location: PropTypes.array
+  location: PropTypes.object
 };
 
 export default Parcours;
