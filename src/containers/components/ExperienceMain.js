@@ -14,6 +14,7 @@ const ExperienceMain = ({ mobile, internship, formation }) => {
           <EducationCard
             key={item.duree}
             duree={item.duree}
+            href={item.href}
             titre={item.ecole}
             description={item.description}
             lieu={item.lieu}
@@ -26,6 +27,7 @@ const ExperienceMain = ({ mobile, internship, formation }) => {
           <EducationCard
             key={item.duree}
             duree={item.duree}
+            href={item.href}
             titre={item.titre}
             description={item.description}
             lieu={item.lieu}

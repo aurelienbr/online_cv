@@ -1,6 +1,6 @@
 const Internship = [
   {
-    image_src: "../../images/formation/actum.png",
+    href: "https://www.actumdigital.com/",
     titre: "internship.actum",
     company: "Actum",
     duree: "actum.duree",
@@ -8,7 +8,7 @@ const Internship = [
     description: "actum.description"
   },
   {
-    image_src: "../../images/formation/alizarine.jpg",
+    href: "http://www.alizarine.fr/",
     titre: "internship.alizarine",
     company: "Alizarine",
     duree: "alizarine.duree",
@@ -16,7 +16,7 @@ const Internship = [
     description: `alizarine.description`
   },
   {
-    image_src: "../../images/formation/sartilly.jpg",
+    href: "http://www.daltoner.fr/",
     titre: "internship.daltoner",
     company: "interns",
     duree: "daltoner.duree",
