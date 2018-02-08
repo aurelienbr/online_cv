@@ -1,25 +1,25 @@
 const Formation = [
-	{
-		image_src: "../../images/formation/alizarine.jpg",
-		ecole: "Institut Lemonnier",
-		duree: "2011 - 2014",
-		lieu: "Saint lo",
-		description: `Baccalaureat, Scientifique`
-	},
-	{
-		image_src: "../../images/formation/alizarine.jpg",
-		ecole: "Institut Lemonnier",
-		duree: "2014 - 2016",
-		lieu: "Caen",
-		description: `two years technical degrees dedicated to computer sciences`
-	},
-	{
-		image_src: "../../images/formation/actum.png",
-		ecole: "EXIA.CESI",
-		duree: "2016 - 2019",
-		lieu: "Bordeaux",
-		description: "Computer Sciences Engineering School spec. Development"
-	}
+  {
+    image_src: "../../images/formation/actum.png",
+    ecole: "exia.ecole",
+    duree: "exia.duree",
+    lieu: "exia.lieu",
+    description: "exia.description"
+  },
+  {
+    image_src: "../../images/formation/alizarine.jpg",
+    ecole: "lemonnier.ecole",
+    duree: "lemonnier.duree",
+    lieu: "lemonnier.lieu",
+    description: `lemonnier.description`
+  },
+  {
+    image_src: "../../images/formation/alizarine.jpg",
+    ecole: "saintlo.ecole",
+    duree: "saintlo.duree",
+    lieu: "saintlo.lieu",
+    description: `saintlo.description`
+  }
 ];
 
 export default Formation;

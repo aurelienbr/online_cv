@@ -1,13 +1,22 @@
 import React, { Component } from "react";
+import Text from "./Text";
 
 class EducationCard extends Component {
   render() {
     const { date, description, lieu, title } = this.props;
     return (
       <div className="educationCard" style={styles.container}>
-        <p style={{ ...styles.title, ...styles.whiteColor }}>{title}</p>
-        <p style={{ ...styles.date, ...styles.whiteColor }}>{date}</p>
-        <p style={styles.whiteColor}>{lieu}</p>
+        <Text
+          style={{ ...styles.title, ...styles.whiteColor }}
+          id={title}
+          size="p"
+        />
+        <Text
+          style={{ ...styles.date, ...styles.whiteColor }}
+          id={date}
+          size="p"
+        />
+        <Text style={styles.whiteColor} id={lieu} size="p" />
       </div>
     );
   }

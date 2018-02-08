@@ -30,7 +30,7 @@ const ExperienceMain = ({ mobile, internship, formation }) => {
             style={styles.educationcard}
             title={item.titre}
             description={item.description}
-            lieu={item.place}
+            lieu={item.lieu}
           />
         ))}
       </div>
