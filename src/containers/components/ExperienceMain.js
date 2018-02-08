@@ -10,12 +10,11 @@ const ExperienceMain = ({ mobile, internship, formation }) => {
     <div style={styles.container} className="main mainCertification">
       <Text id="education.education" style={styles.whiteColor} size="title" />
       <div style={getContainerStyle(mobile)}>
-        {formation.map((item, i) => (
+        {formation.map(item => (
           <EducationCard
             key={item.duree}
-            date={item.duree}
-            style={styles.educationcard}
-            title={item.ecole}
+            duree={item.duree}
+            titre={item.ecole}
             description={item.description}
             lieu={item.lieu}
           />
@@ -23,12 +22,11 @@ const ExperienceMain = ({ mobile, internship, formation }) => {
       </div>
       <Text id="education.internship" style={styles.whiteColor} size="title" />
       <div style={getContainerStyle(mobile)}>
-        {internship.map((item, i) => (
+        {internship.map(item => (
           <EducationCard
             key={item.duree}
-            date={item.duree}
-            style={styles.educationcard}
-            title={item.titre}
+            duree={item.duree}
+            titre={item.titre}
             description={item.description}
             lieu={item.lieu}
           />
@@ -55,9 +53,6 @@ const styles = {
     marginBottom: 20,
     display: "flex",
     flexDirection: "column"
-  },
-  educationcard: {
-    marginLeft: 20
   },
   whiteColor: {
     color: "#fff"

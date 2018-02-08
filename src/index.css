@@ -118,7 +118,7 @@ a:hover {
 }
 
 .backgroundParcoursContainer {
-  background: linear-gradient(#243b55, #243b55);
+  background: linear-gradient(to right, #141e30, #243b55);
 }
 
 .imageProfil {
@@ -207,44 +207,7 @@ a:hover {
 .educationCard:hover {
   background-color: #34495e;
 }
-/*circle skills*/
-#app {
-  margin-top: 40px;
-}
-#progressInput {
-  margin: 20px auto;
-  width: 30%;
-}
-.circle-background,
-.circle-progress {
-  fill: none;
-}
-.circle-background {
-  stroke: #ddd;
-}
-.circle-progress {
-  stroke-linejoin: round;
-}
-.circle-text {
-  font-size: 2em;
-  font-weight: bold;
-  fill: red;
-}
-.circular-row {
-  display: flex;
-  margin-top: 40px;
-  justify-content: space-around;
-  align-items: center;
-}
-.progressBar {
-  border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #3498db; /* Blue */
-  border-right: 16px solid #3498db;
-  border-bottom: 16px solid #3498db;
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-}
+
 /* button contact */
 .buttonContact {
   -webkit-transform: translate(-50%, -50%);

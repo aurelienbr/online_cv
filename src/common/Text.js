@@ -43,13 +43,10 @@ const getStyle = size => {
   return style;
 };
 
-const Text = ({ className, id, style, size }) => {
-  console.log(id);
-  return (
-    <p className={className} style={{ ...getStyle(size), ...style }}>
-      <FormattedMessage id={id} defaultMessage={id} />
-    </p>
-  );
-};
+const Text = ({ className, id, style, size }) => (
+  <p className={className} style={{ ...getStyle(size), ...style }}>
+    <FormattedMessage id={id} defaultMessage={id} />
+  </p>
+);
 
 export default Text;

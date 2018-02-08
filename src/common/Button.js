@@ -16,7 +16,7 @@ class Button extends Component {
 
     if (location && location.pathname === route) {
       styles.button.paddingTop = 0;
-      styles.button.borderTop = "10px solid #77A391";
+      styles.button.borderTop = "10px solid #34495e"; // 77A391
       return styles.button;
     }
     return styles.button;
