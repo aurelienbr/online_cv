@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import GoogleMapReact from "google-map-react";
 
 import Text from "./Text";
 import linkIcon from "../images/link.png";
 import mapIcon from "../images/map.png";
 import MyModal from "./MyModal";
 
-import API_KEY from "../const/googleMapAPI";
-import MapStyle from "../const/mapCustom";
+import MyGoogleMap from "./MyGoogleMap";
 
 class EducationCard extends Component {
   state = {
@@ -34,7 +32,7 @@ class EducationCard extends Component {
   };
 
   render() {
-    const { duree, description, lieu, titre, href } = this.props;
+    const { duree, description, lieu, titre, href, coord } = this.props;
 
     return (
       <div
@@ -66,17 +64,9 @@ class EducationCard extends Component {
           </div>
         </div>
         <MyModal onRequestClose={this.closeMap} isOpen={this.state.isModalOpen}>
-          <GoogleMapReact
-            bootstrapURLKeys={{
-              key: API_KEY,
-              language: "fr",
-              region: "fr"
-            }}
-            style={styles.googleMap}
-            onGoogleApiLoaded={({ map, maps }) => this.renderMarkers(map, maps)}
-            defaultZoom={14}
-            options={{ styles: [...MapStyle] }}
-            defaultCenter={{ lat: 44.84044, lng: -0.5805 }} // Bordeaux
+          <MyGoogleMap
+            defaultZoom={10}
+            defaultCenter={coord} // Bordeaux
           />
         </MyModal>
         {this.state.isOpen && (
@@ -88,6 +78,7 @@ class EducationCard extends Component {
 }
 
 EducationCard.propTypes = {
+  coord: PropTypes.object.isRequired,
   duree: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   lieu: PropTypes.string.isRequired,

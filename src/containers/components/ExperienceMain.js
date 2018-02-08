@@ -18,6 +18,7 @@ const ExperienceMain = ({ mobile, internship, formation }) => {
             titre={item.ecole}
             description={item.description}
             lieu={item.lieu}
+            coord={item.coord}
           />
         ))}
       </div>
@@ -31,6 +32,7 @@ const ExperienceMain = ({ mobile, internship, formation }) => {
             titre={item.titre}
             description={item.description}
             lieu={item.lieu}
+            coord={item.coord}
           />
         ))}
       </div>

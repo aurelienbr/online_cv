@@ -1,13 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import GoogleMapReact from "google-map-react";
 
 import ButtonContact from "./ButtonContact";
 import MyModal from "../../common/MyModal";
 import ModalContact from "./ModalContact";
+import MyGoogleMap from "../../common/MyGoogleMap";
 
-import MapStyle from "../../const/mapCustom";
-import API_KEY from "../../const/googleMapAPI";
+import coordTowns from "../../const/coordTowns";
 
 class ContactMain extends React.Component {
   constructor() {
@@ -50,17 +49,10 @@ class ContactMain extends React.Component {
 
     return (
       <div>
-        <GoogleMapReact
-          bootstrapURLKeys={{
-            key: API_KEY,
-            language: "fr",
-            region: "fr"
-          }}
+        <MyGoogleMap
+          defaultCenter={coordTowns[1]} // bordeaux
           style={styles.googleMap}
-          onGoogleApiLoaded={({ map, maps }) => this.renderMarkers(map, maps)}
           defaultZoom={14}
-          options={{ styles: [...MapStyle] }}
-          defaultCenter={{ lat: 44.84044, lng: -0.5805 }} // Bordeaux
         />
         <MyModal isOpen={isModalOpen} onRequestClose={this.closeModal}>
           <ModalContact
