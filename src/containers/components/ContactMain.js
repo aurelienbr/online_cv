@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import ButtonContact from "./ButtonContact";
 import MyModal from "../../common/MyModal";
-import ModalContact from "./ModalContact";
+import FormContact from "./FormContact";
 import MyGoogleMap from "../../common/MyGoogleMap";
 
 import coordTowns from "../../const/coordTowns";
@@ -55,7 +55,7 @@ class ContactMain extends React.Component {
           defaultZoom={14}
         />
         <MyModal isOpen={isModalOpen} onRequestClose={this.closeModal}>
-          <ModalContact
+          <FormContact
             sendEmail={sendEmail}
             handleNameChange={handleNameChange}
             handleEmailChange={handleEmailChange}

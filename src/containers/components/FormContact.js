@@ -16,12 +16,13 @@ class MyModal extends React.Component {
       sendEmail,
       name,
       email,
-      textarea
+      textarea,
+      mobile
     } = this.props;
     return (
       <form style={styles.formContainer}>
         <Text style={styles.titleContact} size="h3" id="Contact me" />
-        <div style={styles.inputMain}>
+        <div style={mobile ? styles.inputMainMobile : styles.inputMain}>
           <div className="wrap-input-contact" style={styles.containerInput}>
             <span style={styles.span}>Your Name</span>
             <input
@@ -89,6 +90,10 @@ const styles = {
     display: "flex",
     width: "100%",
     justifyContent: "space-between"
+  },
+  inputMainMobile: {
+    display: "flex",
+    flexDirection: "column"
   },
   containerInput: {
     width: "100%",
