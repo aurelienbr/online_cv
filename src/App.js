@@ -8,8 +8,20 @@ import Rooter from "./Rooter";
 import reducers from "./reducers";
 
 export default class App extends Component {
+  state = {
+    load: true
+  };
+
+  componentDidMount() {
+    this.setState({
+      load: false
+    });
+  }
   render() {
     const store = createStore(reducers, applyMiddleware(thunk));
+    if (this.state.load) {
+      return <div />;
+    }
     return (
       <Provider store={store}>
         <Rooter />
