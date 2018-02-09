@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import WayPoint from "react-waypoint";
 
 import Text from "./Text";
 import linkIcon from "../images/link.png";
@@ -10,9 +11,9 @@ import MyGoogleMap from "./MyGoogleMap";
 
 class EducationCard extends Component {
   state = {
-    isModalOpen: false
+    isModalOpen: false,
+    isInView: false
   };
-
   handleDescription = () => this.setState({ isOpen: !this.state.isOpen });
 
   stopPropagation = e => e.stopPropagation();
@@ -21,6 +22,16 @@ class EducationCard extends Component {
     e.stopPropagation();
     this.setState({ isModalOpen: true });
   };
+
+  onEnter = ({ previousPosition }) => {
+    if (previousPosition === WayPoint.below || WayPoint.inside) {
+      this.setState({
+        isInView: true
+      });
+    }
+  };
+
+  onLeave = () => this.setState({ isInView: false });
 
   closeMap = () => this.setState({ isModalOpen: false });
 
@@ -35,42 +46,50 @@ class EducationCard extends Component {
     const { duree, description, lieu, titre, href, coord } = this.props;
 
     return (
-      <div
-        onClick={this.handleDescription}
-        className="educationCard"
-        style={styles.container}
-      >
-        <div style={styles.containerData}>
-          <div>
-            <Text
-              style={{ ...styles.title, ...styles.whiteColor }}
-              id={titre}
-              size="p"
-            />
-            <Text
-              style={{ ...styles.date, ...styles.whiteColor }}
-              id={duree}
-              size="p"
-            />
-            <Text style={styles.whiteColor} id={lieu} size="p" />
+      <div style={{ minHeight: 150 }}>
+        <WayPoint onEnter={this.onEnter} onLeave={this.onLeave} />
+        {this.state.isInView && (
+          <div
+            onClick={this.handleDescription}
+            className="educationCard"
+            style={styles.container}
+          >
+            <div style={styles.containerData}>
+              <div>
+                <Text
+                  style={{ ...styles.title, ...styles.whiteColor }}
+                  id={titre}
+                  size="p"
+                />
+                <Text
+                  style={{ ...styles.date, ...styles.whiteColor }}
+                  id={duree}
+                  size="p"
+                />
+                <Text style={styles.whiteColor} id={lieu} size="p" />
+              </div>
+              <div>
+                <a onClick={this.showMap}>
+                  <img alt="icon map" src={mapIcon} style={styles.mapIcon} />
+                </a>
+                <a target="_tab" onClick={this.stopPropagation} href={href}>
+                  <img alt="link site" src={linkIcon} />
+                </a>
+              </div>
+            </div>
+            <MyModal
+              onRequestClose={this.closeMap}
+              isOpen={this.state.isModalOpen}
+            >
+              <MyGoogleMap
+                defaultZoom={10}
+                defaultCenter={coord} // Bordeaux
+              />
+            </MyModal>
+            {this.state.isOpen && (
+              <Text style={styles.whiteColor} id={description} size="p" />
+            )}
           </div>
-          <div>
-            <a onClick={this.showMap}>
-              <img alt="icon map" src={mapIcon} style={styles.mapIcon} />
-            </a>
-            <a target="_tab" onClick={this.stopPropagation} href={href}>
-              <img alt="link site" src={linkIcon} />
-            </a>
-          </div>
-        </div>
-        <MyModal onRequestClose={this.closeMap} isOpen={this.state.isModalOpen}>
-          <MyGoogleMap
-            defaultZoom={10}
-            defaultCenter={coord} // Bordeaux
-          />
-        </MyModal>
-        {this.state.isOpen && (
-          <Text style={styles.whiteColor} id={description} size="p" />
         )}
       </div>
     );
