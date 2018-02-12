@@ -84,7 +84,7 @@ const styles = {
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "space-between",
-    padding: 60
+    padding: 30
   },
   inputMain: {
     display: "flex",

@@ -7,8 +7,8 @@
   npm start
 
 # Todo
-  - correct Responsive
-  - design of the contact form
-  - design card
-  - finish translations
-  - add Flow type
+  - improve text on the card
+  - moove text files to const
+  - improve style of form on mobile
+  - add form validation
+  - deploy the backend for sending e-mail
