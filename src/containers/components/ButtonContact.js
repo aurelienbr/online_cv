@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Text from "../../common/Text";
+import imgMail from "../../images/mail64.png";
 
 const ButtonContact = ({ children, onClick }) => (
   <button onClick={onClick} style={styles.button} className="buttonContact">
-    <Text style={styles.textButton} size="p" id="Contact Me" />
+    <img alt="contact me" src={imgMail} style={styles.imgButton} />
   </button>
 );
 
@@ -30,9 +30,6 @@ const styles = {
     left: "50%",
     cursor: "pointer"
   },
-  textButton: {
-    marginTop: 10
-  }
 };
 
 export default ButtonContact;

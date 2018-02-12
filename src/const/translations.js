@@ -8,6 +8,17 @@ export default {
     "home.fonction": "Javascript Developper",
     "about.title": "About me",
 
+    "buttonContact.submit": "Submit",
+
+    "formContact.spanName": "Name",
+    "formContact.placeholderName": "Enter your name :",
+
+    "formContact.spanEmail": "Email",
+    "formContact.placeholderEmail": "Enter your email :",
+
+    "formContact.spanTextarea": "Message",
+    "formContact.placeholderTextarea": "Enter your message :",
+
     "education.education": "Education",
     "education.internship": "Internship",
 
@@ -64,6 +75,17 @@ export default {
     "home.fonction": "Développeur Javascript",
     "about.title": "A propos",
 
+    "buttonContact.submit": "Envoyer",
+
+    "formContact.spanName": "Nom",
+    "formContact.placeholderName": "Entrez votre nom et prénom :",
+
+    "formContact.spanEmail": "Email",
+    "formContact.placeholderEmail": "Entrez votre email :",
+
+    "formContact.spanTextarea": "Message",
+    "formContact.placeholderTextarea": "Entrez votre message :",
+
     "education.education": "Scolarite",
     "education.internship": "Stage",
 
@@ -117,6 +139,17 @@ export default {
     "home.fonction": "Программист JavaScript",
     "about.title": "Обо мне",
 
+    "buttonContact.submit": "Отправить",
+
+    "formContact.spanName": "Имя",
+    "formContact.placeholderName": "Введите ваше имя :",
+
+    "formContact.spanEmail": "Эл. адрес",
+    "formContact.placeholderEmail": "Введите ваш Эл. адрес :",
+
+    "formContact.spanTextarea": "Сообщение",
+    "formContact.placeholderTextarea": "Введите ваш текст :",
+
     "education.education": "Oбразование",
     "education.internship": "Опыт работы",
 
@@ -148,7 +181,7 @@ export default {
     "lemonnier.description":
       "двухгодичный технический диплом по специальности «Информатика»",
 
-    "erasmus.ecole": "University West of Scotland",
+    "erasmus.ecole": "Université West of Scotland",
     "erasmus.duree": "Январь 2018 г.-апрель 2018",
     "erasmus.lieu": "Paisley, Великобритания",
     "erasmus.description": "Erasmus по специальности «Мобильная разработка»",

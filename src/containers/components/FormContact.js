@@ -1,6 +1,7 @@
 import React from "react";
 import Modal from "react-modal";
 import PropTypes from "prop-types";
+import { injectIntl } from 'react-intl';
 
 import Text from "../../common/Text";
 
@@ -19,12 +20,15 @@ class MyModal extends React.Component {
       textarea,
       mobile
     } = this.props;
+
+    const { formatMessage } = this.props.intl;
+
     return (
       <form style={styles.formContainer}>
         <Text style={styles.titleContact} size="h3" id="Contact me" />
         <div style={mobile ? styles.inputMainMobile : styles.inputMain}>
           <div className="wrap-input-contact" style={styles.containerInput}>
-            <span style={styles.span}>Your Name</span>
+            <Text style={styles.span} size="p" id="formContact.spanName" />
             <input
               className="input"
               style={{ ...styles.input, ...styles.dimInput }}
@@ -32,7 +36,7 @@ class MyModal extends React.Component {
               name="name"
               value={name}
               onChange={handleNameChange}
-              placeholder="Enter your name"
+              placeholder={formatMessage({ id: "formContact.placeholderName" })}
             />
             <span className="focus-input" style={styles.focusInput} />
           </div>
@@ -41,7 +45,7 @@ class MyModal extends React.Component {
             className="wrap-input-contact"
             data-validate="Valid email is required: ex@abc.xyz"
           >
-            <span style={styles.span}>Email</span>
+            <Text style={styles.span} size="p" id="formContact.spanEmail" />
             <input
               className="input"
               style={{ ...styles.input, ...styles.dimInput }}
@@ -49,7 +53,7 @@ class MyModal extends React.Component {
               value={email}
               onChange={handleEmailChange}
               name="email"
-              placeholder="Enter your email addess"
+              placeholder={formatMessage({ id: "formContact.placeholderEmail" })}
             />
             <span className="focus-input" style={styles.focusInput} />
           </div>
@@ -59,19 +63,19 @@ class MyModal extends React.Component {
           style={styles.containerInput}
           data-validate="Message is required"
         >
-          <span style={styles.span}>Message</span>
+          <Text style={styles.span} size="p" id="formContact.spanTextarea" />
           <textarea
             value={textarea}
             onChange={handleTextAreaChange}
             className="input"
             style={{ ...styles.input, ...styles.textArea }}
             name="message"
-            placeholder="Your message here..."
+            placeholder={formatMessage({ id: "formContact.placeholderTextarea" })}
           />
           <span className="focus-input" style={styles.focusInput} />
         </div>
         <button onClick={sendEmail} className="contactBtn">
-          <Text style={styles.textBtn} size="p" id="submit" />
+          <Text style={styles.textBtn} size="p" id="buttonContact.submit" />
         </button>
       </form>
     );
@@ -163,4 +167,4 @@ MyModal.propTypes = {
   textarea: PropTypes.string.isRequired
 };
 
-export default MyModal;
+export default injectIntl(MyModal);
