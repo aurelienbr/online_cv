@@ -4,8 +4,8 @@ import MediaQuery from "react-responsive";
 
 import ExperienceMain from "./components/ExperienceMain";
 import Header from "./Header";
-import Formation from "../text/Formation";
-import Internship from "../text/internship";
+import Education from "../const/education";
+import Internship from "../const/internship";
 
 const Parcours = ({ location }) => {
   return (
@@ -13,11 +13,11 @@ const Parcours = ({ location }) => {
       <MediaQuery query="(min-device-width: 1224px)">
         <div>
           <Header location={location} />
-          <ExperienceMain formation={Formation} internship={Internship} />
+          <ExperienceMain education={Education} internship={Internship} />
         </div>
       </MediaQuery>
       <MediaQuery query="(max-device-width: 1224px)">
-        <ExperienceMain mobile formation={Formation} internship={Internship} />
+        <ExperienceMain mobile education={Education} internship={Internship} />
       </MediaQuery>
     </div>
   );

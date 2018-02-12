@@ -7,12 +7,12 @@ import WithinView from "../../common/WithinView";
 const getContainerStyle = mobile =>
   mobile === true ? styles.formationMobile : styles.formation;
 
-const ExperienceMain = ({ mobile, internship, formation }) => {
+const ExperienceMain = ({ mobile, internship, education }) => {
   return (
     <div style={styles.container} className="main mainCertification">
       <Text id="education.education" style={styles.whiteColor} size="title" />
       <div style={getContainerStyle(mobile)}>
-        {formation.map(item => (
+        {education.map(item => (
           <WithinView key={item.duree}>
             <EducationCard
               duree={item.duree}
