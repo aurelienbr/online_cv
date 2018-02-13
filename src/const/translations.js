@@ -7,8 +7,32 @@ export default {
     "home.name": "Aurelien Brachet",
     "home.fonction": "Javascript Developper",
     "about.title": "About me",
+    "about.main": `Plusieurs variations de Lorem Ipsum peuvent être trouvées ici ou là,
+      mais la majeure partie d'entre elles a été altérée par l'addition
+      d'humour ou de mots aléatoires qui ne ressemblent pas une seconde à du
+      texte standard. Si vous voulez utiliser un passage du Lorem Ipsum,
+      vous devez être sûr qu'il n'y a rien d'embarrassant caché dans le
+      texte. Tous les générateurs de Lorem Ipsum sur Internet tendent à
+      reproduire le même extrait sans fin, ce qui fait de lipsum.com le seul
+      vrai générateur de Lorem Ipsum. Iil utilise un dictionnaire de plus de
+      200 mots latins, en combinaison de plusieurs structures de phrases,
+      pour générer un Lorem Ipsum irréprochable. Le Lorem Ipsum ainsi obtenu
+      ne contient aucune répétition, ni ne contient des mots farfelus, ouco
+      des touches d'humour. Plusieurs variations de Lorem Ipsum peuvent être
+      trouvées ici ou là, mais la majeure partie d'entre elles a été altérée
+      par l'addition d'humour ou de mots aléatoires qui ne ressemblent pas
+      une seconde à du texte standard. Si vous voulez utiliser un passage du
+      Lorem Ipsum, vous devez être sûr qu'il n'y a rien d'embarrassant caché
+      dans le texte. Tous les générateurs de Lorem Ipsum sur Internet
+      tendent à reproduire le même extrait sans fin, ce qui fait de
+      lipsum.com le seul vrai générateur de Lorem Ipsum. Iil utilise un
+      dictionnaire de plus de 200 mots latins, en combinaison de plusieurs
+      structures de phrases, pour générer un Lorem Ipsum irréprochable. Le
+      Lorem Ipsum ainsi obtenu ne contient aucune répétition, ni ne contient
+      des mots farfelus, ou des touches d'humour.`,
 
     "buttonContact.submit": "Submit",
+    "formContact.contactMe": "Contact me",
 
     "formContact.spanName": "Name",
     "formContact.placeholderName": "Enter your name :",
@@ -33,10 +57,10 @@ export default {
     "alizarine.lieu": "Bordeaux",
     "alizarine.description":
       `Internship in mobile development, I had to learn from scratch how to use React Native and firebase.
-      I learnt how to use this framework on my own. The application I made is not avaible for now on the store.
-      But it consists of a social media which users can log in and share amazing pleasure craft spots on a google map with their beautiful photo.
-      And of course they can talk to each other with a chat, and also they get notified when someone send a message to another user or also if someone comment one of his spots.`
-      ,
+      What I learnt during this internship :
+      how to manage my time and to make productive work,
+      how to speak with people without any knowledge in development,
+      React Native, JS, ES6, Firebase.`,
 
     "internship.actum": "Full Stack javascript trainee",
     "actum.duree": "September 2017 - December 2017",
@@ -75,7 +99,32 @@ export default {
     "home.fonction": "Développeur Javascript",
     "about.title": "A propos",
 
+    "about.main": `Plusieurs variations de Lorem Ipsum peuvent être trouvées ici ou là,
+      mais la majeure partie d'entre elles a été altérée par l'addition
+      d'humour ou de mots aléatoires qui ne ressemblent pas une seconde à du
+      texte standard. Si vous voulez utiliser un passage du Lorem Ipsum,
+      vous devez être sûr qu'il n'y a rien d'embarrassant caché dans le
+      texte. Tous les générateurs de Lorem Ipsum sur Internet tendent à
+      reproduire le même extrait sans fin, ce qui fait de lipsum.com le seul
+      vrai générateur de Lorem Ipsum. Iil utilise un dictionnaire de plus de
+      200 mots latins, en combinaison de plusieurs structures de phrases,
+      pour générer un Lorem Ipsum irréprochable. Le Lorem Ipsum ainsi obtenu
+      ne contient aucune répétition, ni ne contient des mots farfelus, ouco
+      des touches d'humour. Plusieurs variations de Lorem Ipsum peuvent être
+      trouvées ici ou là, mais la majeure partie d'entre elles a été altérée
+      par l'addition d'humour ou de mots aléatoires qui ne ressemblent pas
+      une seconde à du texte standard. Si vous voulez utiliser un passage du
+      Lorem Ipsum, vous devez être sûr qu'il n'y a rien d'embarrassant caché
+      dans le texte. Tous les générateurs de Lorem Ipsum sur Internet
+      tendent à reproduire le même extrait sans fin, ce qui fait de
+      lipsum.com le seul vrai générateur de Lorem Ipsum. Iil utilise un
+      dictionnaire de plus de 200 mots latins, en combinaison de plusieurs
+      structures de phrases, pour générer un Lorem Ipsum irréprochable. Le
+      Lorem Ipsum ainsi obtenu ne contient aucune répétition, ni ne contient
+      des mots farfelus, ou des touches d'humour.`,
+
     "buttonContact.submit": "Envoyer",
+    "formContact.contactMe": "Contactez moi",
 
     "formContact.spanName": "Nom",
     "formContact.placeholderName": "Entrez votre nom et prénom :",
@@ -139,7 +188,32 @@ export default {
     "home.fonction": "Программист JavaScript",
     "about.title": "Обо мне",
 
+    "about.main": `Plusieurs variations de Lorem Ipsum peuvent être trouvées ici ou là,
+      mais la majeure partie d'entre elles a été altérée par l'addition
+      d'humour ou de mots aléatoires qui ne ressemblent pas une seconde à du
+      texte standard. Si vous voulez utiliser un passage du Lorem Ipsum,
+      vous devez être sûr qu'il n'y a rien d'embarrassant caché dans le
+      texte. Tous les générateurs de Lorem Ipsum sur Internet tendent à
+      reproduire le même extrait sans fin, ce qui fait de lipsum.com le seul
+      vrai générateur de Lorem Ipsum. Iil utilise un dictionnaire de plus de
+      200 mots latins, en combinaison de plusieurs structures de phrases,
+      pour générer un Lorem Ipsum irréprochable. Le Lorem Ipsum ainsi obtenu
+      ne contient aucune répétition, ni ne contient des mots farfelus, ouco
+      des touches d'humour. Plusieurs variations de Lorem Ipsum peuvent être
+      trouvées ici ou là, mais la majeure partie d'entre elles a été altérée
+      par l'addition d'humour ou de mots aléatoires qui ne ressemblent pas
+      une seconde à du texte standard. Si vous voulez utiliser un passage du
+      Lorem Ipsum, vous devez être sûr qu'il n'y a rien d'embarrassant caché
+      dans le texte. Tous les générateurs de Lorem Ipsum sur Internet
+      tendent à reproduire le même extrait sans fin, ce qui fait de
+      lipsum.com le seul vrai générateur de Lorem Ipsum. Iil utilise un
+      dictionnaire de plus de 200 mots latins, en combinaison de plusieurs
+      structures de phrases, pour générer un Lorem Ipsum irréprochable. Le
+      Lorem Ipsum ainsi obtenu ne contient aucune répétition, ni ne contient
+      des mots farfelus, ou des touches d'humour.`,
+
     "buttonContact.submit": "Отправить",
+    "formContact.contactMe": "Свяжитесь со мной",
 
     "formContact.spanName": "Имя",
     "formContact.placeholderName": "Введите ваше имя :",

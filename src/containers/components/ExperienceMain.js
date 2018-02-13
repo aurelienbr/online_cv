@@ -15,6 +15,7 @@ const ExperienceMain = ({ mobile, internship, education }) => {
         {education.map(item => (
           <WithinView key={item.duree}>
             <EducationCard
+              mobile={mobile}
               duree={item.duree}
               href={item.href}
               titre={item.ecole}
@@ -30,6 +31,7 @@ const ExperienceMain = ({ mobile, internship, education }) => {
         {internship.map(item => (
           <WithinView key={item.duree}>
             <EducationCard
+              mobile={mobile}
               duree={item.duree}
               href={item.href}
               titre={item.titre}
@@ -43,6 +45,10 @@ const ExperienceMain = ({ mobile, internship, education }) => {
     </div>
   );
 };
+
+ExperienceMain.defaultProps = {
+  mobile: false
+}
 
 const styles = {
   container: {

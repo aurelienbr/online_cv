@@ -4,8 +4,11 @@ import PropTypes from "prop-types";
 import Text from "./Text";
 import linkIcon from "../images/link.png";
 import mapIcon from "../images/map.png";
-import MyModal from "./MyModal";
 
+import linkMobileIcon from "../images/linkMobile.png";
+import mapMobileIcon from "../images/mapMobile.png";
+
+import MyModal from "./MyModal";
 import MyGoogleMap from "./MyGoogleMap";
 
 class EducationCard extends Component {
@@ -38,7 +41,8 @@ class EducationCard extends Component {
       titre,
       href,
       coord,
-      isInView
+      isInView,
+      mobile
     } = this.props;
 
     if (!isInView) {
@@ -65,12 +69,12 @@ class EducationCard extends Component {
             />
             <Text style={styles.whiteColor} id={lieu} size="p" />
           </div>
-          <div>
+          <div style={styles.imgContainer}>
             <a onClick={this.showMap}>
-              <img alt="icon map" src={mapIcon} style={styles.mapIcon} />
+              <img alt="icon map" src={ mobile ? mapMobileIcon : mapIcon } style={styles.mapIcon} />
             </a>
             <a target="_tab" onClick={this.stopPropagation} href={href}>
-              <img alt="link site" src={linkIcon} />
+              <img alt="link site" src={ mobile ? linkMobileIcon : linkIcon } />
             </a>
           </div>
         </div>
@@ -113,6 +117,9 @@ const styles = {
   },
   mapIcon: {
     marginRight: 10
+  },
+  imgContainer: {
+    display: "flex"
   }
 };
 

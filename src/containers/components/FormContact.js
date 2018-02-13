@@ -5,7 +5,7 @@ import { injectIntl } from 'react-intl';
 
 import Text from "../../common/Text";
 
-class MyModal extends React.Component {
+class FormContact extends React.Component {
   componentWillMount() {
     Modal.setAppElement("body");
   }
@@ -24,8 +24,10 @@ class MyModal extends React.Component {
     const { formatMessage } = this.props.intl;
 
     return (
-      <form style={styles.formContainer}>
-        <Text style={styles.titleContact} size="h3" id="Contact me" />
+      <form id="Contact" style={styles.formContainer}>
+        <div style={mobile && styles.containerCenter}>
+          <Text style={styles.titleContact} size="h3" id="formContact.contactMe" />
+        </div>
         <div style={mobile ? styles.inputMainMobile : styles.inputMain}>
           <div className="wrap-input-contact" style={styles.containerInput}>
             <Text style={styles.span} size="p" id="formContact.spanName" />
@@ -74,15 +76,22 @@ class MyModal extends React.Component {
           />
           <span className="focus-input" style={styles.focusInput} />
         </div>
-        <button onClick={sendEmail} className="contactBtn">
-          <Text style={styles.textBtn} size="p" id="buttonContact.submit" />
-        </button>
+        <div style={mobile && styles.containerCenter}>
+          <button onClick={sendEmail} className="contactBtn">
+            <Text style={styles.textBtn} size="p" id="buttonContact.submit" />
+          </button>
+        </div>
       </form>
     );
   }
 }
 
 const styles = {
+  containerCenter: {
+    display: "flex",
+    width: "100%",
+    justifyContent: "center"
+  },
   formContainer: {
     width: "100%",
     display: "flex",
@@ -153,7 +162,7 @@ const styles = {
   }
 };
 
-MyModal.propTypes = {
+FormContact.propTypes = {
   onAfterOpen: PropTypes.func,
   onRequestClose: PropTypes.func,
   closeTimeoutMS: PropTypes.number,
@@ -167,4 +176,4 @@ MyModal.propTypes = {
   textarea: PropTypes.string.isRequired
 };
 
-export default injectIntl(MyModal);
+export default injectIntl(FormContact);
