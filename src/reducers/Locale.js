@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-  locale: navigator.language || navigator.userLanguage,
+  locale: navigator.language || navigator.userLanguage || "en",
   translations: []
 };
 
