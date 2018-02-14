@@ -4,6 +4,7 @@ import MediaQuery from "react-responsive";
 
 import Header from "./Header";
 import ContactMain from "./components/ContactMain";
+import FormContact from "./components/FormContact";
 import axios from "axios";
 
 class Contact extends React.Component {
@@ -16,22 +17,73 @@ class Contact extends React.Component {
     this.state = {
       name: "",
       email: "",
-      textarea: ""
+      textarea: "",
+      textAreaMax: 360,
+      error: {
+        name: "",
+        email: "",
+        textarea: ""
+      }
     };
   }
 
   handleNameChange = e => {
-    this.setState({ name: e.target.value });
+    this.setState({
+      name: e.target.value,
+      error: {
+        ...this.state.error,
+        name: ""
+      }
+    });
   };
   handleEmailChange = e => {
-    this.setState({ email: e.target.value });
+    this.setState({
+      email: e.target.value,
+      error: {
+        ...this.state.error,
+        email: ""
+      }
+    });
   };
   handleTextAreaChange = e => {
-    this.setState({ textarea: e.target.value });
+    this.setState({
+      textarea: e.target.value,
+      textAreaMax: this.state.textAreaMax - e.target.value.length,
+      error: {
+        ...this.state.textarea,
+        textarea: ""
+      }
+    });
   };
 
   sendEmail = event => {
+    const { name, email, textarea, textAreaMax } = this.state;
+    let error = {};
     event.preventDefault();
+    if (name.length === 0) {
+      error.name = "error.nameNotProvided";
+    }
+    if (name.length > 16) {
+      error.name = "error.nameTooLong";
+    }
+    if (!email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)) {
+      error.email = "error.emailNotMatch";
+    }
+    if (email.length === 0) {
+      error.email = "error.emailNotProvided";
+    }
+    if (textAreaMax < 0) {
+      error.textarea = "error.textareaMax";
+    }
+    if (!textarea) {
+      error.textarea = "error.textareaNotProvided";
+    }
+    if (Object.keys(error).length > 0) {
+      this.setState({
+        error
+      });
+      return null;
+    }
     axios
       .post("http://localhost:3000/mail", {
         email: this.state.email,
@@ -47,13 +99,21 @@ class Contact extends React.Component {
 
   render() {
     const { location } = this.props;
-    const { name, email, textarea, isModalOpen } = this.state;
+    const {
+      name,
+      email,
+      textarea,
+      isModalOpen,
+      error,
+      textAreaMax
+    } = this.state;
     return (
       <div id="contact">
         <MediaQuery query="(min-device-width: 1224px)">
           <div>
             <Header location={location} />
             <ContactMain
+              error={error}
               handleNameChange={this.handleNameChange.bind(this)}
               handleEmailChange={this.handleEmailChange.bind(this)}
               handleTextAreaChange={this.handleTextAreaChange.bind(this)}
@@ -61,6 +121,7 @@ class Contact extends React.Component {
               name={name}
               email={email}
               textarea={textarea}
+              textAreaMax={textAreaMax}
               isModalOpen={isModalOpen}
               openModal={this.openModal}
               onRequestClose={this.closeModal}
@@ -68,8 +129,10 @@ class Contact extends React.Component {
           </div>
         </MediaQuery>
         <MediaQuery query="(max-device-width: 1224px)">
-          <ContactMain
+          <FormContact
             mobile
+            error={error}
+            textAreaMax={textAreaMax}
             handleNameChange={this.handleNameChange.bind(this)}
             handleEmailChange={this.handleEmailChange.bind(this)}
             handleTextAreaChange={this.handleTextAreaChange.bind(this)}

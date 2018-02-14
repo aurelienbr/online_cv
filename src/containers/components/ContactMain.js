@@ -42,7 +42,9 @@ class ContactMain extends React.Component {
       sendEmail,
       name,
       email,
-      textarea
+      textarea,
+      error,
+      textAreaMax
     } = this.props;
 
     const { isModalOpen } = this.state;
@@ -56,6 +58,8 @@ class ContactMain extends React.Component {
         />
         <MyModal isOpen={isModalOpen} onRequestClose={this.closeModal}>
           <FormContact
+            textAreaMax={textAreaMax}
+            error={error}
             sendEmail={sendEmail}
             handleNameChange={handleNameChange}
             handleEmailChange={handleEmailChange}

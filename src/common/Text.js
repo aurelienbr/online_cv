@@ -17,6 +17,10 @@ const styles = {
   p: {
     fontSize: 16
   },
+  error: {
+    fontSize: 16,
+    color: 'red'
+  },
   title: {
     height: 75,
     marginTop: 50,
@@ -32,13 +36,14 @@ const map = {
   h3: styles.h3,
   h4: styles.h4,
   p: styles.p,
+  error: styles.error,
   title: { ...styles.title, ...styles.h2 }
 };
 
 const getStyle = size => {
   const style = map[size];
   if (!style) {
-    throw new Error(`style ${style}" not supported`);
+    throw new Error(`size ${style}" not supported`);
   }
   return style;
 };

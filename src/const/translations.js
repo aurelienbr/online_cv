@@ -17,6 +17,13 @@ export default {
       I am currently seeking for an internship in Russia for this summer
       where I could development my russians skills and also my developers skills while building amazing application with fun.`,
 
+    "error.nameNotProvided": "A name must be provided",
+    "error.emailNotMatch": "A valid e-mail must be provided",
+    "error.emailNotProvided": "An e-mail must be provided",
+    "error.textareaNotProvided": "A message must be provided",
+    "error.nameTooLong": "Your name must be no longer 16 characters",
+    "error.textareaMax": "Your message must be no longer than 360 characters",
+
     "buttonContact.submit": "Submit",
     "formContact.contactMe": "Contact me",
 
@@ -41,8 +48,7 @@ export default {
     "internship.alizarine": "React Native trainee",
     "alizarine.duree": "January 2017 - April 2017",
     "alizarine.lieu": "Bordeaux",
-    "alizarine.description":
-      `Internship in mobile development, I had to learn from scratch how to use React Native and firebase.
+    "alizarine.description": `Internship in mobile development, I had to learn from scratch how to use React Native and firebase.
       What I learnt during this internship :
       how to manage my time and to make productive work,
       how to speak with people without any knowledge in development,
@@ -69,7 +75,8 @@ export default {
     "erasmus.ecole": "University West of Scotland",
     "erasmus.duree": "January 2018 - April 2018",
     "erasmus.lieu": "Paisley, United Kingdom",
-    "erasmus.description": "One semester in erasmus in Paisley University with spec. Mobile development",
+    "erasmus.description":
+      "One semester in erasmus in Paisley University with spec. Mobile development",
 
     "exia.ecole": "Exia Cesi",
     "exia.duree": "September 2016 - January 2019",
@@ -85,29 +92,22 @@ export default {
     "home.fonction": "Développeur Javascript",
     "about.title": "A propos",
 
-    "about.main": `Plusieurs variations de Lorem Ipsum peuvent être trouvées ici ou là,
-      mais la majeure partie d'entre elles a été altérée par l'addition
-      d'humour ou de mots aléatoires qui ne ressemblent pas une seconde à du
-      texte standard. Si vous voulez utiliser un passage du Lorem Ipsum,
-      vous devez être sûr qu'il n'y a rien d'embarrassant caché dans le
-      texte. Tous les générateurs de Lorem Ipsum sur Internet tendent à
-      reproduire le même extrait sans fin, ce qui fait de lipsum.com le seul
-      vrai générateur de Lorem Ipsum. Iil utilise un dictionnaire de plus de
-      200 mots latins, en combinaison de plusieurs structures de phrases,
-      pour générer un Lorem Ipsum irréprochable. Le Lorem Ipsum ainsi obtenu
-      ne contient aucune répétition, ni ne contient des mots farfelus, ouco
-      des touches d'humour. Plusieurs variations de Lorem Ipsum peuvent être
-      trouvées ici ou là, mais la majeure partie d'entre elles a été altérée
-      par l'addition d'humour ou de mots aléatoires qui ne ressemblent pas
-      une seconde à du texte standard. Si vous voulez utiliser un passage du
-      Lorem Ipsum, vous devez être sûr qu'il n'y a rien d'embarrassant caché
-      dans le texte. Tous les générateurs de Lorem Ipsum sur Internet
-      tendent à reproduire le même extrait sans fin, ce qui fait de
-      lipsum.com le seul vrai générateur de Lorem Ipsum. Iil utilise un
-      dictionnaire de plus de 200 mots latins, en combinaison de plusieurs
-      structures de phrases, pour générer un Lorem Ipsum irréprochable. Le
-      Lorem Ipsum ainsi obtenu ne contient aucune répétition, ni ne contient
-      des mots farfelus, ou des touches d'humour.`,
+    "about.main": `Hi and welcome on my resume. I am called Aurelien. Currently in fourth year in an engineering school in France.
+      I have earn knowledge in computer sciences since the beginning of my studies. During the past 2 years I have gained interest towards web and mobile technologies.
+      Indeed, I have learn how to developp web and mobile application from basic HTML CSS application to complex application in ReactJS or React Native.
+      I passed a two years technical degree 2 years ago, during those years I earned all the basic knowledge in computer science in many areas to continue my studies in an engineering school.
+      I have the chance to have to do one internship every year in my actual school, this allowed me to gain a lot of experiences. I did one in Bordeaux, France, where I gained my first React Native skills.
+      I chose to go abroad for my second internship, in the beautiful city of Prague in Czech Republic, where I improved a lot my english while being a Javascript developer there.
+      I really enjoy going abroad and to discover new culture, indeed, I am currently doing a semester in the university of Scotland as an Erasmus Student. Curious, I try to learn everyday about new tricks in React to develop my knowledge.
+      I am currently seeking for an internship in Russia for this summer
+      where I could development my russians skills and also my developers skills while building amazing application with fun.`,
+
+    "error.nameNotProvided": "Vous devez rentrer votre nom",
+    "error.emailNotMatch": "Vous devez rentrer une adresse email valide",
+    "error.emailNotProvided": "Vous devez rentrer une adresse email",
+    "error.textareaNotProvided": "Vous devez rentrer un message",
+    "error.nameTooLong": "Votre nom ne doit pas dépasser 16 charactères",
+    "error.textareaMax": "Votre message ne doit pas dépasser 360 characters",
 
     "buttonContact.submit": "Envoyer",
     "formContact.contactMe": "Contactez moi",
@@ -133,8 +133,7 @@ export default {
     "internship.alizarine": "Stagiaire React Native",
     "alizarine.duree": "Janvier 2017 - Avril 2017",
     "alizarine.lieu": "Bordeaux, France",
-    "alizarine.description":
-      `Pendant ces 4 mois j'ai travaillé comme stagiaire React Native, où j'ai pu commencer à développer en utilisant cette technologie.
+    "alizarine.description": `Pendant ces 4 mois j'ai travaillé comme stagiaire React Native, où j'ai pu commencer à développer en utilisant cette technologie.
       Ce stage a été un vrai challenge pour moi, j'ai du apprendre en un temps très court à apprendre une nouvelle technologie tout en développant une application.
       Néanmoins, l'application n'a pas été terminé. J'ai aussi du apprendre à créer un back-end avec Firebase.`,
 
@@ -147,7 +146,8 @@ export default {
     "saintlo.ecole": "Institut Saint lô",
     "saintlo.duree": "Septembre 2011 - Juin 2014",
     "saintlo.lieu": "Agneau, France",
-    "saintlo.description": "Baccalaureat, Scientifique spécialisation Informatique",
+    "saintlo.description":
+      "Baccalaureat, Scientifique spécialisation Informatique",
 
     "lemonnier.ecole": "Institut Lemonnier",
     "lemonnier.duree": "Septembre 2014 - Juin 2016",
@@ -163,7 +163,8 @@ export default {
     "exia.ecole": "Exia Cesi",
     "exia.duree": "Septembre 2016 - Janvier 2019",
     "exia.lieu": "Bordeaux, France",
-    "exia.description": "Ecole d'ingénieur en informatique spécialisation développement"
+    "exia.description":
+      "Ecole d'ingénieur en informatique spécialisation développement"
   },
   ru: {
     "header.home": "Прием",
@@ -197,6 +198,13 @@ export default {
       structures de phrases, pour générer un Lorem Ipsum irréprochable. Le
       Lorem Ipsum ainsi obtenu ne contient aucune répétition, ni ne contient
       des mots farfelus, ou des touches d'humour.`,
+
+    "error.nameNotProvided": "A name must be provided",
+    "error.emailNotMatch": "A valid e-mail must be provided",
+    "error.emailNotProvided": "An e-mail must be provided",
+    "error.textareaNotProvided": "A message must be provided",
+    "error.nameTooLong": "Must be less than 16 characters",
+    "error.textareaMax": "Your message must be no longer than 360 characters",
 
     "buttonContact.submit": "Отправить",
     "formContact.contactMe": "Свяжитесь со мной",
