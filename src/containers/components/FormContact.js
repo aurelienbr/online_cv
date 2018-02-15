@@ -60,7 +60,6 @@ class FormContact extends React.Component {
           <div
             style={styles.containerInput}
             className="wrap-input-contact"
-            data-validate="Valid email is required: ex@abc.xyz"
           >
             <Text style={styles.span} size="p" id="formContact.spanEmail" />
             <input
@@ -142,8 +141,10 @@ const styles = {
     padding: 30
   },
   errorContainer: {
-    marginLeft: 5,
     display: "flex",
+    position: "absolute",
+    bottom: -70,
+    left: 0,
     marginBottom: 5
   },
   inputMain: {
@@ -208,6 +209,7 @@ const styles = {
   focusInput: {
     width: "100%",
     height: "100%",
+    position: "absolute",
     top: 0,
     left: 0,
     pointerEvents: "none"

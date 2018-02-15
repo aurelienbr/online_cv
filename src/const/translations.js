@@ -175,29 +175,15 @@ export default {
     "home.fonction": "Программист JavaScript",
     "about.title": "Обо мне",
 
-    "about.main": `Plusieurs variations de Lorem Ipsum peuvent être trouvées ici ou là,
-      mais la majeure partie d'entre elles a été altérée par l'addition
-      d'humour ou de mots aléatoires qui ne ressemblent pas une seconde à du
-      texte standard. Si vous voulez utiliser un passage du Lorem Ipsum,
-      vous devez être sûr qu'il n'y a rien d'embarrassant caché dans le
-      texte. Tous les générateurs de Lorem Ipsum sur Internet tendent à
-      reproduire le même extrait sans fin, ce qui fait de lipsum.com le seul
-      vrai générateur de Lorem Ipsum. Iil utilise un dictionnaire de plus de
-      200 mots latins, en combinaison de plusieurs structures de phrases,
-      pour générer un Lorem Ipsum irréprochable. Le Lorem Ipsum ainsi obtenu
-      ne contient aucune répétition, ni ne contient des mots farfelus, ouco
-      des touches d'humour. Plusieurs variations de Lorem Ipsum peuvent être
-      trouvées ici ou là, mais la majeure partie d'entre elles a été altérée
-      par l'addition d'humour ou de mots aléatoires qui ne ressemblent pas
-      une seconde à du texte standard. Si vous voulez utiliser un passage du
-      Lorem Ipsum, vous devez être sûr qu'il n'y a rien d'embarrassant caché
-      dans le texte. Tous les générateurs de Lorem Ipsum sur Internet
-      tendent à reproduire le même extrait sans fin, ce qui fait de
-      lipsum.com le seul vrai générateur de Lorem Ipsum. Iil utilise un
-      dictionnaire de plus de 200 mots latins, en combinaison de plusieurs
-      structures de phrases, pour générer un Lorem Ipsum irréprochable. Le
-      Lorem Ipsum ainsi obtenu ne contient aucune répétition, ni ne contient
-      des mots farfelus, ou des touches d'humour.`,
+    "about.main": `Hi and welcome on my resume. I am called Aurelien. Currently in fourth year in an engineering school in France.
+      I have earn knowledge in computer sciences since the beginning of my studies. During the past 2 years I have gained interest towards web and mobile technologies.
+      Indeed, I have learn how to developp web and mobile application from basic HTML CSS application to complex application in ReactJS or React Native.
+      I passed a two years technical degree 2 years ago, during those years I earned all the basic knowledge in computer science in many areas to continue my studies in an engineering school.
+      I have the chance to have to do one internship every year in my actual school, this allowed me to gain a lot of experiences. I did one in Bordeaux, France, where I gained my first React Native skills.
+      I chose to go abroad for my second internship, in the beautiful city of Prague in Czech Republic, where I improved a lot my english while being a Javascript developer there.
+      I really enjoy going abroad and to discover new culture, indeed, I am currently doing a semester in the university of Scotland as an Erasmus Student. Curious, I try to learn everyday about new tricks in React to develop my knowledge.
+      I am currently seeking for an internship in Russia for this summer
+      where I could development my russians skills and also my developers skills while building amazing application with fun`,
 
     "error.nameNotProvided": "A name must be provided",
     "error.emailNotMatch": "A valid e-mail must be provided",

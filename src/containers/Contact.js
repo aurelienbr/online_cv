@@ -14,6 +14,7 @@ class Contact extends React.Component {
 
   constructor() {
     super();
+    this.textAreaMax = 360;
     this.state = {
       name: "",
       email: "",
@@ -48,7 +49,7 @@ class Contact extends React.Component {
   handleTextAreaChange = e => {
     this.setState({
       textarea: e.target.value,
-      textAreaMax: this.state.textAreaMax - e.target.value.length,
+      textAreaMax: this.textAreaMax - e.target.value.length,
       error: {
         ...this.state.textarea,
         textarea: ""
