@@ -86,7 +86,7 @@ class Contact extends React.Component {
       return null;
     }
     axios
-      .post("http://localhost:3000/mail", {
+      .post("https://apiresume.herokuapp.com/mail", {
         email: this.state.email,
         subject: this.state.name,
         text: this.state.textarea,

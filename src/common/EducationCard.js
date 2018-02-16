@@ -97,7 +97,10 @@ EducationCard.propTypes = {
   duree: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   lieu: PropTypes.string.isRequired,
-  titre: PropTypes.string.isRequired
+  titre: PropTypes.string.isRequired,
+  href: PropTypes.string.isRequired,
+  isInView: PropTypes.bool.isRequired,
+  mobile: PropTypes.bool
 };
 
 const styles = {
