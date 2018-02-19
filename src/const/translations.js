@@ -167,7 +167,7 @@ export default {
       "Ecole d'ingénieur en informatique spécialisation développement"
   },
   ru: {
-    "header.home": "Прием",
+    "header.home": "Главная страница",
     "header.about": "Обо мне",
     "header.education": "Образование",
     "header.contact": "Контакт",
@@ -175,22 +175,20 @@ export default {
     "home.fonction": "Программист JavaScript",
     "about.title": "Обо мне",
 
-    "about.main": `Hi and welcome on my resume. I am called Aurelien. Currently in fourth year in an engineering school in France.
-      I have earn knowledge in computer sciences since the beginning of my studies. During the past 2 years I have gained interest towards web and mobile technologies.
-      Indeed, I have learn how to developp web and mobile application from basic HTML CSS application to complex application in ReactJS or React Native.
-      I passed a two years technical degree 2 years ago, during those years I earned all the basic knowledge in computer science in many areas to continue my studies in an engineering school.
-      I have the chance to have to do one internship every year in my actual school, this allowed me to gain a lot of experiences. I did one in Bordeaux, France, where I gained my first React Native skills.
-      I chose to go abroad for my second internship, in the beautiful city of Prague in Czech Republic, where I improved a lot my english while being a Javascript developer there.
-      I really enjoy going abroad and to discover new culture, indeed, I am currently doing a semester in the university of Scotland as an Erasmus Student. Curious, I try to learn everyday about new tricks in React to develop my knowledge.
-      I am currently seeking for an internship in Russia for this summer
-      where I could development my russians skills and also my developers skills while building amazing application with fun`,
-
-    "error.nameNotProvided": "A name must be provided",
-    "error.emailNotMatch": "A valid e-mail must be provided",
-    "error.emailNotProvided": "An e-mail must be provided",
-    "error.textareaNotProvided": "A message must be provided",
-    "error.nameTooLong": "Must be less than 16 characters",
-    "error.textareaMax": "Your message must be no longer than 360 characters",
+    "about.main": `Приветствую и добро пожаловать на мою страницу. Меня зовут Орельен. В настоящее время я на четвертом году обучения в инженерной школе во Франции.
+      Я получал знания в области компьютерных наук с самого налача своего обучения. За последние два года я приобрел интерес к мобильным и веб-технологиям.
+      В самом деле, я научился разрабатывать мобильные и веб-приложения из простого HTML CSS приложения в сложное ReactJS или React Native.
+      Два года назад я окончил двухгодичную техническую степень, в течение этих лет я получил основные знания в сфере компьютерных наук и других областях, для продолжения своего обучения в инженерной школе.
+    У меня есть возможность проходить стажировку каждый год от моей нженерной школы, что позволило мне приобрести больше опыта. Одна из них была в Бордо,  где я впервые получил опыт с React Nate.
+      Вторая практика прошла заграницей, для этого я выбрал прекрасный город Прагу в Чешской республике, где я улучшил свой английский язык, работая разработчиком JavaScript.
+      Мне действительно приносит удовольствие находиться в других странах и изучать иx культуру, и в данный момент я учусь в Шотландском университете, как студент Erasmus. Мое любопытство заставляет меня каждый день узнавать больше вещей о  React , для развития моих навыков.
+      Сейчас я ищу стажировку в России на лето, где я смог бы развить также свои знания русского языка и навыки разработчика, создавая интересные приложения.`,
+    "error.nameNotProvided": "Имя должно быть указано",
+    "error.emailNotMatch": "Действительный электронный адрес должен быть указан",
+    "error.emailNotProvided": "Электронный адрес должен быть указан",
+    "error.textareaNotProvided": "Сообщение должно быть указано",
+    "error.nameTooLong": "Должно быть меньше 16 символов",
+    "error.textareaMax": "Ваше сообщение должно быть не больше 360 символов",
 
     "buttonContact.submit": "Отправить",
     "formContact.contactMe": "Свяжитесь со мной",
@@ -198,8 +196,8 @@ export default {
     "formContact.spanName": "Имя",
     "formContact.placeholderName": "Введите ваше имя :",
 
-    "formContact.spanEmail": "Эл. адрес",
-    "formContact.placeholderEmail": "Введите ваш Эл. адрес :",
+    "formContact.spanEmail": "Электронный адрес",
+    "formContact.placeholderEmail": "Введите ваш електронный адрес :",
 
     "formContact.spanTextarea": "Сообщение",
     "formContact.placeholderTextarea": "Введите ваш текст :",
@@ -207,22 +205,21 @@ export default {
     "education.education": "Oбразование",
     "education.internship": "Опыт работы",
 
-    "internship.daltoner": "Trainee as a technician network",
+    "internship.daltoner": "Стажер в области технических сетей",
     "daltoner.duree": "Мая 2015 - Июль 2015",
     "daltoner.lieu": "Avranches (Авранш), Франция",
     "daltoner.description":
-      "J'ai travaillé comme technicien réseau pendant ces deux mois",
+      "В течение этих двух месяцев я работал сетевым специалистом",
 
     "internship.alizarine": "Интерн-програмист React Native",
     "alizarine.duree": "Июнь 2017 - апрель 2017",
     "alizarine.lieu": "Bordeaux (Бордо), Франция",
     "alizarine.description":
-      "Internship in mobile development, I had to learn from scratch how to use React Native and firebase. I learnt how to use this framework on my own. The application I made is not avaible for now on the store. But it consists of a social media which users can log in and share amazing pleasure craft spots on a google map with their beautiful photo. And of course they can talk to each other with a chat, and also they get notified when someone send a message to another user or also if someone comment one of his spots.",
-
+      "Стажировка в мобильной разработке. Мне пришлось учиться с нуля как применять React Native и firebase. Я изучал как пользоваться этим фреймворком самостоятельно. Приложение,котрое я разработал, еще недоступно в магазинах. Но это состоит из социальной сети в которой пользователи могут регистрироваться и делиться потрясающими прогулочными маршрутами с Google картами и фотографиями.И конечно же, они могут общаться друг с другом в чате, а также получать уведомления когда кто-то посылает сообщение пользователю, или если кто-то оставил комментарий обо одном из маршрутов.",
     "internship.actum": "Интерн- программист Full stack JavaScript",
     "actum.duree": "Сентябрь 2017 - декабрь 2017",
     "actum.lieu": "Прага, Чешская Республика",
-    "actum.description": "Интерн- программист Full stack JavaScript",
+    "actum.description": "Интерн-программист Full stack JavaScript",
 
     "saintlo.ecole": "Institut Saint lô",
     "saintlo.duree": "2011 - 2014",
