@@ -1,5 +1,8 @@
 const INITIAL_STATE = {
-  locale: navigator.language.substring(0,2).toLowerCase() || navigator.userLanguage.substring(0,2).toLowerCase() || "en",
+  locale:
+    navigator.language.substring(0, 2).toLowerCase() ||
+    navigator.userLanguage.substring(0, 2).toLowerCase() ||
+    "en",
   translations: []
 };
 

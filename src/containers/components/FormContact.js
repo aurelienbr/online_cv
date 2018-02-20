@@ -2,19 +2,27 @@ import React from "react";
 import Modal from "react-modal";
 import PropTypes from "prop-types";
 import { injectIntl } from "react-intl";
+import { connect } from "react-redux";
 
 import Text from "../../common/Text";
 import errorImg from "../../images/error.png";
+import {
+  handleNameChange,
+  handleEmailChange,
+  handleTextAreaChange
+} from "../../actions";
 
 class FormContact extends React.Component {
   componentWillMount() {
     Modal.setAppElement("body");
   }
+
+  handleEmailChange = e => this.props.handleEmailChange(e.target.value);
+  handleNameChange = e => this.props.handleNameChange(e.target.value);
+  handleTextAreaChange = e => this.props.handleTextAreaChange(e.target.value);
+
   render() {
     const {
-      handleNameChange,
-      handleEmailChange,
-      handleTextAreaChange,
       sendEmail,
       name,
       email,
@@ -44,7 +52,7 @@ class FormContact extends React.Component {
               type="text"
               name="name"
               value={name}
-              onChange={handleNameChange}
+              onChange={this.handleNameChange}
               placeholder={formatMessage({ id: "formContact.placeholderName" })}
             />
             <span className="focus-input" style={styles.focusInput} />
@@ -57,17 +65,14 @@ class FormContact extends React.Component {
               </div>
             )}
           </div>
-          <div
-            style={styles.containerInput}
-            className="wrap-input-contact"
-          >
+          <div style={styles.containerInput} className="wrap-input-contact">
             <Text style={styles.span} size="p" id="formContact.spanEmail" />
             <input
               className="input"
               style={{ ...styles.input, ...styles.dimInput }}
               type="text"
               value={email}
-              onChange={handleEmailChange}
+              onChange={this.handleEmailChange}
               name="email"
               placeholder={formatMessage({
                 id: "formContact.placeholderEmail"
@@ -92,7 +97,7 @@ class FormContact extends React.Component {
           <Text style={styles.span} size="p" id="formContact.spanTextarea" />
           <textarea
             value={textarea}
-            onChange={handleTextAreaChange}
+            onChange={this.handleTextAreaChange}
             className="input"
             style={{ ...styles.input, ...styles.textArea }}
             name="message"
@@ -230,4 +235,18 @@ FormContact.propTypes = {
   textarea: PropTypes.string.isRequired
 };
 
-export default injectIntl(FormContact);
+const mapStateToprops = ({ formContact }) => ({
+  name: formContact.name,
+  email: formContact.email,
+  textarea: formContact.textArea,
+  error: formContact.error,
+  textAreaMax: formContact.textAreaMax
+});
+
+const FormContactConnected = connect(mapStateToprops, {
+  handleNameChange,
+  handleEmailChange,
+  handleTextAreaChange
+})(FormContact);
+
+export default injectIntl(FormContactConnected);

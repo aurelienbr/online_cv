@@ -35,17 +35,7 @@ class ContactMain extends React.Component {
   };
 
   render() {
-    const {
-      handleNameChange,
-      handleEmailChange,
-      handleTextAreaChange,
-      sendEmail,
-      name,
-      email,
-      textarea,
-      error,
-      textAreaMax
-    } = this.props;
+    const { sendEmail } = this.props;
 
     const { isModalOpen } = this.state;
 
@@ -57,17 +47,7 @@ class ContactMain extends React.Component {
           defaultZoom={14}
         />
         <MyModal isOpen={isModalOpen} onRequestClose={this.closeModal}>
-          <FormContact
-            textAreaMax={textAreaMax}
-            error={error}
-            sendEmail={sendEmail}
-            handleNameChange={handleNameChange}
-            handleEmailChange={handleEmailChange}
-            handleTextAreaChange={handleTextAreaChange}
-            name={name}
-            email={email}
-            textarea={textarea}
-          />
+          <FormContact sendEmail={sendEmail} />
         </MyModal>
         <ButtonContact onClick={this.openModal}>Contact me</ButtonContact>
       </div>
@@ -88,13 +68,7 @@ const styles = {
 
 ContactMain.propTypes = {
   mobile: PropTypes.bool,
-  handleNameChange: PropTypes.func.isRequired,
-  handleEmailChange: PropTypes.func.isRequired,
-  handleTextAreaChange: PropTypes.func.isRequired,
-  sendEmail: PropTypes.func.isRequired,
-  name: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired,
-  textarea: PropTypes.string.isRequired
+  sendEmail: PropTypes.func.isRequired
 };
 
 export default ContactMain;

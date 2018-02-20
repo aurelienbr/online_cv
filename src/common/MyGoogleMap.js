@@ -1,5 +1,6 @@
 import React from "react";
 import GoogleMapReact from "google-map-react";
+import { connect } from "react-redux";
 
 import MapStyle from "../const/mapCustom";
 import API_KEY from "../const/googleMapAPI";
@@ -15,13 +16,14 @@ class MyGoogleMap extends React.Component {
     });
   };
   render() {
-    const { style, defaultCenter, defaultZoom } = this.props;
+    const { style, defaultCenter, defaultZoom, locale } = this.props;
+    console.log(locale);
     return (
       <GoogleMapReact
         bootstrapURLKeys={{
           key: API_KEY,
-          language: "fr",
-          region: "fr"
+          language: locale,
+          region: locale
         }}
         style={style}
         onGoogleApiLoaded={({ map, maps }) => this.renderMarkers(map, maps)}
@@ -33,4 +35,8 @@ class MyGoogleMap extends React.Component {
   }
 }
 
-export default MyGoogleMap;
+const mapStateToProps = ({ locale }) => ({
+  locale: locale.locale
+});
+
+export default connect(mapStateToProps)(MyGoogleMap);
