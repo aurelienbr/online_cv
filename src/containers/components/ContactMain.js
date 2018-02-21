@@ -35,7 +35,7 @@ class ContactMain extends React.Component {
   };
 
   render() {
-    const { sendEmail } = this.props;
+    const { sendEmail, loadingMail } = this.props;
 
     const { isModalOpen } = this.state;
 
@@ -47,7 +47,7 @@ class ContactMain extends React.Component {
           defaultZoom={14}
         />
         <MyModal isOpen={isModalOpen} onRequestClose={this.closeModal}>
-          <FormContact sendEmail={sendEmail} />
+          <FormContact loadingMail={loadingMail} sendEmail={sendEmail} />
         </MyModal>
         <ButtonContact onClick={this.openModal}>Contact me</ButtonContact>
       </div>

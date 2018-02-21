@@ -17,7 +17,7 @@ class MyGoogleMap extends React.Component {
   };
   render() {
     const { style, defaultCenter, defaultZoom, locale } = this.props;
-    console.log(locale);
+
     return (
       <GoogleMapReact
         bootstrapURLKeys={{

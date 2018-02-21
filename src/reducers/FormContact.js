@@ -6,7 +6,7 @@ const INITIAL_STATE = {
   error: {
     name: "",
     email: "",
-    textArea: ""
+    textarea: ""
   }
 };
 
@@ -28,8 +28,8 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         textArea: action.payload,
-        error: { ...state.error, textArea: "" },
-        textAreaMax: 360 - state.textArea.length
+        error: { ...state.error, textarea: "" },
+        textAreaMax: 360 - action.payload.length
       };
     case "HANDLE_ERROR":
       return { ...state, error: action.payload };

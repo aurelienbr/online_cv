@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 import { FormattedMessage } from "react-intl";
 import MediaQuery from "react-responsive";
-import PropTypes from "prop-types";
 
 class Button extends Component {
   state = {

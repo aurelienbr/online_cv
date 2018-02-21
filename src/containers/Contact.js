@@ -14,6 +14,10 @@ class Contact extends React.Component {
     location: PropTypes.object
   };
 
+  state = {
+    loadingMail: false
+  };
+
   sendEmail = event => {
     const { name, email, textarea, textAreaMax, setFormErrors } = this.props;
     let error = {};
@@ -40,6 +44,7 @@ class Contact extends React.Component {
       setFormErrors(error);
       return null;
     }
+    this.setState({ loadingMail: true });
     axios
       .post("https://apiresume.herokuapp.com/mail", {
         email: email,
@@ -49,12 +54,17 @@ class Contact extends React.Component {
           "Content-type": "application/x-www-form-urlencoded"
         }
       })
-      .then(response => console.log(response))
-      .catch(error => console.log(error));
+      .then(response => {
+        this.setState({ loadingMail: false });
+      })
+      .catch(error => {
+        this.setState({ loadingMail: false });
+      });
   };
 
   render() {
     const { location } = this.props;
+    const { loadingMail } = this.state;
 
     return (
       <div id="contact">
@@ -63,12 +73,17 @@ class Contact extends React.Component {
             <Header location={location} />
             <ContactMain
               sendEmail={this.sendEmail.bind(this)}
+              loadingMail={loadingMail}
               onRequestClose={this.closeModal}
             />
           </div>
         </MediaQuery>
         <MediaQuery query="(max-device-width: 1224px)">
-          <FormContact mobile sendEmail={this.sendEmail.bind(this)} />
+          <FormContact
+            mobile
+            sendEmail={this.sendEmail.bind(this)}
+            loadingMail={loadingMail}
+          />
         </MediaQuery>
       </div>
     );

@@ -20,7 +20,7 @@ export const handleNameChange = value => ({
   type: "HANDLE_NAME_CHANGE"
 });
 
-export const handleTextAreaChange = (value, valueMaxTextArea) => ({
+export const handleTextAreaChange = value => ({
   payload: value,
   type: "HANDLE_TEXTAREA_CHANGE"
 });

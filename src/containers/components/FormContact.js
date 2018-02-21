@@ -3,8 +3,10 @@ import Modal from "react-modal";
 import PropTypes from "prop-types";
 import { injectIntl } from "react-intl";
 import { connect } from "react-redux";
+import Loader from "react-loader-spinner";
 
 import Text from "../../common/Text";
+import checkedImg from "../../images/checked.png";
 import errorImg from "../../images/error.png";
 import {
   handleNameChange,
@@ -13,13 +15,48 @@ import {
 } from "../../actions";
 
 class FormContact extends React.Component {
+  state = {
+    iconChecked: false
+  };
   componentWillMount() {
     Modal.setAppElement("body");
   }
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.loadingMail === false && this.props.loadingMail === true) {
+      this.setState({ iconChecked: true, visible: true });
+      this.setTimeoutForState({ iconChecked: false }, 2000);
+      this.setTimeoutForState({ visible: false }, 1500);
+    }
+  }
+
+  setTimeoutForState = (newState, duration) =>
+    setTimeout(() => this.setState(newState), duration);
 
   handleEmailChange = e => this.props.handleEmailChange(e.target.value);
   handleNameChange = e => this.props.handleNameChange(e.target.value);
   handleTextAreaChange = e => this.props.handleTextAreaChange(e.target.value);
+
+  renderButton = () => {
+    const { loadingMail } = this.props;
+    const { iconChecked, visible } = this.state;
+
+    if (iconChecked) {
+      return (
+        <img
+          className={visible === true ? "fadeIn" : "fadeOut"}
+          src={checkedImg}
+          alt="ok"
+        />
+      );
+    }
+
+    const render = loadingMail ? (
+      <Loader type="Rings" color="#fff" height="45" width="45" />
+    ) : (
+      <Text style={styles.textBtn} size="p" id="buttonContact.submit" />
+    );
+    return render;
+  };
 
   render() {
     const {
@@ -118,7 +155,7 @@ class FormContact extends React.Component {
         </div>
         <div style={mobile && styles.containerCenter}>
           <button onClick={sendEmail} className="contactBtn">
-            <Text style={styles.textBtn} size="p" id="buttonContact.submit" />
+            {this.renderButton()}
           </button>
         </div>
       </form>
