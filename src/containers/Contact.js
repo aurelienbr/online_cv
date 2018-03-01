@@ -15,7 +15,8 @@ class Contact extends React.Component {
   };
 
   state = {
-    loadingMail: false
+    loadingMail: false,
+    errorMail: false
   };
 
   sendEmail = event => {
@@ -58,7 +59,7 @@ class Contact extends React.Component {
         this.setState({ loadingMail: false });
       })
       .catch(error => {
-        this.setState({ loadingMail: false });
+        this.setState({ loadingMail: false, errorMail: true });
       });
   };
 

@@ -11,6 +11,7 @@ class MyGoogleMap extends React.Component {
     coordTowns.map(coord => {
       return new maps.Marker({
         position: coord,
+        title: "test",
         map
       });
     });
@@ -25,6 +26,7 @@ class MyGoogleMap extends React.Component {
           language: locale,
           region: locale
         }}
+        yesIWantToUseGoogleMapApiInternals
         style={style}
         onGoogleApiLoaded={({ map, maps }) => this.renderMarkers(map, maps)}
         defaultZoom={defaultZoom}

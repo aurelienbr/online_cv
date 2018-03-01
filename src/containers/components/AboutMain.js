@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import Text from "../../common/Text";
+import BarSkill from "../../common/BarSkill";
 import { colors } from "../../style/colors";
 
 const AboutMain = ({ mobile, downloadCV }) => (
@@ -14,25 +15,34 @@ const AboutMain = ({ mobile, downloadCV }) => (
     />
     <div style={mobile ? styles.containerMobile : styles.container}>
       <div style={styles.description}>
-        <Text className="slide-up-presentation" style={{ width: "90%" }} size="p" id="about.main" />
+        <Text
+          className="slide-up-presentation"
+          style={{ width: "90%" }}
+          size="p"
+          id="about.main"
+        />
       </div>
       <div style={mobile ? styles.skillContainerMobile : styles.skillContainer}>
-        <p>HTML CSS</p>
-        <div style={mobile ? styles.skillMobile : styles.skill}>
-          <div style={styles.html} />
-        </div>
-        <p>React Native / ReactJS</p>
-        <div style={mobile ? styles.skillMobile : styles.skill}>
-          <div style={styles.react} />
-        </div>
-        <p>NodeJS</p>
-        <div style={mobile ? styles.skillMobile : styles.skill}>
-          <div style={styles.nodeJS} />
-        </div>
-        <p>Java (Android)</p>
-        <div style={mobile ? styles.skillMobile : styles.skill}>
-          <div style={styles.java} />
-        </div>
+        <BarSkill
+          containerStyle={mobile ? styles.skillMobile : styles.skill}
+          style={styles.html}
+          title={"HTML CSS"}
+        />
+        <BarSkill
+          containerStyle={mobile ? styles.skillMobile : styles.skill}
+          style={styles.react}
+          title={"React Native / ReactJS"}
+        />
+        <BarSkill
+          containerStyle={mobile ? styles.skillMobile : styles.skill}
+          style={styles.nodeJS}
+          title={"NodeJS"}
+        />
+        <BarSkill
+          containerStyle={mobile ? styles.skillMobile : styles.skill}
+          style={styles.java}
+          title={"Java (Android)"}
+        />
       </div>
     </div>
     <div onClick={this.downloadCV} className="imageProfil boum-boum" />
