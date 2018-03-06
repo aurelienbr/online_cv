@@ -6,8 +6,10 @@ import { connect } from "react-redux";
 import Loader from "react-loader-spinner";
 
 import Text from "../../common/Text";
+import errorMail from "../../assets/icons/errorMail.png";
 import checkedImg from "../../assets/icons/checked.png";
 import errorImg from "../../assets/icons/error.png";
+
 import {
   handleNameChange,
   handleEmailChange,
@@ -37,15 +39,23 @@ type State = {
 class FormContact extends React.Component<Props, State> {
   state = {
     iconChecked: false,
-    visible: false
+    visible: false,
+    emailFailure: false
   };
   componentWillMount() {
     Modal.setAppElement("body");
   }
   componentWillReceiveProps(nextProps) {
+    if (
+      nextProps.errorSendEmail === true &&
+      nextProps.loadingMail === false &&
+      this.props.loadingMail === true
+    ) {
+      this.setState({ visible: true });
+      this.setTimeoutForState({ visible: false }, 1500);
+    }
     if (nextProps.loadingMail === false && this.props.loadingMail === true) {
-      this.setState({ iconChecked: true, visible: true });
-      this.setTimeoutForState({ iconChecked: false }, 2000);
+      this.setState({ visible: true });
       this.setTimeoutForState({ visible: false }, 1500);
     }
   }
@@ -58,15 +68,25 @@ class FormContact extends React.Component<Props, State> {
   handleTextAreaChange = e => this.props.handleTextAreaChange(e.target.value);
 
   renderButton = () => {
-    const { loadingMail } = this.props;
-    const { iconChecked, visible } = this.state;
+    const { loadingMail, emailFailure, emailSuccess } = this.props;
+    const { visible } = this.state;
 
-    if (iconChecked) {
+    if (emailSuccess) {
       return (
         <img
           className={visible === true ? "fadeIn" : "fadeOut"}
           src={checkedImg}
           alt="ok"
+        />
+      );
+    }
+
+    if (emailFailure) {
+      return (
+        <img
+          className={visible === true ? "fadeIn" : "fadeOut"}
+          src={errorMail}
+          alt="error"
         />
       );
     }
@@ -284,7 +304,10 @@ const mapStateToprops = ({ formContact }) => ({
   email: formContact.email,
   textarea: formContact.textArea,
   error: formContact.error,
-  textAreaMax: formContact.textAreaMax
+  textAreaMax: formContact.textAreaMax,
+  loadingMail: formContact.loadingMail,
+  emailSuccess: formContact.emailSuccess,
+  emailFailure: formContact.emailFailure
 });
 
 const FormContactConnected = connect(mapStateToprops, {

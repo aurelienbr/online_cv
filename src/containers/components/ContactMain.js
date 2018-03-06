@@ -10,13 +10,12 @@ import coordTowns from "../../const/coordTowns";
 
 type Props = {
   mobile?: boolean,
-  loadingMail: boolean,
   sendEmail: Function
-}
+};
 
 type State = {
   isModalOpen: boolean
-}
+};
 
 class ContactMain extends React.Component<Props, State> {
   constructor() {
@@ -45,7 +44,7 @@ class ContactMain extends React.Component<Props, State> {
   };
 
   render() {
-    const { sendEmail, loadingMail } = this.props;
+    const { sendEmail } = this.props;
 
     const { isModalOpen } = this.state;
 
@@ -57,7 +56,7 @@ class ContactMain extends React.Component<Props, State> {
           defaultZoom={14}
         />
         <MyModal isOpen={isModalOpen} onRequestClose={this.closeModal}>
-          <FormContact loadingMail={loadingMail} sendEmail={sendEmail} />
+          <FormContact sendEmail={sendEmail} />
         </MyModal>
         <ButtonContact onClick={this.openModal}>Contact me</ButtonContact>
       </div>
