@@ -6,8 +6,8 @@ import { connect } from "react-redux";
 import Loader from "react-loader-spinner";
 
 import Text from "../../common/Text";
-import checkedImg from "../../images/checked.png";
-import errorImg from "../../images/error.png";
+import checkedImg from "../../assets/icons/checked.png";
+import errorImg from "../../assets/icons/error.png";
 import {
   handleNameChange,
   handleEmailChange,
@@ -27,12 +27,12 @@ type Props = {
   mobile?: boolean,
   error: Object,
   textAreaMax: number
-}
+};
 
 type State = {
   iconChecked: boolean,
   visible: boolean
-}
+};
 
 class FormContact extends React.Component<Props, State> {
   state = {

@@ -2,11 +2,11 @@
 import React, { Component } from "react";
 
 import Text from "./Text";
-import linkIcon from "../images/link.png";
-import mapIcon from "../images/map.png";
+import linkIcon from "../assets/icons/link.png";
+import mapIcon from "../assets/icons/map.png";
 
-import linkMobileIcon from "../images/linkMobile.png";
-import mapMobileIcon from "../images/mapMobile.png";
+import linkMobileIcon from "../assets/icons/linkMobile.png";
+import mapMobileIcon from "../assets/icons/mapMobile.png";
 
 import MyModal from "./MyModal";
 import MyGoogleMap from "./MyGoogleMap";

@@ -1,11 +1,11 @@
 // @flow
 import React from "react";
-import imgMail from "../../images/mail64.png";
+import imgMail from "../../assets/icons/mail64.png";
 
 type Props = {
   children: string,
   onClick: Function
-}
+};
 
 const ButtonContact = ({ children, onClick }: Props) => (
   <button onClick={onClick} style={styles.button} className="buttonContact">
@@ -28,7 +28,7 @@ const styles = {
     top: "50%",
     left: "50%",
     cursor: "pointer"
-  },
+  }
 };
 
 export default ButtonContact;
