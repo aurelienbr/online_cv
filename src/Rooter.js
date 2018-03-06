@@ -1,3 +1,4 @@
+// @flow
 import React from "react";
 import { IntlProvider, addLocaleData } from "react-intl";
 import { connect } from "react-redux";
@@ -18,7 +19,13 @@ import MobileScreen from "./MobileScreen";
 
 addLocaleData([...fr, ...en, ...ru]);
 
-class Rooter extends React.Component {
+type Props = {
+  translations: Object,
+  locale: string,
+  getTranslations: Function
+};
+
+class Rooter extends React.Component<Props> {
   componentDidMount() {
     this.props.getTranslations();
   }

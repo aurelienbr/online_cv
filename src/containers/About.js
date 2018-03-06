@@ -1,15 +1,15 @@
+// @flow
 import React from "react";
-import PropTypes from "prop-types";
 import MediaQuery from "react-responsive";
 
 import Header from "./Header";
 import AboutMain from "./components/AboutMain";
 
-class About extends React.Component {
-  static PropTypes = {
-    location: PropTypes.object
-  };
+type Props = {
+  location: any
+};
 
+class About extends React.Component<Props> {
   downloadCV() {
     window.open("http://localhost:3000/cv");
   }

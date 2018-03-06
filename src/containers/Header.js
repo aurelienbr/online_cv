@@ -1,6 +1,6 @@
+// @flow
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import PropTypes from "prop-types";
 
 import Button from "../common/Button";
 
@@ -14,13 +14,13 @@ const options = [
   { value: "en", label: "En" }
 ];
 
-class Header extends Component {
-  static propTypes = {
-    changeLocale: PropTypes.func.isRequired,
-    locale: PropTypes.string.isRequired,
-    location: PropTypes.object.isRequired
-  };
+type Props = {
+  changeLocale: Function,
+  locale: string,
+  location: any
+}
 
+class Header extends Component<Props> {
   onSelect = obj => {
     const value = obj.target.value;
     this.props.changeLocale(value);

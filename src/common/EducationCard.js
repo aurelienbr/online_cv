@@ -1,5 +1,5 @@
+// @flow
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 
 import Text from "./Text";
 import linkIcon from "../images/link.png";
@@ -11,27 +11,38 @@ import mapMobileIcon from "../images/mapMobile.png";
 import MyModal from "./MyModal";
 import MyGoogleMap from "./MyGoogleMap";
 
-class EducationCard extends Component {
+type Props = {
+  duree: string,
+  description: string,
+  lieu: string,
+  titre: string,
+  href: string,
+  coord: Object,
+  isInView?: boolean,
+  mobile?: boolean
+};
+
+type State = {
+  isModalOpen: boolean,
+  isOpen: boolean
+};
+
+class EducationCard extends Component<Props, State> {
   state = {
-    isModalOpen: false
+    isModalOpen: false,
+    isOpen: false
   };
   handleDescription = () => this.setState({ isOpen: !this.state.isOpen });
 
-  stopPropagation = e => e.stopPropagation();
+  stopPropagation = (e: SyntheticEvent<HTMLButtonElement>) =>
+    e.stopPropagation();
 
-  showMap = e => {
+  showMap = (e: SyntheticEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     this.setState({ isModalOpen: true });
   };
 
   closeMap = () => this.setState({ isModalOpen: false });
-
-  renderMarkers = (map, maps) => {
-    new maps.Marker({
-      position: { lat: 44.84044, lng: -0.5805 },
-      map
-    });
-  };
 
   render() {
     const {
@@ -57,24 +68,20 @@ class EducationCard extends Component {
       >
         <div style={styles.containerData}>
           <div>
-            <Text
-              style={{ ...styles.title, ...styles.whiteColor }}
-              id={titre}
-              size="p"
-            />
-            <Text
-              style={{ ...styles.date, ...styles.whiteColor }}
-              id={duree}
-              size="p"
-            />
+            <Text style={styles.whiteColor} id={titre} size="p" />
+            <Text style={styles.whiteColor} id={duree} size="p" />
             <Text style={styles.whiteColor} id={lieu} size="p" />
           </div>
           <div style={styles.imgContainer}>
             <a onClick={this.showMap}>
-              <img alt="icon map" src={ mobile ? mapMobileIcon : mapIcon } style={styles.mapIcon} />
+              <img
+                alt="icon map"
+                src={mobile ? mapMobileIcon : mapIcon}
+                style={styles.mapIcon}
+              />
             </a>
             <a target="_tab" onClick={this.stopPropagation} href={href}>
-              <img alt="link site" src={ mobile ? linkMobileIcon : linkIcon } />
+              <img alt="link site" src={mobile ? linkMobileIcon : linkIcon} />
             </a>
           </div>
         </div>
@@ -91,17 +98,6 @@ class EducationCard extends Component {
     );
   }
 }
-
-EducationCard.propTypes = {
-  coord: PropTypes.object.isRequired,
-  duree: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  lieu: PropTypes.string.isRequired,
-  titre: PropTypes.string.isRequired,
-  href: PropTypes.string.isRequired,
-  isInView: PropTypes.bool.isRequired,
-  mobile: PropTypes.bool
-};
 
 const styles = {
   container: {

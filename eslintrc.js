@@ -3,18 +3,25 @@ module.exports = {
     commonjs: true,
     es6: true,
     jest: true,
-    mocha: true,
+    mocha: true
   },
   extends: ["airbnb", "prettier", "prettier/react"],
   parser: "babel-eslint",
-  plugins: ["fp", "prettier", "react", "react-native"],
+  plugins: [
+    "fp",
+    "prettier",
+    "react",
+    "react-native",
+    "transform-class-properties"
+  ],
+  presets: ["flow", "stage-2"],
   rules: {
     // Soft some rules.
     "global-require": 0, // Used by webpack-isomorphic-tools and React Native.
     "import/first": 0, // Sorts by atom/sort-lines natural order.
     "no-use-before-define": 0, // It's nice to have styles on the botom.
     "import/no-duplicates": 2,
-    "no-undef":0,
+    "no-undef": 0,
     "import/prefer-default-export": 0, // No. Actions can have just one action.
     "no-class-assign": 0, // Class assign is used for higher order components.
     "no-confusing-arrow": 0, // This rule is super confusing.
@@ -41,9 +48,9 @@ module.exports = {
         allowThis: true,
         exceptions: [
           { property: "propTypes" },
-          { property: "navigationOptions" },
-        ],
-      },
+          { property: "navigationOptions" }
+        ]
+      }
     ],
     // Prettier.
     "prettier/prettier": [
@@ -53,8 +60,8 @@ module.exports = {
         printWidth: 80,
         singleQuote: true,
         tabWidth: 2,
-        trailingComma: "all",
-      },
-    ],
-  },
+        trailingComma: "all"
+      }
+    ]
+  }
 };

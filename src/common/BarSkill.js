@@ -1,6 +1,13 @@
+// @flow
 import React from "react";
 
-const BarSkill = ({ title, containerStyle, style }) => (
+type Props = {
+  title: string,
+  style?: Object,
+  containerStyle?: Object
+};
+
+const BarSkill = ({ title, containerStyle, style }: Props) => (
   <div>
     <p>{title}</p>
     <div style={containerStyle}>

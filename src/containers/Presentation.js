@@ -1,18 +1,27 @@
+// @flow
 import React, { Component } from "react";
-import PropTypes from "prop-types";
 import MediaQuery from "react-responsive";
 
 import PresentationMain from "./components/PresentationMain";
 import Header from "./Header";
 
-class Presentation extends Component {
-  static propTypes = {
-    location: PropTypes.object
-  };
+type Props = {
+  location: any
+};
 
-  state = {
-    slideFooter: false
-  };
+type State = {
+  slideFooter: boolean,
+  slideTitle: boolean
+};
+
+class Presentation extends Component<Props, State> {
+  constructor() {
+    super();
+    this.state = {
+      slideFooter: false,
+      slideTitle: false
+    };
+  }
 
   componentDidMount() {
     setTimeout(() => {

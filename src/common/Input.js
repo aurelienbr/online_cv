@@ -10,7 +10,7 @@ const Input = ({
   handleTextAreaChange,
   handleChangeInput,
   value
-}) => {
+}: Props) => {
   if (textArea) {
     return (
       <div

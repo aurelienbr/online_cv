@@ -1,5 +1,13 @@
+// @flow
 import React from "react";
 import { FormattedMessage } from "react-intl";
+
+type Props = {
+  className?: string,
+  id: string,
+  style?: Object,
+  size: string
+};
 
 const styles = {
   h1: {
@@ -19,7 +27,7 @@ const styles = {
   },
   error: {
     fontSize: 16,
-    color: 'red'
+    color: "red"
   },
   title: {
     height: 75,
@@ -48,7 +56,7 @@ const getStyle = size => {
   return style;
 };
 
-const Text = ({ className, id, style, size }) => (
+const Text = ({ className, id, style, size }: Props) => (
   <p className={className} style={{ ...getStyle(size), ...style }}>
     <FormattedMessage id={id} defaultMessage={id} />
   </p>

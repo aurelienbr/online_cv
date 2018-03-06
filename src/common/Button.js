@@ -1,25 +1,38 @@
+// @flow
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 import { FormattedMessage } from "react-intl";
 import MediaQuery from "react-responsive";
 
-class Button extends Component {
+type Props = {
+  route: Object,
+  location: Object,
+  children: string,
+  href?: string,
+  defaultMessage?: string
+};
+
+type State = {
+  active: boolean
+};
+
+class Button extends Component<Props, State> {
   state = {
     active: false
   };
 
   getStyle = () => {
     const { location, route } = this.props;
-    styles.button.borderTop = "";
-    styles.button.paddingTop = 7;
+    let borderTop = "";
+    let paddingTop = 7;
 
     if (location && location.pathname === route) {
-      styles.button.paddingTop = 0;
-      styles.button.borderTop = "10px solid #34495e"; // 77A391
-      return styles.button;
+      paddingTop = 0;
+      borderTop = "10px solid #34495e"; // 77A391
+      return { ...styles.button, paddingTop, borderTop };
     }
-    return styles.button;
+    return { ...styles.button, paddingTop, borderTop };
   };
 
   render() {

@@ -1,7 +1,13 @@
+// @flow
 import React from "react";
 import Text from "../../common/Text";
 
-const PresentationExperience = ({ mobile, slideFooter }) => (
+type Props = {
+  mobile?: boolean,
+  slideFooter: boolean
+}
+
+const PresentationExperience = ({ mobile, slideFooter }: Props) => (
   <div className="main mainPresentation">
     <h3 className="slide-down" style={styles.monograme}>
       AB

@@ -1,13 +1,20 @@
+// @flow
 import React from "react";
 
 import Text from "../../common/Text";
 import EducationCard from "../../common/EducationCard";
 import WithinView from "../../common/WithinView";
 
+type Props = {
+  mobile?: boolean,
+  internship: any,
+  education: any
+}
+
 const getContainerStyle = mobile =>
   mobile === true ? styles.formationMobile : styles.formation;
 
-const ExperienceMain = ({ mobile, internship, education }) => {
+const ExperienceMain = ({ mobile, internship, education }: Props) => {
   return (
     <div style={styles.container} className="main mainCertification">
       <Text id="education.education" style={styles.whiteColor} size="title" />

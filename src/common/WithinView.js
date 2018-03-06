@@ -1,11 +1,22 @@
+// @flow
 import React from "react";
 import WayPoint from "react-waypoint";
 
-class WithinView extends React.Component {
+import type { Node } from "react";
+
+type Props = {
+  children: Node
+};
+
+type State = {
+  isInView: boolean
+};
+
+class WithinView extends React.Component<Props, State> {
   state = {
     isInView: false
   };
-  onEnter = ({ previousPosition }) => {
+  onEnter = ({ previousPosition }: Object) => {
     if (previousPosition === WayPoint.below || WayPoint.inside) {
       this.setState({
         isInView: true

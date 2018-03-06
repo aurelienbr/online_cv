@@ -1,6 +1,6 @@
+// @flow
 import React from "react";
 import Modal from "react-modal";
-import PropTypes from "prop-types";
 import { injectIntl } from "react-intl";
 import { connect } from "react-redux";
 import Loader from "react-loader-spinner";
@@ -14,9 +14,30 @@ import {
   handleTextAreaChange
 } from "../../actions";
 
-class FormContact extends React.Component {
+type Props = {
+  loadingMail: boolean,
+  intl: any,
+  sendEmail: Function,
+  handleNameChange: Function,
+  handleEmailChange: Function,
+  handleTextAreaChange: Function,
+  name: string,
+  email: string,
+  textarea: string,
+  mobile?: boolean,
+  error: Object,
+  textAreaMax: number
+}
+
+type State = {
+  iconChecked: boolean,
+  visible: boolean
+}
+
+class FormContact extends React.Component<Props, State> {
   state = {
-    iconChecked: false
+    iconChecked: false,
+    visible: false
   };
   componentWillMount() {
     Modal.setAppElement("body");
@@ -256,20 +277,6 @@ const styles = {
     left: 0,
     pointerEvents: "none"
   }
-};
-
-FormContact.propTypes = {
-  onAfterOpen: PropTypes.func,
-  onRequestClose: PropTypes.func,
-  closeTimeoutMS: PropTypes.number,
-  style: PropTypes.array,
-  handleNameChange: PropTypes.func.isRequired,
-  handleEmailChange: PropTypes.func.isRequired,
-  handleTextAreaChange: PropTypes.func.isRequired,
-  sendEmail: PropTypes.func.isRequired,
-  name: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired,
-  textarea: PropTypes.string.isRequired
 };
 
 const mapStateToprops = ({ formContact }) => ({

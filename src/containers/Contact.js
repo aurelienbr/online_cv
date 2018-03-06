@@ -1,5 +1,5 @@
+// @flow
 import React from "react";
-import PropTypes from "prop-types";
 import MediaQuery from "react-responsive";
 import axios from "axios";
 import { connect } from "react-redux";
@@ -9,15 +9,28 @@ import ContactMain from "./components/ContactMain";
 import FormContact from "./components/FormContact";
 import { setFormErrors } from "../actions";
 
-class Contact extends React.Component {
-  static propTypes = {
-    location: PropTypes.object
-  };
+type Props = {
+  name: string,
+  email: string,
+  textarea: string,
+  textAreaMax: number,
+  setFormErrors: Function,
+  location: any
+};
 
-  state = {
-    loadingMail: false,
-    errorMail: false
-  };
+type State = {
+  loadingMail: boolean,
+  errorMail: boolean
+};
+
+class Contact extends React.Component<Props, State> {
+  constructor() {
+    super();
+    this.state = {
+      loadingMail: false,
+      errorMail: false
+    };
+  }
 
   sendEmail = event => {
     const { name, email, textarea, textAreaMax, setFormErrors } = this.props;
@@ -75,7 +88,6 @@ class Contact extends React.Component {
             <ContactMain
               sendEmail={this.sendEmail.bind(this)}
               loadingMail={loadingMail}
-              onRequestClose={this.closeModal}
             />
           </div>
         </MediaQuery>

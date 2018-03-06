@@ -1,11 +1,16 @@
+// @flow
 import React from "react";
-import PropTypes from "prop-types";
 
 import Text from "../../common/Text";
 import BarSkill from "../../common/BarSkill";
 import { colors } from "../../style/colors";
 
-const AboutMain = ({ mobile, downloadCV }) => (
+type Props = {
+  mobile?: boolean,
+  downloadCV: Function
+}
+
+const AboutMain = ({ mobile, downloadCV }: Props) => (
   <div className="main mainAbout">
     <Text
       size="h2"
@@ -45,14 +50,9 @@ const AboutMain = ({ mobile, downloadCV }) => (
         />
       </div>
     </div>
-    <div onClick={this.downloadCV} className="imageProfil boum-boum" />
+    <div onClick={downloadCV} className="imageProfil boum-boum" />
   </div>
 );
-
-AboutMain.propTypes = {
-  downloadCV: PropTypes.func.isRequired,
-  mobile: PropTypes.bool
-};
 
 const styles = {
   container: {

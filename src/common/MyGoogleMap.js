@@ -1,3 +1,4 @@
+// @flow
 import React from "react";
 import GoogleMapReact from "google-map-react";
 import { connect } from "react-redux";
@@ -6,8 +7,15 @@ import MapStyle from "../const/mapCustom";
 import API_KEY from "../const/googleMapAPI";
 import coordTowns from "../const/coordTowns";
 
-class MyGoogleMap extends React.Component {
-  renderMarkers = (map, maps) => {
+type Props = {
+  defaultCenter: Object,
+  defaultZoom: Object,
+  locale: string,
+  style?: Object
+};
+
+class MyGoogleMap extends React.Component<Props> {
+  renderMarkers = (map: Object, maps: Object) => {
     coordTowns.map(coord => {
       return new maps.Marker({
         position: coord,

@@ -1,8 +1,19 @@
+// @flow
 import React from "react";
 import Modal from "react-modal";
-import PropTypes from "prop-types";
 
-class MyModal extends React.Component {
+import type { Node } from "react";
+
+type Props = {
+  isOpen: boolean,
+  onAfterOpen?: Function,
+  onRequestClose?: Function,
+  children: Node,
+  closeTimeoutMS?: number,
+  style?: Object
+};
+
+class MyModal extends React.Component<Props> {
   componentWillMount() {
     Modal.setAppElement("body");
   }
@@ -30,13 +41,5 @@ class MyModal extends React.Component {
     );
   }
 }
-
-MyModal.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
-  onAfterOpen: PropTypes.func,
-  onRequestClose: PropTypes.func,
-  closeTimeoutMS: PropTypes.number,
-  style: PropTypes.object
-};
 
 export default MyModal;

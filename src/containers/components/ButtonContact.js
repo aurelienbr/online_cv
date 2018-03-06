@@ -1,18 +1,17 @@
+// @flow
 import React from "react";
-import PropTypes from "prop-types";
-
 import imgMail from "../../images/mail64.png";
 
-const ButtonContact = ({ children, onClick }) => (
+type Props = {
+  children: string,
+  onClick: Function
+}
+
+const ButtonContact = ({ children, onClick }: Props) => (
   <button onClick={onClick} style={styles.button} className="buttonContact">
-    <img alt="contact me" src={imgMail} style={styles.imgButton} />
+    <img alt="contact me" src={imgMail} />
   </button>
 );
-
-ButtonContact.propTypes = {
-  children: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired
-};
 
 const styles = {
   button: {

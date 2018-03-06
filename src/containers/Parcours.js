@@ -1,3 +1,4 @@
+// @flow
 import React from "react";
 import PropTypes from "prop-types";
 import MediaQuery from "react-responsive";
@@ -7,7 +8,11 @@ import Header from "./Header";
 import Education from "../const/education";
 import Internship from "../const/internship";
 
-const Parcours = ({ location }) => {
+type Props = {
+  location: any
+}
+
+const Parcours = ({ location }: Props) => {
   return (
     <div id="Parcours" className="backgroundParcoursContainer">
       <MediaQuery query="(min-device-width: 1224px)">

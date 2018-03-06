@@ -1,5 +1,5 @@
+// @flow
 import React from "react";
-import PropTypes from "prop-types";
 
 import ButtonContact from "./ButtonContact";
 import MyModal from "../../common/MyModal";
@@ -8,7 +8,17 @@ import MyGoogleMap from "../../common/MyGoogleMap";
 
 import coordTowns from "../../const/coordTowns";
 
-class ContactMain extends React.Component {
+type Props = {
+  mobile?: boolean,
+  loadingMail: boolean,
+  sendEmail: Function
+}
+
+type State = {
+  isModalOpen: boolean
+}
+
+class ContactMain extends React.Component<Props, State> {
   constructor() {
     super();
     this.state = {
@@ -16,7 +26,7 @@ class ContactMain extends React.Component {
     };
   }
 
-  renderMarkers = (map, maps) => {
+  renderMarkers = (map: any, maps: any) => {
     new maps.Marker({
       position: { lat: 44.84044, lng: -0.5805 },
       map
@@ -64,11 +74,6 @@ const styles = {
     top: 0,
     left: 0
   }
-};
-
-ContactMain.propTypes = {
-  mobile: PropTypes.bool,
-  sendEmail: PropTypes.func.isRequired
 };
 
 export default ContactMain;
