@@ -6,17 +6,16 @@ export type State = {
   textAreaMax: number,
   loadingMail: boolean,
   errorSendEmail: boolean,
-  emailFailure: boolean,
   emailSuccess: boolean,
   error: {
     name: string,
     email: string,
-    textArea: string
+    textarea: string
   }
 };
 
 export type SET_INITIAL_STATE_ACTION = {
-  type: SET_INITIAL_STATE
+  type: "SET_INITIAL_STATE"
 };
 export type HANDLE_EMAIL_CHANGE_ACTION = {
   type: "HANDLE_EMAIL_CHANGE",
@@ -27,7 +26,7 @@ export type HANDLE_NAME_CHANGE_ACTION = {
   name: string
 };
 export type HANDLE_TEXTAREA_CHANGE_ACTION = {
-  type: "HANDLE_EMAIL_CHANGE",
+  type: "HANDLE_TEXTAREA_CHANGE",
   textArea: string
 };
 export type SEND_EMAIL_ACTION = {

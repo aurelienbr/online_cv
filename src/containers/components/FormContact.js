@@ -67,7 +67,11 @@ class FormContact extends React.Component<Props, State> {
 
   handleEmailChange = e => this.props.handleEmailChange(e.target.value);
   handleNameChange = e => this.props.handleNameChange(e.target.value);
-  handleTextAreaChange = e => this.props.handleTextAreaChange(e.target.value);
+  handleTextAreaChange = e => {
+    if (this.props.textAreaMax > 0) {
+      this.props.handleTextAreaChange(e.target.value);
+    }
+  };
 
   renderButton = () => {
     const { loadingMail, emailFailure, emailSuccess } = this.props;

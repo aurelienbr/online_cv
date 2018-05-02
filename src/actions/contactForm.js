@@ -15,17 +15,17 @@ import { API_MAIL } from "../const/api";
 import verifForm from "../tools/verifForm";
 
 export const handleEmailChange = value => ({
-  payload: value,
+  email: value,
   type: HANDLE_EMAIL_CHANGE
 });
 
 export const handleNameChange = value => ({
-  payload: value,
+  name: value,
   type: HANDLE_NAME_CHANGE
 });
 
 export const handleTextAreaChange = value => ({
-  payload: value,
+  textArea: value,
   type: HANDLE_TEXTAREA_CHANGE
 });
 
