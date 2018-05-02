@@ -25,6 +25,8 @@ type Props = {
   handleTextAreaChange: Function,
   name: string,
   email: string,
+  emailSuccess: boolean,
+  emailFailure: boolean,
   textarea: string,
   mobile?: boolean,
   error: Object,

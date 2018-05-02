@@ -7,15 +7,13 @@ export default {
     "home.name": "Aurelien Brachet",
     "home.fonction": "Javascript Developper",
     "about.title": "About me",
-    "about.main": `Hi and welcome on my resume. I am called Aurelien. Currently in fourth year in an engineering school in France.
-      I have earn knowledge in computer sciences since the beginning of my studies. During the past 2 years I have gained interest towards web and mobile technologies.
-      Indeed, I have learn how to developp web and mobile application from basic HTML CSS application to complex application in ReactJS or React Native.
-      I passed a two years technical degree 2 years ago, during those years I earned all the basic knowledge in computer science in many areas to continue my studies in an engineering school.
+    "about.main": `Hi and welcome on my resume. I am called Aurelien. I am currently in fourth year in an engineering school located in France.
+      I have acquired knowledges in computer sciences since the beginning of my studies. During the past 2 years I have gained interest towards web and mobile technologies.
+      Indeed, I have learnt how to develop web and mobile application from basic HTML CSS applications to complex applications in ReactJS or React Native.
+      I passed a two years technical degree 2 years ago (2014) dedicated in computer sciences, during those years I gained all the basic knowledges in computer sciences in many areas to continue my studies in an engineering school.
       I have the chance to have to do one internship every year in my actual school, this allowed me to gain a lot of experiences. I did one in Bordeaux, France, where I gained my first React Native skills.
       I chose to go abroad for my second internship, in the beautiful city of Prague in Czech Republic, where I improved a lot my english while being a Javascript developer there.
-      I really enjoy going abroad and to discover new culture, indeed, I am currently doing a semester in the university of Scotland as an Erasmus Student. Curious, I try to learn everyday about new tricks in React to develop my knowledge.
-      I am currently seeking for an internship in Russia for this summer
-      where I could development my russians skills and also my developers skills while building amazing application with fun.`,
+      As I just came back from a semester abroad in Scotland, I am free for any kind of work in JavaScript during this summer`,
 
     "error.nameNotProvided": "A name must be provided",
     "error.emailNotMatch": "A valid e-mail must be provided",
@@ -92,15 +90,13 @@ export default {
     "home.fonction": "Développeur Javascript",
     "about.title": "A propos",
 
-    "about.main": `Hi and welcome on my resume. I am called Aurelien. Currently in fourth year in an engineering school in France.
-      I have earn knowledge in computer sciences since the beginning of my studies. During the past 2 years I have gained interest towards web and mobile technologies.
-      Indeed, I have learn how to developp web and mobile application from basic HTML CSS application to complex application in ReactJS or React Native.
-      I passed a two years technical degree 2 years ago, during those years I earned all the basic knowledge in computer science in many areas to continue my studies in an engineering school.
-      I have the chance to have to do one internship every year in my actual school, this allowed me to gain a lot of experiences. I did one in Bordeaux, France, where I gained my first React Native skills.
-      I chose to go abroad for my second internship, in the beautiful city of Prague in Czech Republic, where I improved a lot my english while being a Javascript developer there.
-      I really enjoy going abroad and to discover new culture, indeed, I am currently doing a semester in the university of Scotland as an Erasmus Student. Curious, I try to learn everyday about new tricks in React to develop my knowledge.
-      I am currently seeking for an internship in Russia for this summer
-      where I could development my russians skills and also my developers skills while building amazing application with fun.`,
+    "about.main": `Bonjour et bienvenue sur mon CV. Je m'appelle Aurélien, je suis en fin de 4ème année en école d'ingénieur en informatique, l’Exia Cesi à Bordeaux.
+    J'ai acquis des compétences générales allant du développement d’application bureau au réseaux informatiques depuis le début de mes études. Mais c'est spécialement durant les deux dernières années que j’ai porté de l’intérêt pour les technologies du web et du mobile.
+    En effet, j'ai appris comment développer une application classique avec la paire HTML/CSS jusqu'à des applications plus complexes en ReactJS ou React Native.
+    J'ai passé un BTS en informatique il y a deux ans. Pendant ces deux années j'ai acquis toutes les compétences de base en informatique et dans d'autres domaines tel que les mathématiques pour pouvoir continuer mes études en école d'ingénieur.
+    Nous devons faire un stage chaque année, ce qui m’a permis de développer des compétences professionnelles rapidement. J'ai fait mon premier stage à Bordeaux où j'ai appris à développer ma première application en React Native.
+    Au cours de mon deuxième stage, je suis partit à Prague en République Tchèque pendant 4 mois chez ACTUM digital. Là-bas, j'étais stagiaire développeur Full Stack en React Native. Ce stage m’a apporté beaucoup de compétences en React Native, ainsi qu’une ouverture sociale et linguistique.
+    Je viens tout juste de finir un semestre en Erasmus en écosse, spécialisé en développement mobile, je suis donc actuellement disponible pour pouvoir travailler cet été.`,
 
     "error.nameNotProvided": "Vous devez rentrer votre nom",
     "error.emailNotMatch": "Vous devez rentrer une adresse email valide",
@@ -184,7 +180,8 @@ export default {
       Мне действительно приносит удовольствие находиться в других странах и изучать иx культуру, и в данный момент я учусь в Шотландском университете, как студент Erasmus. Мое любопытство заставляет меня каждый день узнавать больше вещей о  React , для развития моих навыков.
       Сейчас я ищу стажировку в России на лето, где я смог бы развить также свои знания русского языка и навыки разработчика, создавая интересные приложения.`,
     "error.nameNotProvided": "Имя должно быть указано",
-    "error.emailNotMatch": "Действительный электронный адрес должен быть указан",
+    "error.emailNotMatch":
+      "Действительный электронный адрес должен быть указан",
     "error.emailNotProvided": "Электронный адрес должен быть указан",
     "error.textareaNotProvided": "Сообщение должно быть указано",
     "error.nameTooLong": "Должно быть меньше 16 символов",

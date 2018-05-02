@@ -1,1 +1,1 @@
-export const API_MAIl = "https://apiresume.herokuapp.com/mail";
+export const API_MAIL = "https://apiresume.herokuapp.com/mail";
