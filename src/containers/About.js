@@ -16,16 +16,16 @@ class About extends React.Component<Props> {
   downloadCV = () => {
     switch (this.props.locale) {
       case "fr":
-        window.open("http://localhost:3000/files/CVFR.pdf");
+        window.open("https://my-resume-aurelien.herokuapp.com/files/CVFR.pdf");
         break;
       case "en":
-        window.open("http://localhost:3000/files/CVEN.pdf");
+        window.open("https://my-resume-aurelien.herokuapp.com/files/CVEN.pdf");
         break;
       case "ru":
-        window.open("http://localhost:3000/files/CVRU.pdf");
+        window.open("https://my-resume-aurelien.herokuapp.com/files/CVRU.pdf");
         break;
       default:
-        window.open("http://localhost:3000/files/CVEN.pdf");
+        window.open("https://my-resume-aurelien.herokuapp.com/files/CVEN.pdf");
     }
   };
 
