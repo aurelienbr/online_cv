@@ -7,8 +7,6 @@
   npm start
 
 # Todo
-  - improve text on the card
-  - moove text files to const
-  - improve style of form on mobile
-  - add form validation
-  - deploy the backend for sending e-mail
+  - finish to improve the code with flow
+  - improve CSS
+  - map title on the marker
