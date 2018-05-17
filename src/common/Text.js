@@ -48,6 +48,22 @@ const map = {
   title: { ...styles.title, ...styles.h2 }
 };
 
+const linesToParagraphs = (...nodes) => {
+  return nodes
+    .map(
+      node =>
+        typeof node === "string"
+          ? node.split("\n").map(text => (
+              <span>
+                {text}
+                <br />
+              </span>
+            ))
+          : node
+    )
+    .reduce((nodes, node) => nodes.concat(node), []);
+};
+
 const getStyle = size => {
   const style = map[size];
   if (!style) {
@@ -58,7 +74,9 @@ const getStyle = size => {
 
 const Text = ({ className, id, style, size }: Props) => (
   <p className={className} style={{ ...getStyle(size), ...style }}>
-    <FormattedMessage id={id} defaultMessage={id} />
+    <FormattedMessage id={id} defaultMessage={id}>
+      {linesToParagraphs}
+    </FormattedMessage>
   </p>
 );
 

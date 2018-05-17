@@ -85,14 +85,21 @@ class EducationCard extends Component<Props, State> {
             </a>
           </div>
         </div>
-        <MyModal onRequestClose={this.closeMap} isOpen={this.state.isModalOpen}>
+        <MyModal
+          style={styles.myModal}
+          onRequestClose={this.closeMap}
+          isOpen={this.state.isModalOpen}
+        >
           <MyGoogleMap
             defaultZoom={10}
             defaultCenter={coord} // Bordeaux
           />
         </MyModal>
         {this.state.isOpen && (
-          <Text style={styles.whiteColor} id={description} size="p" />
+          <div>
+            <hr />
+            <Text style={styles.description} id={description} size="p" />
+          </div>
         )}
       </div>
     );
@@ -100,6 +107,10 @@ class EducationCard extends Component<Props, State> {
 }
 
 const styles = {
+  myModal: {
+    height: 400,
+    width: 400
+  },
   container: {
     border: "1px solid #89bbd3",
     borderRadius: 10,
@@ -109,6 +120,10 @@ const styles = {
   },
   whiteColor: {
     color: "#fff"
+  },
+  description: {
+    color: "#fff",
+    marginTop: 20
   },
   containerData: {
     display: "flex",

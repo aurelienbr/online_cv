@@ -55,9 +55,13 @@ export default {
     "internship.actum": "Full Stack javascript trainee",
     "actum.duree": "September 2017 - December 2017",
     "actum.lieu": "Prague, Czech Republic",
-    "actum.description": `My first work abroad, I have been working on several task as ReactJS and React Native developer.
-      However, my main task was about build the application "Regiojet". This internship as been the most valuable experience in my life.
-      There, I have improved a lot my English also my english skills and build a new network with amazing person from all around Europe.`,
+    "actum.description": `It was my first internship Abroad, as a React Native developer.\n I was working on an application called Regiojet in an international team. Regiojet is one of the leader in the transport market in Czech Republic. As they already had an old mobile application in React Native, they wanted to improve their design and functionalities to suits more the "modern needs" of an application.
+
+During those 4 months I learnt a lot about myself. Indeed, I was alone in Prague and I had to do mostly everything on my own (finding an apartment and getting used to a foreign country), which was very challenging at first.
+
+During the job, I was mostly programming in React Native. I learnt how to handle multi languages application, building complex search logic through a list and how to be accurate and write nice code with nice component in React Native with Redux.
+
+I learnt advance notion in React like HOC and Functional programming and how to get familiar with a team with people from different country.`,
 
     "saintlo.ecole": "Institut Saint lô",
     "saintlo.duree": "September 2011 - June 2014",
