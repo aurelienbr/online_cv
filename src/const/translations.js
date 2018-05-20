@@ -86,7 +86,7 @@ I learnt advance notion in React like HOC and Functional programming and how to 
     "exia.description": "Computer Sciences Engineering School Spec. Development"
   },
   fr: {
-    "header.home": "acceuil",
+    "header.home": "accueil",
     "header.about": "a propos",
     "header.education": "parcours",
     "header.contact": "contact",
