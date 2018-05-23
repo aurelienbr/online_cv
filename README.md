@@ -1,11 +1,6 @@
 # Aurelien resume Online
-  Responsive CV in ReactJS <br />
+  Responsive CV in ReactJS using flow and with a NodeJS backend<br />
   [Mon CV](https://my-resume-aurelien.herokuapp.com/)
-
-# Getting Started
-  git clone <br />
-  npm install <br />
-  npm start
 
 # Todo
   - finish to improve the code with flow
