@@ -1,9 +1,10 @@
 # Aurelien resume Online
-  Responsive CV in ReactJS
+  Responsive CV in ReactJS <br />
+  [Mon CV](https://my-resume-aurelien.herokuapp.com/)
 
 # Getting Started
-  git clone
-  npm install
+  git clone <br />
+  npm install <br />
   npm start
 
 # Todo
