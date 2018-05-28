@@ -2,7 +2,7 @@ const headerData = [
   { to: "/", id: "header.home", defaultMessage: "Home", href: "Home" },
   { to: "/about", id: "header.about", defaultMessage: "About", href: "About" },
   {
-    to: "/certifications",
+    to: "/course",
     id: "header.education",
     defaultMessage: "Education",
     href: "Parcours"

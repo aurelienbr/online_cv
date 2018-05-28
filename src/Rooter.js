@@ -10,7 +10,7 @@ import { getTranslations } from "./actions";
 
 import Presentation from "./containers/Presentation";
 import About from "./containers/About";
-import Parcours from "./containers/Parcours";
+import Course from "./containers/Course";
 import Contact from "./containers/Contact";
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -52,7 +52,7 @@ class Rooter extends React.Component<Props> {
               <div>
                 <Route exact path="/" component={Presentation} />
                 <Route path="/about" component={About} />
-                <Route path="/certifications" component={Parcours} />
+                <Route path="/course" component={Course} />
                 <Route path="/contact" component={Contact} />
               </div>
             </Router>

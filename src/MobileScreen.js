@@ -3,7 +3,7 @@ import MobileHeader from "./MobileHeader";
 
 import Presentation from "./containers/Presentation";
 import About from "./containers/About";
-import Parcours from "./containers/Parcours";
+import Course from "./containers/Course";
 import Contact from "./containers/Contact";
 
 class MobileScreen extends React.Component {
@@ -13,7 +13,7 @@ class MobileScreen extends React.Component {
         <MobileHeader />
         <Presentation />
         <About />
-        <Parcours />
+        <Course />
         <Contact />
       </div>
     );
