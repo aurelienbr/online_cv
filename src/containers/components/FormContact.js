@@ -9,6 +9,8 @@ import Text from "../../common/Text";
 import errorMail from "../../assets/icons/errorMail.png";
 import checkedImg from "../../assets/icons/checked.png";
 import errorImg from "../../assets/icons/error.png";
+import githubImg from "../../assets/icons/github-logo.png";
+import linkedinImg from "../../assets/icons/linkedin-logo.png";
 
 import {
   handleNameChange,
@@ -205,6 +207,21 @@ class FormContact extends React.Component<Props, State> {
             {this.renderButton()}
           </button>
         </div>
+        <div>
+          <a
+            style={styles.iconGithub}
+            href="https://github.com/aurelienbr"
+            target="_blank"
+          >
+            <img src={githubImg} alt="github" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/aur%C3%A9lien-brachet-146556141/"
+            target="_blank"
+          >
+            <img src={linkedinImg} alt="linkedin" />
+          </a>
+        </div>
       </form>
     );
   }
@@ -221,6 +238,9 @@ const styles = {
     display: "flex",
     width: "100%",
     justifyContent: "center"
+  },
+  iconGithub: {
+    marginRight: 15
   },
   formContainer: {
     width: "100%",

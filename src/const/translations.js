@@ -122,7 +122,7 @@ I learnt advance notion in React like HOC and Functional programming and how to 
     "formContact.placeholderTextarea": "Entrez votre message :",
 
     "education.education": "Scolarite",
-    "education.internship": "Stage",
+    "education.internship": "Stages",
 
     "internship.actum": "Stagiaire Full Stack javascript developpeur",
     "actum.duree": "Septembre 2017 - Decembre 2017",
