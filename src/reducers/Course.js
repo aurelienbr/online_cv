@@ -15,9 +15,9 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case GET_INTERNSHIPS:
-      return { ...state, internships: action.payload, loading: false };
+      return { ...state, internships: action.payload };
     case GET_INTERNSHIPS_ERROR:
-      return { ...state, locale: action.payload, loading: false };
+      return { ...state, locale: action.payload };
     case GET_EDUCATION:
       return { ...state, education: action.payload };
     case GET_EDUCATION_ERROR:

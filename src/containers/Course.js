@@ -1,12 +1,10 @@
 // @flow
 import React from "react";
-import PropTypes from "prop-types";
 import MediaQuery from "react-responsive";
 import { connect } from "react-redux";
 
 import ExperienceMain from "./components/ExperienceMain";
 import Header from "./Header";
-import Education from "../const/education";
 import * as actions from "../actions/course";
 
 type Props = {
@@ -21,17 +19,17 @@ type Props = {
 class Course extends React.Component<Props> {
   componentDidMount() {
     this.props.getInternships();
+    this.props.getEducation();
   }
   render() {
     const {
       education,
       internships,
-      loading,
+      location,
       errInternships,
-      errEducation,
-      location
+      errEducation
     } = this.props;
-    if (loading) {
+    if (education.length === 0 || internships.length === 0) {
       return <div id="Parcours" className="backgroundParcoursContainer" />;
     }
     return (
@@ -39,13 +37,13 @@ class Course extends React.Component<Props> {
         <MediaQuery query="(min-device-width: 1224px)">
           <div>
             <Header location={location} />
-            <ExperienceMain education={Education} internship={internships} />
+            <ExperienceMain education={education} internship={internships} />
           </div>
         </MediaQuery>
         <MediaQuery query="(max-device-width: 1224px)">
           <ExperienceMain
             mobile
-            education={Education}
+            education={education}
             internship={internships}
           />
         </MediaQuery>
