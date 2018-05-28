@@ -1,11 +1,16 @@
-import { GET_TRANSLATIONS, CHANGE_LOCAL } from "../actions/type";
+import {
+  GET_TRANSLATIONS,
+  CHANGE_LOCAL,
+  GET_TRANSLATIONS_ERROR
+} from "../actions/type";
 
 const INITIAL_STATE = {
   locale:
     navigator.language.substring(0, 2).toLowerCase() ||
     navigator.userLanguage.substring(0, 2).toLowerCase() ||
     "en",
-  translations: []
+  translations: [],
+  err: {}
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -14,6 +19,8 @@ export default (state = INITIAL_STATE, action) => {
       return { ...state, translations: action.payload };
     case CHANGE_LOCAL:
       return { ...state, locale: action.payload };
+    case GET_TRANSLATIONS_ERROR:
+      return { ...state, err: action.payload };
     default:
       return state;
   }

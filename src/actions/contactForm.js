@@ -10,7 +10,7 @@ import {
   SET_INITIAL_STATE
 } from "../actions/type";
 
-import { API_MAIL } from "../const/api";
+import api from "../const/api";
 
 import verifForm from "../tools/verifForm";
 
@@ -44,7 +44,7 @@ export const sendEmail = (name, email, textarea, textAreaMax) => {
     });
 
     axios
-      .post(API_MAIL, {
+      .post(api("mail"), {
         email: email,
         subject: name,
         text: textarea,

@@ -22,7 +22,8 @@ addLocaleData([...fr, ...en, ...ru]);
 type Props = {
   translations: Object,
   locale: string,
-  getTranslations: Function
+  getTranslations: Function,
+  err: Object
 };
 
 class Rooter extends React.Component<Props> {
@@ -30,9 +31,13 @@ class Rooter extends React.Component<Props> {
     this.props.getTranslations();
   }
   render() {
-    const { locale, translations } = this.props;
+    const { locale, translations, err } = this.props;
     if (translations.length === 0) {
       return <div />;
+    }
+
+    if (Object.keys(err) > 0) {
+      return <div>An error occured, please check your internet connection</div>;
     }
 
     return (
@@ -62,7 +67,8 @@ class Rooter extends React.Component<Props> {
 }
 const mapStateToProps = ({ locale }) => ({
   locale: locale.locale,
-  translations: locale.translations
+  translations: locale.translations,
+  err: locale.err
 });
 
 export default connect(mapStateToProps, { getTranslations })(Rooter);

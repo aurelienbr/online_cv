@@ -212,12 +212,14 @@ class FormContact extends React.Component<Props, State> {
             style={styles.iconGithub}
             href="https://github.com/aurelienbr"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <img src={githubImg} alt="github" />
           </a>
           <a
             href="https://www.linkedin.com/in/aur%C3%A9lien-brachet-146556141/"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <img src={linkedinImg} alt="linkedin" />
           </a>

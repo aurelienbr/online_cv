@@ -10,7 +10,7 @@ import Internship from "../const/internship";
 
 type Props = {
   location: any
-}
+};
 
 const Parcours = ({ location }: Props) => {
   return (

@@ -2,6 +2,7 @@
 
 export const GET_TRANSLATIONS = "GET_TRANSLATIONS";
 export const CHANGE_LOCAL = "CHANGE_LOCAL";
+export const GET_TRANSLATIONS_ERROR = "GET_TRANSLATIONS_ERROR";
 
 // handle input
 
