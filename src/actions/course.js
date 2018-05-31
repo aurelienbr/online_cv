@@ -4,7 +4,9 @@ import {
   GET_INTERNSHIPS,
   GET_INTERNSHIPS_ERROR,
   GET_EDUCATION,
-  GET_EDUCATION_ERROR
+  GET_EDUCATION_ERROR,
+  GET_COORDS,
+  GET_COORDS_ERROR
 } from "./type";
 
 export const getInternships = () => {
@@ -22,6 +24,26 @@ export const getInternships = () => {
         dispatch({
           payload: err,
           type: GET_INTERNSHIPS_ERROR
+        });
+      });
+  };
+};
+
+export const getCoords = () => {
+  return dispatch => {
+    const API_COORDS = api("coords");
+    axios
+      .get(API_COORDS)
+      .then(response => {
+        dispatch({
+          payload: response.data,
+          type: GET_COORDS
+        });
+      })
+      .catch(err => {
+        dispatch({
+          payload: err,
+          type: GET_COORDS_ERROR
         });
       });
   };

@@ -6,9 +6,9 @@ import { connect } from "react-redux";
 import Header from "./Header";
 import ContactMain from "./components/ContactMain";
 import FormContact from "./components/FormContact";
-import { sendEmail } from "../actions";
+import { sendEmail, getCoords } from "../actions";
 
-type Props = {
+type StateProps = {
   name: string,
   email: string,
   loadingMail: boolean,
@@ -18,7 +18,16 @@ type Props = {
   location: any
 };
 
+type DispatchProps = {
+  getCoords(): void
+};
+
+type Props = StateProps & DispatchProps;
+
 class Contact extends React.Component<Props> {
+  componentDidMount() {
+    this.props.getCoords();
+  }
   sendEmail = event => {
     const { name, email, textarea, textAreaMax, sendEmail } = this.props;
     event.preventDefault();
@@ -52,4 +61,4 @@ const mapStateToProps = ({ formContact }) => ({
   error: formContact.error
 });
 
-export default connect(mapStateToProps, { sendEmail })(Contact);
+export default connect(mapStateToProps, { sendEmail, getCoords })(Contact);

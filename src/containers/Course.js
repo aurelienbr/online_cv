@@ -7,19 +7,28 @@ import ExperienceMain from "./components/ExperienceMain";
 import Header from "./Header";
 import * as actions from "../actions/course";
 
-type Props = {
+type StateProps = {
   location: any,
-  education: array<Object>,
-  internships: array<Object>,
+  education: Array<Object>,
+  internships: Array<Object>,
   loading: boolean,
-  errInternships: array<Object>,
-  errEducation: array<Object>
+  errInternships: Array<Object>,
+  errEducation: Array<Object>
 };
+
+type DispatchProps = {
+  getEducation(): void,
+  getInternships(): void,
+  getCoords(): void
+};
+
+type Props = StateProps & DispatchProps;
 
 class Course extends React.Component<Props> {
   componentDidMount() {
     this.props.getInternships();
     this.props.getEducation();
+    this.props.getCoords();
   }
   render() {
     const {

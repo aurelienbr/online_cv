@@ -36,7 +36,7 @@ class Rooter extends React.Component<Props> {
       return <div />;
     }
 
-    if (Object.keys(err) > 0) {
+    if (Object.keys(err).length > 0) {
       return <div>An error occured, please check your internet connection</div>;
     }
 

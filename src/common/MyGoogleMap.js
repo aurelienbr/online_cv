@@ -5,18 +5,27 @@ import { connect } from "react-redux";
 
 import MapStyle from "../const/mapCustom";
 import API_KEY from "../const/googleMapAPI";
-import coordTowns from "../const/coordTowns";
+
+import type { mapCoords } from "../../type";
 
 type Props = {
   defaultCenter: Object,
   defaultZoom: Object,
   locale: string,
-  style?: Object
+  style?: Object,
+  mapCoords: mapCoords
 };
 
 class MyGoogleMap extends React.Component<Props> {
+  static defaultProps = {
+    defaultCenter: {
+      lat: 44.84044,
+      lng: -0.5805
+    }
+  };
   renderMarkers = (map: Object, maps: Object) => {
-    coordTowns.map(coord => {
+    const { mapCoords } = this.props;
+    mapCoords.map(coord => {
       return new maps.Marker({
         position: coord,
         title: "test",

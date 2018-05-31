@@ -1,5 +1,8 @@
 // @flow
 import React, { Component } from "react";
+import { connect } from "react-redux";
+
+import type { mapCoords } from "../../type";
 
 import Text from "./Text";
 import linkIcon from "../assets/icons/link.png";
@@ -18,6 +21,7 @@ type Props = {
   titre: string,
   href: string,
   coord: Object,
+  mapCoords: mapCoords,
   isInView?: boolean,
   mobile?: boolean
 };
@@ -53,7 +57,8 @@ class EducationCard extends Component<Props, State> {
       href,
       coord,
       isInView,
-      mobile
+      mobile,
+      mapCoords
     } = this.props;
 
     if (!isInView) {
@@ -92,6 +97,7 @@ class EducationCard extends Component<Props, State> {
         >
           <MyGoogleMap
             defaultZoom={10}
+            mapCoords={mapCoords}
             defaultCenter={coord} // Bordeaux
           />
         </MyModal>
@@ -137,4 +143,8 @@ const styles = {
   }
 };
 
-export default EducationCard;
+const mapDispatchToProps = ({ course }) => ({
+  mapCoords: course.mapCoords
+});
+
+export default connect(mapDispatchToProps)(EducationCard);

@@ -1,16 +1,18 @@
 // @flow
 import React from "react";
+import { connect } from "react-redux";
 
 import ButtonContact from "./ButtonContact";
 import MyModal from "../../common/MyModal";
 import FormContact from "./FormContact";
 import MyGoogleMap from "../../common/MyGoogleMap";
 
-import coordTowns from "../../const/coordTowns";
+import type { mapCoords } from "../../../type";
 
 type Props = {
   mobile?: boolean,
-  sendEmail: Function
+  sendEmail: Function,
+  mapCoords: mapCoords
 };
 
 type State = {
@@ -44,14 +46,15 @@ class ContactMain extends React.Component<Props, State> {
   };
 
   render() {
-    const { sendEmail } = this.props;
+    const { sendEmail, mapCoords } = this.props;
 
     const { isModalOpen } = this.state;
 
     return (
       <div>
         <MyGoogleMap
-          defaultCenter={coordTowns[1]} // bordeaux
+          mapCoords={mapCoords}
+          defaultCenter={mapCoords[1]} // bordeaux
           style={styles.googleMap}
           defaultZoom={14}
         />
@@ -75,4 +78,8 @@ const styles = {
   }
 };
 
-export default ContactMain;
+const mapDispatchToProps = ({ course }) => ({
+  mapCoords: course.mapCoords
+});
+
+export default connect(mapDispatchToProps)(ContactMain);
