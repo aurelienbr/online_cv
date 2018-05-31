@@ -1,22 +1,22 @@
 // @flow
-import React from "react";
-import Modal from "react-modal";
-import { injectIntl } from "react-intl";
-import { connect } from "react-redux";
-import Loader from "react-loader-spinner";
+import React from 'react';
+import Modal from 'react-modal';
+import { injectIntl } from 'react-intl';
+import { connect } from 'react-redux';
+import Loader from 'react-loader-spinner';
 
-import Text from "../../common/Text";
-import errorMail from "../../assets/icons/errorMail.png";
-import checkedImg from "../../assets/icons/checked.png";
-import errorImg from "../../assets/icons/error.png";
-import githubImg from "../../assets/icons/github-logo.png";
-import linkedinImg from "../../assets/icons/linkedin-logo.png";
+import Text from '../../common/Text';
+import errorMail from '../../assets/icons/errorMail.png';
+import checkedImg from '../../assets/icons/checked.png';
+import errorImg from '../../assets/icons/error.png';
+import githubImg from '../../assets/icons/github-logo.png';
+import linkedinImg from '../../assets/icons/linkedin-logo.png';
 
 import {
   handleNameChange,
   handleEmailChange,
   handleTextAreaChange
-} from "../../actions";
+} from '../../actions';
 
 type Props = {
   loadingMail: boolean,
@@ -47,7 +47,7 @@ class FormContact extends React.Component<Props, State> {
     emailFailure: false
   };
   componentWillMount() {
-    Modal.setAppElement("body");
+    Modal.setAppElement('body');
   }
   componentWillReceiveProps(nextProps) {
     if (
@@ -82,7 +82,7 @@ class FormContact extends React.Component<Props, State> {
     if (emailSuccess) {
       return (
         <img
-          className={visible === true ? "fadeIn" : "fadeOut"}
+          className={visible === true ? 'fadeIn' : 'fadeOut'}
           src={checkedImg}
           alt="ok"
         />
@@ -92,7 +92,7 @@ class FormContact extends React.Component<Props, State> {
     if (emailFailure) {
       return (
         <img
-          className={visible === true ? "fadeIn" : "fadeOut"}
+          className={visible === true ? 'fadeIn' : 'fadeOut'}
           src={errorMail}
           alt="error"
         />
@@ -139,7 +139,7 @@ class FormContact extends React.Component<Props, State> {
               name="name"
               value={name}
               onChange={this.handleNameChange}
-              placeholder={formatMessage({ id: "formContact.placeholderName" })}
+              placeholder={formatMessage({ id: 'formContact.placeholderName' })}
             />
             <span className="focus-input" style={styles.focusInput} />
             {error.name && (
@@ -161,7 +161,7 @@ class FormContact extends React.Component<Props, State> {
               onChange={this.handleEmailChange}
               name="email"
               placeholder={formatMessage({
-                id: "formContact.placeholderEmail"
+                id: 'formContact.placeholderEmail'
               })}
             />
             <span className="focus-input" style={styles.focusInput} />
@@ -188,7 +188,7 @@ class FormContact extends React.Component<Props, State> {
             style={{ ...styles.input, ...styles.textArea }}
             name="message"
             placeholder={formatMessage({
-              id: "formContact.placeholderTextarea"
+              id: 'formContact.placeholderTextarea'
             })}
           />
           <span className="focus-input" style={styles.focusInput} />
@@ -237,74 +237,74 @@ const styles = {
     marginLeft: 5
   },
   containerCenter: {
-    display: "flex",
-    width: "100%",
-    justifyContent: "center"
+    display: 'flex',
+    width: '100%',
+    justifyContent: 'center'
   },
   iconGithub: {
     marginRight: 15
   },
   formContainer: {
-    width: "100%",
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "space-between",
+    width: '100%',
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
     padding: 30
   },
   errorContainer: {
-    display: "flex",
-    position: "absolute",
+    display: 'flex',
+    position: 'absolute',
     bottom: -70,
     left: 0,
     marginBottom: 5
   },
   inputMain: {
-    display: "flex",
-    width: "100%",
-    justifyContent: "space-between"
+    display: 'flex',
+    width: '100%',
+    justifyContent: 'space-between'
   },
   inputMainMobile: {
-    display: "flex",
-    flexDirection: "column"
+    display: 'flex',
+    flexDirection: 'column'
   },
   textareaMax: {
-    position: "absolute",
+    position: 'absolute',
     right: 0,
     bottom: 0
   },
   containerInput: {
-    width: "100%",
-    position: "relative",
-    display: "flex",
-    flexDirection: "column",
-    borderBottom: "2px solid #d9d9d9",
+    width: '100%',
+    position: 'relative',
+    display: 'flex',
+    flexDirection: 'column',
+    borderBottom: '2px solid #d9d9d9',
     paddingBottom: 13,
     marginBottom: 65,
     marginLeft: 30,
     marginRight: 30
   },
   span: {
-    color: "#999999",
+    color: '#999999',
     lineHeight: 1.5,
     paddingLeft: 5
   },
   titleContact: {
-    display: "block",
-    width: "100%",
-    color: "#333333",
+    display: 'block',
+    width: '100%',
+    color: '#333333',
     lineHeight: 1.2,
-    textAlign: "left",
+    textAlign: 'left',
     paddingBottom: 44
   },
   dimInput: {
     height: 40,
-    position: "relative"
+    position: 'relative'
   },
   input: {
-    display: "block",
-    width: "100%",
-    background: "transparent",
-    color: "#555555",
+    display: 'block',
+    width: '100%',
+    background: 'transparent',
+    color: '#555555',
     lineHeight: 1.2,
     marginLeft: 5
   },
@@ -315,15 +315,15 @@ const styles = {
   },
   textBtn: {
     marginTop: 8,
-    color: "#fff"
+    color: '#fff'
   },
   focusInput: {
-    width: "100%",
-    height: "100%",
-    position: "absolute",
+    width: '100%',
+    height: '100%',
+    position: 'absolute',
     top: 0,
     left: 0,
-    pointerEvents: "none"
+    pointerEvents: 'none'
   }
 };
 

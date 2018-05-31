@@ -1,13 +1,13 @@
 // @flow
-import React from "react";
-import { connect } from "react-redux";
+import React from 'react';
+import { connect } from 'react-redux';
 
-import ButtonContact from "./ButtonContact";
-import MyModal from "../../common/MyModal";
-import FormContact from "./FormContact";
-import MyGoogleMap from "../../common/MyGoogleMap";
+import ButtonContact from './ButtonContact';
+import MyModal from '../../common/MyModal';
+import FormContact from './FormContact';
+import MyGoogleMap from '../../common/MyGoogleMap';
 
-import type { mapCoords } from "../../../type";
+import type { mapCoords } from '../../type';
 
 type Props = {
   mobile?: boolean,
@@ -69,10 +69,10 @@ class ContactMain extends React.Component<Props, State> {
 
 const styles = {
   googleMap: {
-    position: "absolute",
+    position: 'absolute',
     zIndex: -2,
-    width: "100%",
-    height: "100%",
+    width: '100%',
+    height: '100%',
     top: 0,
     left: 0
   }

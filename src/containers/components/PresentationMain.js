@@ -1,11 +1,11 @@
 // @flow
-import React from "react";
-import Text from "../../common/Text";
+import React from 'react';
+import Text from '../../common/Text';
 
 type Props = {
   mobile?: boolean,
   slideFooter: boolean
-}
+};
 
 const PresentationExperience = ({ mobile, slideFooter }: Props) => (
   <div className="main mainPresentation">
@@ -13,14 +13,14 @@ const PresentationExperience = ({ mobile, slideFooter }: Props) => (
       AB
     </h3>
     <Text
-      className={slideFooter ? "slide-down" : "none"}
-      size={mobile ? "h3" : "h1"}
+      className={slideFooter ? 'slide-down' : 'none'}
+      size={mobile ? 'h3' : 'h1'}
       id="home.name"
       style={styles.title}
     />
     <Text
-      className={slideFooter ? "slide-up" : "none"}
-      size={mobile ? "h4" : "h2"}
+      className={slideFooter ? 'slide-up' : 'none'}
+      size={mobile ? 'h4' : 'h2'}
       id="home.fonction"
       style={styles.pres}
     />
@@ -32,13 +32,13 @@ const styles = {
     fontSize: 35,
     height: 80,
     width: 80,
-    border: "5px solid #fff",
+    border: '5px solid #fff',
     borderRadius: 200,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
     marginBottom: 50,
-    boxShadow: "0 0 5px 5px #888"
+    boxShadow: '0 0 5px 5px #888'
   },
   title: {
     marginTop: 30

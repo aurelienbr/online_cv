@@ -1,14 +1,14 @@
 // @flow
-import React from "react";
+import React from 'react';
 
-import Text from "../../common/Text";
-import BarSkill from "../../common/BarSkill";
-import { colors } from "../../style/colors";
+import Text from '../../common/Text';
+import BarSkill from '../../common/BarSkill';
+import { colors } from '../../style/colors';
 
 type Props = {
   mobile?: boolean,
   downloadCV: Function
-}
+};
 
 const AboutMain = ({ mobile, downloadCV }: Props) => (
   <div className="main mainAbout">
@@ -22,7 +22,7 @@ const AboutMain = ({ mobile, downloadCV }: Props) => (
       <div style={styles.description}>
         <Text
           className="slide-up-presentation"
-          style={{ width: "90%" }}
+          style={{ width: '90%' }}
           size="p"
           id="about.main"
         />
@@ -31,22 +31,22 @@ const AboutMain = ({ mobile, downloadCV }: Props) => (
         <BarSkill
           containerStyle={mobile ? styles.skillMobile : styles.skill}
           style={styles.html}
-          title={"HTML CSS"}
+          title={'HTML CSS'}
         />
         <BarSkill
           containerStyle={mobile ? styles.skillMobile : styles.skill}
           style={styles.react}
-          title={"React Native / ReactJS"}
+          title={'React Native / ReactJS'}
         />
         <BarSkill
           containerStyle={mobile ? styles.skillMobile : styles.skill}
           style={styles.nodeJS}
-          title={"NodeJS"}
+          title={'NodeJS'}
         />
         <BarSkill
           containerStyle={mobile ? styles.skillMobile : styles.skill}
           style={styles.java}
-          title={"Java (Android)"}
+          title={'Java (Android)'}
         />
       </div>
     </div>
@@ -56,16 +56,16 @@ const AboutMain = ({ mobile, downloadCV }: Props) => (
 
 const styles = {
   container: {
-    display: "flex",
-    justifyContent: "center",
+    display: 'flex',
+    justifyContent: 'center',
     marginTop: 75
   },
   header: {
     marginTop: 40
   },
   html: {
-    height: "100%",
-    width: "90%",
+    height: '100%',
+    width: '90%',
     backgroundColor: colors.greenFour
   },
   description: {
@@ -74,23 +74,23 @@ const styles = {
     marginLeft: 30
   },
   react: {
-    height: "100%",
-    width: "80%",
+    height: '100%',
+    width: '80%',
     backgroundColor: colors.greenOne
   },
   nodeJS: {
-    height: "100%",
-    width: "50%",
+    height: '100%',
+    width: '50%',
     backgroundColor: colors.greenTwo
   },
   java: {
-    height: "100%",
-    width: "70%",
+    height: '100%',
+    width: '70%',
     backgroundColor: colors.greenThree
   },
   skill: {
     height: 40,
-    backgroundColor: "#ecf0f1",
+    backgroundColor: '#ecf0f1',
     marginBottom: 20
   },
   skillMobile: {
@@ -104,8 +104,8 @@ const styles = {
   },
   containerMobile: {
     flex: 1,
-    flexDirection: "column",
-    alignItems: "center"
+    flexDirection: 'column',
+    alignItems: 'center'
   },
   skillContainerMobile: {
     marginTop: 20,

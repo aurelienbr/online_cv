@@ -6,14 +6,14 @@ import { connect } from 'react-redux';
 import MapStyle from '../const/mapCustom';
 import API_KEY from '../const/googleMapAPI';
 
-import type { mapCoords } from '../../type';
+import type { mapCoords } from '../type';
 
 type Props = {
   defaultCenter: Object,
   defaultZoom: Object,
   locale: string,
   style?: Object,
-  mapCoords: mapCoords
+  mapCoords: Array<mapCoords>
 };
 
 class MyGoogleMap extends React.Component<Props> {

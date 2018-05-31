@@ -1,6 +1,6 @@
 // @flow
-import React from "react";
-import imgMail from "../../assets/icons/mail64.png";
+import React from 'react';
+import imgMail from '../../assets/icons/mail64.png';
 
 type Props = {
   children: string,
@@ -15,19 +15,19 @@ const ButtonContact = ({ children, onClick }: Props) => (
 
 const styles = {
   button: {
-    color: "#fff",
-    fontSize: "39px",
-    position: "fixed",
-    zIndex: "-1",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "120px",
-    height: "120px",
-    borderRadius: "50%",
-    top: "50%",
-    left: "50%",
-    cursor: "pointer"
+    color: '#fff',
+    fontSize: '39px',
+    position: 'fixed',
+    zIndex: '-1',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '120px',
+    height: '120px',
+    borderRadius: '50%',
+    top: '50%',
+    left: '50%',
+    cursor: 'pointer'
   }
 };
 

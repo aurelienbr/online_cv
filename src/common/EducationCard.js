@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import type { mapCoords } from '../../type';
+import type { mapCoords } from '../type';
 
 import Text from './Text';
 import linkIcon from '../assets/icons/link.png';

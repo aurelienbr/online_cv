@@ -1,15 +1,15 @@
 // @flow
-import React from "react";
+import React from 'react';
 
-import Text from "../../common/Text";
-import EducationCard from "../../common/EducationCard";
-import WithinView from "../../common/WithinView";
+import Text from '../../common/Text';
+import EducationCard from '../../common/EducationCard';
+import WithinView from '../../common/WithinView';
 
 type Props = {
   mobile?: boolean,
   internship: any,
   education: any
-}
+};
 
 const getContainerStyle = mobile =>
   mobile === true ? styles.formationMobile : styles.formation;
@@ -55,7 +55,7 @@ const ExperienceMain = ({ mobile, internship, education }: Props) => {
 
 ExperienceMain.defaultProps = {
   mobile: false
-}
+};
 
 const styles = {
   container: {
@@ -64,19 +64,19 @@ const styles = {
   formation: {
     marginTop: 40,
     marginBottom: 20,
-    display: "flex",
-    justifyContent: "space-between",
-    flexDirection: "column",
-    width: "80%"
+    display: 'flex',
+    justifyContent: 'space-between',
+    flexDirection: 'column',
+    width: '80%'
   },
   formationMobile: {
     marginTop: 40,
     marginBottom: 20,
-    display: "flex",
-    flexDirection: "column"
+    display: 'flex',
+    flexDirection: 'column'
   },
   whiteColor: {
-    color: "#fff"
+    color: '#fff'
   }
 };
 
