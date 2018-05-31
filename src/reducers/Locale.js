@@ -2,13 +2,13 @@ import {
   GET_TRANSLATIONS,
   CHANGE_LOCAL,
   GET_TRANSLATIONS_ERROR
-} from "../actions/type";
+} from '../actions/type';
 
 const INITIAL_STATE = {
   locale:
     navigator.language.substring(0, 2).toLowerCase() ||
     navigator.userLanguage.substring(0, 2).toLowerCase() ||
-    "en",
+    'en',
   translations: [],
   err: {}
 };

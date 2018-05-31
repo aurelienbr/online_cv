@@ -1,11 +1,11 @@
 // @flow
-import React from "react";
-import MediaQuery from "react-responsive";
+import React from 'react';
+import MediaQuery from 'react-responsive';
 
-import Header from "./Header";
-import AboutMain from "./components/AboutMain";
+import Header from './Header';
+import AboutMain from './components/AboutMain';
 
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 
 type Props = {
   location: any,
@@ -15,17 +15,17 @@ type Props = {
 class About extends React.Component<Props> {
   downloadCV = () => {
     switch (this.props.locale) {
-      case "fr":
-        window.open("https://my-resume-aurelien.herokuapp.com/files/CVFR.pdf");
+      case 'fr':
+        window.open('https://my-resume-aurelien.herokuapp.com/files/CVFR.pdf');
         break;
-      case "en":
-        window.open("https://my-resume-aurelien.herokuapp.com/files/CVEN.pdf");
+      case 'en':
+        window.open('https://my-resume-aurelien.herokuapp.com/files/CVEN.pdf');
         break;
-      case "ru":
-        window.open("https://my-resume-aurelien.herokuapp.com/files/CVRU.pdf");
+      case 'ru':
+        window.open('https://my-resume-aurelien.herokuapp.com/files/CVRU.pdf');
         break;
       default:
-        window.open("https://my-resume-aurelien.herokuapp.com/files/CVEN.pdf");
+        window.open('https://my-resume-aurelien.herokuapp.com/files/CVEN.pdf');
     }
   };
 

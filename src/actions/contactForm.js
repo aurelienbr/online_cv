@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 import {
   HANDLE_EMAIL_CHANGE,
   HANDLE_NAME_CHANGE,
@@ -8,11 +8,11 @@ import {
   SEND_EMAIL_FAILURE,
   SEND_EMAIL,
   SET_INITIAL_STATE
-} from "../actions/type";
+} from '../actions/type';
 
-import api from "../const/api";
+import api from '../const/api';
 
-import verifForm from "../tools/verifForm";
+import verifForm from '../tools/verifForm';
 
 export const handleEmailChange = value => ({
   email: value,
@@ -44,12 +44,12 @@ export const sendEmail = (name, email, textarea, textAreaMax) => {
     });
 
     axios
-      .post(api("mail"), {
+      .post(api('mail'), {
         email: email,
         subject: name,
         text: textarea,
         headers: {
-          "Content-type": "application/x-www-form-urlencoded"
+          'Content-type': 'application/x-www-form-urlencoded'
         }
       })
       .then(response => {

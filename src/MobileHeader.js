@@ -1,6 +1,6 @@
-import React from "react";
-import Button from "./common/Button";
-import BUTTONS from "./const/headerConsts";
+import React from 'react';
+import Button from './common/Button';
+import BUTTONS from './const/headerConsts';
 
 class MobileHeader extends React.Component {
   render() {

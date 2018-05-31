@@ -8,22 +8,22 @@ const verifForm = (
 ) => {
   let error = {};
   if (name.length === 0) {
-    error.name = "error.nameNotProvided";
+    error.name = 'error.nameNotProvided';
   }
   if (name.length > 16) {
-    error.name = "error.nameTooLong";
+    error.name = 'error.nameTooLong';
   }
   if (!email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)) {
-    error.email = "error.emailNotMatch";
+    error.email = 'error.emailNotMatch';
   }
   if (email.length === 0) {
-    error.email = "error.emailNotProvided";
+    error.email = 'error.emailNotProvided';
   }
   if (textAreaMax < 0) {
-    error.textarea = "error.textareaMax";
+    error.textarea = 'error.textareaMax';
   }
   if (!textarea) {
-    error.textarea = "error.textareaNotProvided";
+    error.textarea = 'error.textareaNotProvided';
   }
 
   return error;

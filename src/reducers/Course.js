@@ -5,7 +5,7 @@ import {
   GET_EDUCATION_ERROR,
   GET_COORDS,
   GET_COORDS_ERROR
-} from "../actions/type";
+} from '../actions/type';
 
 const INITIAL_STATE = {
   education: [],
@@ -23,9 +23,9 @@ export default (state = INITIAL_STATE, action) => {
     case GET_INTERNSHIPS_ERROR:
       return { ...state, locale: action.payload };
     case GET_COORDS:
-      return {...state, mapCoords: action.payload};
+      return { ...state, mapCoords: action.payload };
     case GET_COORDS_ERROR:
-      return {...state, err_mapCoords: action.payload};
+      return { ...state, err_mapCoords: action.payload };
     case GET_EDUCATION:
       return { ...state, education: action.payload };
     case GET_EDUCATION_ERROR:

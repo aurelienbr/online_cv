@@ -1,24 +1,24 @@
 // @flow
-import React, { Component } from "react";
-import { connect } from "react-redux";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-import Button from "../common/Button";
+import Button from '../common/Button';
 
-import * as actions from "../actions";
+import * as actions from '../actions';
 
-import BUTTONS from "../const/headerConsts";
+import BUTTONS from '../const/headerConsts';
 
 const options = [
-  { value: "fr", label: "Fr" },
-  { value: "ru", label: "Ru" },
-  { value: "en", label: "En" }
+  { value: 'fr', label: 'Fr' },
+  { value: 'ru', label: 'Ru' },
+  { value: 'en', label: 'En' }
 ];
 
 type Props = {
   changeLocale: Function,
   locale: string,
   location: any
-}
+};
 
 class Header extends Component<Props> {
   onSelect = obj => {
@@ -54,16 +54,16 @@ class Header extends Component<Props> {
 
 const styles = {
   containerSelect: {
-    border: "1px solid #ccc",
-    width: "60px",
-    borderRadius: "3px"
+    border: '1px solid #ccc',
+    width: '60px',
+    borderRadius: '3px'
   },
   select: {
-    padding: "5px 8px",
-    width: "130%",
-    border: "none",
-    boxShadow: "none",
-    background: "transparent"
+    padding: '5px 8px',
+    width: '130%',
+    border: 'none',
+    boxShadow: 'none',
+    background: 'transparent'
   }
 };
 

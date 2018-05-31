@@ -1,10 +1,10 @@
-import axios from "axios";
-import api from "../const/api";
-import { GET_TRANSLATIONS, CHANGE_LOCAL, GET_TRANSLATIONS_ERROR } from "./type";
+import axios from 'axios';
+import api from '../const/api';
+import { GET_TRANSLATIONS, CHANGE_LOCAL, GET_TRANSLATIONS_ERROR } from './type';
 
 export const getTranslations = () => {
   return dispatch => {
-    const API_TRANSLATION = api("translations");
+    const API_TRANSLATION = api('translations');
     axios
       .get(API_TRANSLATION)
       .then(response => {

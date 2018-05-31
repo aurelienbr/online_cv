@@ -1,17 +1,17 @@
 @font-face {
-  font-family: "OpenSans";
-  src: url("assets/fonts/OpenSans-Semibold.ttf");
+  font-family: 'OpenSans';
+  src: url('assets/fonts/OpenSans-Semibold.ttf');
 }
 
 @font-face {
-  font-family: "OpenSans-light";
-  src: url("assets/fonts/OpenSans-Regular.ttf");
+  font-family: 'OpenSans-light';
+  src: url('assets/fonts/OpenSans-Regular.ttf');
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: "OpenSans", sans-serif;
+  font-family: 'OpenSans', sans-serif;
 }
 
 hr {
@@ -28,7 +28,7 @@ button:visited {
 }
 
 p {
-  font-family: "OpenSans-light", sans-serif;
+  font-family: 'OpenSans-light', sans-serif;
 }
 
 input {
@@ -125,7 +125,7 @@ a:hover {
 }
 
 .mainPresentation {
-  background-image: url("assets/images/backgroundPresentation.jpeg");
+  background-image: url('assets/images/backgroundPresentation.jpeg');
   background-position: 0px 0px;
   background-size: cover;
 }
@@ -140,7 +140,7 @@ a:hover {
   border-radius: 50%;
   margin-top: 50px;
   margin-bottom: 20px;
-  background-image: url("assets/images/myprofil.png");
+  background-image: url('assets/images/myprofil.png');
   background-size: cover;
 }
 .imageProfil:hover {
@@ -230,7 +230,7 @@ a:hover {
   transform: translate(-50%, -50%);
 }
 .buttonContact::before {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   z-index: -2;
@@ -257,7 +257,7 @@ wrap-input-contact: {
   width: calc((100 % -30px) / 2);
 }
 .focus-input::before {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   bottom: -2px;

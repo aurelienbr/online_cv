@@ -1,18 +1,18 @@
 // @flow
-import React, { Component } from "react";
-import { connect } from "react-redux";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-import type { mapCoords } from "../../type";
+import type { mapCoords } from '../../type';
 
-import Text from "./Text";
-import linkIcon from "../assets/icons/link.png";
-import mapIcon from "../assets/icons/map.png";
+import Text from './Text';
+import linkIcon from '../assets/icons/link.png';
+import mapIcon from '../assets/icons/map.png';
 
-import linkMobileIcon from "../assets/icons/linkMobile.png";
-import mapMobileIcon from "../assets/icons/mapMobile.png";
+import linkMobileIcon from '../assets/icons/linkMobile.png';
+import mapMobileIcon from '../assets/icons/mapMobile.png';
 
-import MyModal from "./MyModal";
-import MyGoogleMap from "./MyGoogleMap";
+import MyModal from './MyModal';
+import MyGoogleMap from './MyGoogleMap';
 
 type Props = {
   duree: string,
@@ -118,28 +118,28 @@ const styles = {
     width: 400
   },
   container: {
-    border: "1px solid #89bbd3",
+    border: '1px solid #89bbd3',
     borderRadius: 10,
     padding: 20,
     marginBottom: 20,
-    cursor: "pointer"
+    cursor: 'pointer'
   },
   whiteColor: {
-    color: "#fff"
+    color: '#fff'
   },
   description: {
-    color: "#fff",
+    color: '#fff',
     marginTop: 20
   },
   containerData: {
-    display: "flex",
-    justifyContent: "space-between"
+    display: 'flex',
+    justifyContent: 'space-between'
   },
   mapIcon: {
     marginRight: 10
   },
   imgContainer: {
-    display: "flex"
+    display: 'flex'
   }
 };
 

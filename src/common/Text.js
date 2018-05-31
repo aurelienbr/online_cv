@@ -1,6 +1,6 @@
 // @flow
-import React from "react";
-import { FormattedMessage } from "react-intl";
+import React from 'react';
+import { FormattedMessage } from 'react-intl';
 
 type Props = {
   className?: string,
@@ -27,14 +27,14 @@ const styles = {
   },
   error: {
     fontSize: 16,
-    color: "red"
+    color: 'red'
   },
   title: {
     height: 75,
     marginTop: 50,
-    display: "flex",
-    alignItems: "center",
-    borderBottom: "5px solid #fff"
+    display: 'flex',
+    alignItems: 'center',
+    borderBottom: '5px solid #fff'
   }
 };
 
@@ -52,8 +52,8 @@ const linesToParagraphs = (...nodes) => {
   return nodes
     .map(
       node =>
-        typeof node === "string"
-          ? node.split("\n").map(text => (
+        typeof node === 'string'
+          ? node.split('\n').map(text => (
               <span>
                 {text}
                 <br />

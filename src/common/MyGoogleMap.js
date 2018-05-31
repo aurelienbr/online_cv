@@ -1,12 +1,12 @@
 // @flow
-import React from "react";
-import GoogleMapReact from "google-map-react";
-import { connect } from "react-redux";
+import React from 'react';
+import GoogleMapReact from 'google-map-react';
+import { connect } from 'react-redux';
 
-import MapStyle from "../const/mapCustom";
-import API_KEY from "../const/googleMapAPI";
+import MapStyle from '../const/mapCustom';
+import API_KEY from '../const/googleMapAPI';
 
-import type { mapCoords } from "../../type";
+import type { mapCoords } from '../../type';
 
 type Props = {
   defaultCenter: Object,
@@ -28,7 +28,7 @@ class MyGoogleMap extends React.Component<Props> {
     mapCoords.map(coord => {
       return new maps.Marker({
         position: coord,
-        title: "test",
+        title: 'test',
         map
       });
     });

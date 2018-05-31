@@ -1,5 +1,5 @@
-import axios from "axios";
-import api from "../const/api";
+import axios from 'axios';
+import api from '../const/api';
 import {
   GET_INTERNSHIPS,
   GET_INTERNSHIPS_ERROR,
@@ -7,11 +7,11 @@ import {
   GET_EDUCATION_ERROR,
   GET_COORDS,
   GET_COORDS_ERROR
-} from "./type";
+} from './type';
 
 export const getInternships = () => {
   return dispatch => {
-    const API_INTERNSHIPS = api("internships");
+    const API_INTERNSHIPS = api('internships');
     axios
       .get(API_INTERNSHIPS)
       .then(response => {
@@ -31,7 +31,7 @@ export const getInternships = () => {
 
 export const getCoords = () => {
   return dispatch => {
-    const API_COORDS = api("coords");
+    const API_COORDS = api('coords');
     axios
       .get(API_COORDS)
       .then(response => {
@@ -51,7 +51,7 @@ export const getCoords = () => {
 
 export const getEducation = () => {
   return dispatch => {
-    const API_EDUCATION = api("education");
+    const API_EDUCATION = api('education');
     axios
       .get(API_EDUCATION)
       .then(response => {

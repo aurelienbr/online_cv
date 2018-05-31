@@ -1,9 +1,9 @@
 // @flow
-import React, { Component } from "react";
-import MediaQuery from "react-responsive";
+import React, { Component } from 'react';
+import MediaQuery from 'react-responsive';
 
-import PresentationMain from "./components/PresentationMain";
-import Header from "./Header";
+import PresentationMain from './components/PresentationMain';
+import Header from './Header';
 
 type Props = {
   location: any

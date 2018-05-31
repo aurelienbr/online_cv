@@ -1,10 +1,10 @@
-import React from "react";
-import MobileHeader from "./MobileHeader";
+import React from 'react';
+import MobileHeader from './MobileHeader';
 
-import Presentation from "./containers/Presentation";
-import About from "./containers/About";
-import Course from "./containers/Course";
-import Contact from "./containers/Contact";
+import Presentation from './containers/Presentation';
+import About from './containers/About';
+import Course from './containers/Course';
+import Contact from './containers/Contact';
 
 class MobileScreen extends React.Component {
   render() {

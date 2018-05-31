@@ -1,16 +1,16 @@
 // @flow
-import React from "react";
-import { Provider } from "react-redux";
-import { applyMiddleware, createStore } from "redux";
+import React from 'react';
+import { Provider } from 'react-redux';
+import { applyMiddleware, createStore } from 'redux';
 
-import thunk from "redux-thunk";
+import thunk from 'redux-thunk';
 
-import Rooter from "./Rooter";
-import reducers from "./reducers";
+import Rooter from './Rooter';
+import reducers from './reducers';
 
 type State = {
   load: boolean
-}
+};
 
 export default class App extends React.Component<null, State> {
   constructor() {

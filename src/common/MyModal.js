@@ -1,8 +1,8 @@
 // @flow
-import React from "react";
-import Modal from "react-modal";
+import React from 'react';
+import Modal from 'react-modal';
 
-import type { Node } from "react";
+import type { Node } from 'react';
 
 type Props = {
   isOpen: boolean,
@@ -15,7 +15,7 @@ type Props = {
 
 class MyModal extends React.Component<Props> {
   componentWillMount() {
-    Modal.setAppElement("body");
+    Modal.setAppElement('body');
   }
   render() {
     const {

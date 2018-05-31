@@ -1,12 +1,12 @@
 // @flow
-import React from "react";
-import MediaQuery from "react-responsive";
-import { connect } from "react-redux";
+import React from 'react';
+import MediaQuery from 'react-responsive';
+import { connect } from 'react-redux';
 
-import Header from "./Header";
-import ContactMain from "./components/ContactMain";
-import FormContact from "./components/FormContact";
-import { sendEmail, getCoords } from "../actions";
+import Header from './Header';
+import ContactMain from './components/ContactMain';
+import FormContact from './components/FormContact';
+import { sendEmail, getCoords } from '../actions';
 
 type StateProps = {
   name: string,

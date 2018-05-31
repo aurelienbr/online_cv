@@ -1,8 +1,8 @@
 // @flow
-import React from "react";
-import WayPoint from "react-waypoint";
+import React from 'react';
+import WayPoint from 'react-waypoint';
 
-import type { Node } from "react";
+import type { Node } from 'react';
 
 type Props = {
   children: Node

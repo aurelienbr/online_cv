@@ -1,11 +1,11 @@
 // @flow
-import React from "react";
-import MediaQuery from "react-responsive";
-import { connect } from "react-redux";
+import React from 'react';
+import MediaQuery from 'react-responsive';
+import { connect } from 'react-redux';
 
-import ExperienceMain from "./components/ExperienceMain";
-import Header from "./Header";
-import * as actions from "../actions/course";
+import ExperienceMain from './components/ExperienceMain';
+import Header from './Header';
+import * as actions from '../actions/course';
 
 type StateProps = {
   location: any,

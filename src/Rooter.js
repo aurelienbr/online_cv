@@ -1,21 +1,21 @@
 // @flow
-import React from "react";
-import { IntlProvider, addLocaleData } from "react-intl";
-import { connect } from "react-redux";
-import fr from "react-intl/locale-data/fr";
-import en from "react-intl/locale-data/en";
-import ru from "react-intl/locale-data/ru";
+import React from 'react';
+import { IntlProvider, addLocaleData } from 'react-intl';
+import { connect } from 'react-redux';
+import fr from 'react-intl/locale-data/fr';
+import en from 'react-intl/locale-data/en';
+import ru from 'react-intl/locale-data/ru';
 
-import { getTranslations } from "./actions";
+import { getTranslations } from './actions';
 
-import Presentation from "./containers/Presentation";
-import About from "./containers/About";
-import Course from "./containers/Course";
-import Contact from "./containers/Contact";
+import Presentation from './containers/Presentation';
+import About from './containers/About';
+import Course from './containers/Course';
+import Contact from './containers/Contact';
 
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import MediaQuery from "react-responsive";
-import MobileScreen from "./MobileScreen";
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import MediaQuery from 'react-responsive';
+import MobileScreen from './MobileScreen';
 
 addLocaleData([...fr, ...en, ...ru]);
 
