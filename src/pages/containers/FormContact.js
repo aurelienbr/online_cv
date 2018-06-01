@@ -5,7 +5,7 @@ import { injectIntl } from 'react-intl';
 import { connect } from 'react-redux';
 import Loader from 'react-loader-spinner';
 
-import Text from '../../common/Text';
+import Text from '../common/Text';
 import errorMail from '../../assets/icons/errorMail.png';
 import checkedImg from '../../assets/icons/checked.png';
 import errorImg from '../../assets/icons/error.png';
@@ -103,7 +103,7 @@ class FormContact extends React.Component<Props, StateComponent> {
     return render;
   };
 
-  render() {
+  render(): React$Element<*> {
     const { sendEmail, name, email, textArea, mobile, error, textAreaMax } = this.props;
 
     const { formatMessage } = this.props.intl;

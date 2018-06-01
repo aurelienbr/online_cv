@@ -2,20 +2,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import type { mapCoords } from '../type';
+import type { mapCoords } from '../../type';
 
-import Text from './Text';
-import linkIcon from '../assets/icons/link.png';
-import mapIcon from '../assets/icons/map.png';
+import Text from '../common/Text';
+import linkIcon from '../../assets/icons/link.png';
+import mapIcon from '../../assets/icons/map.png';
 
-import linkMobileIcon from '../assets/icons/linkMobile.png';
-import mapMobileIcon from '../assets/icons/mapMobile.png';
+import linkMobileIcon from '../../assets/icons/linkMobile.png';
+import mapMobileIcon from '../../assets/icons/mapMobile.png';
 
-import MyModal from './MyModal';
+import MyModal from '../common/MyModal';
 import MyGoogleMap from './MyGoogleMap';
 
 import type { Connector, MapStateToProps } from 'react-redux';
-import type { State } from '../reducers/reducersType';
+import type { State } from '../../reducers/reducersType';
 
 type OwnProps = {
   isInView?: boolean,

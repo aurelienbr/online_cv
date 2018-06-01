@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import { capitalizeFirstLetter } from '../tools/stringManipulation';
 
-import Button from '../common/Button';
+import HeaderButton from '../pages/containers/HeaderButton';
 import BUTTONS from '../const/headerConsts';
 import { changeLocale } from '../actions/translations';
 
@@ -68,9 +68,9 @@ class Header extends Component<Props, StateComponent> {
         </div>
         <div className="headerMenu">
           {BUTTONS.map(button => (
-            <Button key={button.id} location={location} route={button.to}>
+            <HeaderButton key={button.id} location={location} route={button.to}>
               {button.id}
-            </Button>
+            </HeaderButton>
           ))}
         </div>
       </header>

@@ -1,8 +1,8 @@
 // @flow
 import React from 'react';
 
-import Text from '../../common/Text';
-import BarSkill from '../../common/BarSkill';
+import Text from '../common/Text';
+import BarSkill from '../common/BarSkill';
 import { colors } from '../../style/colors';
 
 type Props = {
@@ -10,22 +10,12 @@ type Props = {
   downloadCV: Function
 };
 
-const AboutMain = ({ mobile, downloadCV }: Props) => (
+const AboutMain = ({ mobile, downloadCV }: Props): React$Element<*> => (
   <div className="main mainAbout">
-    <Text
-      size="h2"
-      style={styles.header}
-      className="slide-down-skill"
-      id="about.title"
-    />
+    <Text size="h2" style={styles.header} className="slide-down-skill" id="about.title" />
     <div style={mobile ? styles.containerMobile : styles.container}>
       <div style={styles.description}>
-        <Text
-          className="slide-up-presentation"
-          style={{ width: '90%' }}
-          size="p"
-          id="about.main"
-        />
+        <Text className="slide-up-presentation" style={{ width: '90%' }} size="p" id="about.main" />
       </div>
       <div style={mobile ? styles.skillContainerMobile : styles.skillContainer}>
         <BarSkill

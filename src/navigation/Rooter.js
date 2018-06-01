@@ -6,19 +6,15 @@ import fr from 'react-intl/locale-data/fr';
 import en from 'react-intl/locale-data/en';
 import ru from 'react-intl/locale-data/ru';
 
-import { getTranslations } from './actions';
+import { getTranslations } from '../actions';
 
-import Presentation from './containers/Presentation';
-import About from './containers/About';
-import Course from './containers/Course';
-import Contact from './containers/Contact';
-
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import MediaQuery from 'react-responsive';
-import MobileScreen from './MobileScreen';
+import MobileScreenRouter from './MobileScreenRouter';
+import DesktopScreenRouter from './DesktopScreenRouter';
 
 import type { Connector, MapDispatchToProps, MapStateToProps } from 'react-redux';
-import type { Action, Dispatch, State } from './reducers/reducersType';
+import type { Action, Dispatch, State } from '../reducers/reducersType';
 
 addLocaleData([...fr, ...en, ...ru]);
 
@@ -29,10 +25,12 @@ type StateProps = {
   err: Object
 };
 
-type OwnProps = {};
-
 type DispatchProps = {
   getTranslations(): void
+};
+
+type OwnProps = {
+  location?: any
 };
 
 type Props = StateProps & DispatchProps;
@@ -41,7 +39,7 @@ class Rooter extends React.Component<Props> {
   componentDidMount() {
     this.props.getTranslations();
   }
-  render() {
+  render(): React$Element<*> {
     const { locale, translations, err, loading } = this.props;
     if (loading) {
       return <div />;
@@ -56,16 +54,11 @@ class Rooter extends React.Component<Props> {
         <div>
           <MediaQuery query="(min-device-width: 1224px)">
             <Router>
-              <div>
-                <Route exact path="/" component={Presentation} />
-                <Route path="/about" component={About} />
-                <Route path="/course" component={Course} />
-                <Route path="/contact" component={Contact} />
-              </div>
+              <DesktopScreenRouter />
             </Router>
           </MediaQuery>
           <MediaQuery query="(max-device-width: 1224px)">
-            <MobileScreen />
+            <MobileScreenRouter />
           </MediaQuery>
         </div>
       </IntlProvider>

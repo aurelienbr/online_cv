@@ -3,9 +3,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import ButtonContact from './ButtonContact';
-import MyModal from '../../common/MyModal';
+import MyModal from '../common/MyModal';
 import FormContact from './FormContact';
-import MyGoogleMap from '../../common/MyGoogleMap';
+import MyGoogleMap from './MyGoogleMap';
 
 import type { mapCoords } from '../../type';
 import type { Connector, MapStateToProps } from 'react-redux';
@@ -47,7 +47,7 @@ class ContactMain extends React.Component<Props, StateComponent> {
     });
   };
 
-  render() {
+  render(): React$Element<*> {
     const { mapCoords, sendEmail } = this.props;
 
     const { isModalOpen } = this.state;

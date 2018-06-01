@@ -3,15 +3,15 @@ import React from 'react';
 import MediaQuery from 'react-responsive';
 import { connect } from 'react-redux';
 
-import Header from './Header';
-import ContactMain from './components/ContactMain';
-import FormContact from './components/FormContact';
+import Header from '../headers/Header';
+import ContactMain from './containers/ContactMain';
+import FormContact from './containers/FormContact';
 import { sendEmail, getCoords } from '../actions';
 
 import type { Connector, MapDispatchToProps, MapStateToProps } from 'react-redux';
 import type { Action, Dispatch, State } from '../reducers/reducersType';
 
-type OwnProps = { location: any };
+type OwnProps = { location?: any };
 
 type StateProps = {
   name: string,
@@ -37,7 +37,7 @@ class Contact extends React.Component<Props> {
     sendEmail(name, email, textArea, textAreaMax);
   };
 
-  render() {
+  render(): React$Element<*> {
     const { location } = this.props;
 
     return (

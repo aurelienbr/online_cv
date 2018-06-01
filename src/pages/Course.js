@@ -3,14 +3,14 @@ import React from 'react';
 import MediaQuery from 'react-responsive';
 import { connect } from 'react-redux';
 
-import ExperienceMain from './components/ExperienceMain';
-import Header from './Header';
+import ExperienceMain from './containers/ExperienceMain';
+import Header from '../headers/Header';
 import { getEducation, getInternships, getCoords } from '../actions/course';
 
 import type { Connector, MapDispatchToProps, MapStateToProps } from 'react-redux';
 import type { Action, Dispatch, State } from '../reducers/reducersType';
 
-type OwnProps = { location: any };
+type OwnProps = { location?: any };
 
 type StateProps = {
   education: Array<Object>,
@@ -33,7 +33,7 @@ class Course extends React.Component<Props> {
     this.props.getEducation();
     this.props.getCoords();
   }
-  render() {
+  render(): React$Element<*> {
     const { education, internships, location, err_internships, err_education } = this.props;
 
     return (

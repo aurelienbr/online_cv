@@ -2,11 +2,11 @@
 import React, { Component } from 'react';
 import MediaQuery from 'react-responsive';
 
-import PresentationMain from './components/PresentationMain';
-import Header from './Header';
+import PresentationMain from './containers/PresentationMain';
+import Header from '../headers/Header';
 
 type Props = {
-  location: any
+  location?: any
 };
 
 type State = {
@@ -32,7 +32,7 @@ class Presentation extends Component<Props, State> {
     }, 50);
   }
 
-  render() {
+  render(): React$Element<*> {
     const { location } = this.props;
     const { slideFooter } = this.state;
 

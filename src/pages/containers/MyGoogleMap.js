@@ -3,13 +3,13 @@ import React from 'react';
 import GoogleMapReact from 'google-map-react';
 import { connect } from 'react-redux';
 
-import MapStyle from '../const/mapCustom';
-import API_KEY from '../const/googleMapAPI';
+import MapStyle from '../../const/mapCustom';
+import API_KEY from '../../const/googleMapAPI';
 
-import type { mapCoords } from '../type';
+import type { mapCoords } from '../../type';
 
 import type { Connector, MapStateToProps } from 'react-redux';
-import type { State } from '../reducers/reducersType';
+import type { State } from '../../reducers/reducersType';
 
 type OwnProps = {
   defaultCenter: Object,

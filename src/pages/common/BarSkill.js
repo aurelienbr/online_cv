@@ -7,7 +7,7 @@ type Props = {
   containerStyle?: Object
 };
 
-const BarSkill = ({ title, containerStyle, style }: Props) => (
+export default ({ title, containerStyle, style }: Props): React$Element<*> => (
   <div>
     <p>{title}</p>
     <div style={containerStyle}>
@@ -15,5 +15,3 @@ const BarSkill = ({ title, containerStyle, style }: Props) => (
     </div>
   </div>
 );
-
-export default BarSkill;

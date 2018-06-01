@@ -7,7 +7,7 @@ type Props = {
   onClick: Function
 };
 
-const ButtonContact = ({ children, onClick }: Props) => (
+const ButtonContact = ({ children, onClick }: Props): React$Element<*> => (
   <button onClick={onClick} style={styles.button} className="buttonContact">
     <img alt="contact me" src={imgMail} />
   </button>

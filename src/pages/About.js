@@ -2,8 +2,8 @@
 import React from 'react';
 import MediaQuery from 'react-responsive';
 
-import Header from './Header';
-import AboutMain from './components/AboutMain';
+import Header from '../headers/Header';
+import AboutMain from './containers/AboutMain';
 
 import { connect } from 'react-redux';
 
@@ -11,7 +11,7 @@ import type { Connector, MapStateToProps } from 'react-redux';
 import type { State } from '../reducers/reducersType';
 
 type OwnProps = {
-  location: any
+  location?: any
 };
 
 type StateProps = {
@@ -38,7 +38,7 @@ class About extends React.Component<Props> {
     }
   };
 
-  render() {
+  render(): React$Element<*> {
     const { location } = this.props;
     return (
       <div id="About">

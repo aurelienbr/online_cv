@@ -2,9 +2,9 @@
 import React, { Fragment } from 'react';
 import Loader from 'react-loader-spinner';
 
-import Text from '../../common/Text';
-import EducationCard from '../../common/EducationCard';
-import WithinView from '../../common/WithinView';
+import Text from '../common/Text';
+import EducationCard from './EducationCard';
+import WithinView from './WithinView';
 
 type Props = {
   mobile?: boolean,
@@ -14,7 +14,7 @@ type Props = {
 
 const getContainerStyle = mobile => (mobile === true ? styles.formationMobile : styles.formation);
 
-const ExperienceMain = ({ mobile, internship, education }: Props) => {
+const ExperienceMain = ({ mobile, internship, education }: Props): React$Element<*> => {
   return (
     <div style={styles.container} className="main mainCertification">
       {education.length === 0 ? (

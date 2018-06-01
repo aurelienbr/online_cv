@@ -5,7 +5,7 @@ import { applyMiddleware, createStore } from 'redux';
 
 import thunk from 'redux-thunk';
 
-import Rooter from './Rooter';
+import Rooter from './navigation/Rooter';
 import reducers from './reducers';
 
 type State = {
