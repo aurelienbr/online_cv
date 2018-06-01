@@ -1,5 +1,6 @@
 // @flow
-import React from 'react';
+import React, { Fragment } from 'react';
+import Loader from 'react-loader-spinner';
 
 import Text from '../../common/Text';
 import EducationCard from '../../common/EducationCard';
@@ -11,13 +12,18 @@ type Props = {
   education: any
 };
 
-const getContainerStyle = mobile =>
-  mobile === true ? styles.formationMobile : styles.formation;
+const getContainerStyle = mobile => (mobile === true ? styles.formationMobile : styles.formation);
 
 const ExperienceMain = ({ mobile, internship, education }: Props) => {
   return (
     <div style={styles.container} className="main mainCertification">
-      <Text id="education.education" style={styles.whiteColor} size="title" />
+      {education.length === 0 ? (
+        <div style={styles.loaderContainer}>
+          <Loader type="Rings" color="#fff" height="45" width="45" />
+        </div>
+      ) : (
+        <Text id="education.education" style={styles.whiteColor} size="title" />
+      )}
       <div style={getContainerStyle(mobile)}>
         {education.map(item => (
           <WithinView key={item.duree}>
@@ -33,22 +39,26 @@ const ExperienceMain = ({ mobile, internship, education }: Props) => {
           </WithinView>
         ))}
       </div>
-      <Text id="education.internship" style={styles.whiteColor} size="title" />
-      <div style={getContainerStyle(mobile)}>
-        {internship.map(item => (
-          <WithinView key={item.duree}>
-            <EducationCard
-              mobile={mobile}
-              duree={item.duree}
-              href={item.href}
-              titre={item.titre}
-              description={item.description}
-              lieu={item.lieu}
-              coord={item.coord}
-            />
-          </WithinView>
-        ))}
-      </div>
+      {internship.length > 0 && education.length > 0 ? (
+        <Fragment>
+          <Text id="education.internship" style={styles.whiteColor} size="title" />
+          <div style={getContainerStyle(mobile)}>
+            {internship.map(item => (
+              <WithinView key={item.duree}>
+                <EducationCard
+                  mobile={mobile}
+                  duree={item.duree}
+                  href={item.href}
+                  titre={item.titre}
+                  description={item.description}
+                  lieu={item.lieu}
+                  coord={item.coord}
+                />
+              </WithinView>
+            ))}
+          </div>
+        </Fragment>
+      ) : null}
     </div>
   );
 };
@@ -60,6 +70,11 @@ ExperienceMain.defaultProps = {
 const styles = {
   container: {
     padding: 20
+  },
+  loaderContainer: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   formation: {
     marginTop: 40,

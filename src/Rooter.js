@@ -17,22 +17,33 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import MediaQuery from 'react-responsive';
 import MobileScreen from './MobileScreen';
 
+import type { Connector, MapDispatchToProps, MapStateToProps } from 'react-redux';
+import type { Action, Dispatch, State } from './reducers/reducersType';
+
 addLocaleData([...fr, ...en, ...ru]);
 
-type Props = {
+type StateProps = {
   translations: Object,
   locale: string,
-  getTranslations: Function,
+  loading: boolean,
   err: Object
 };
+
+type OwnProps = {};
+
+type DispatchProps = {
+  getTranslations(): void
+};
+
+type Props = StateProps & DispatchProps;
 
 class Rooter extends React.Component<Props> {
   componentDidMount() {
     this.props.getTranslations();
   }
   render() {
-    const { locale, translations, err } = this.props;
-    if (translations.length === 0) {
+    const { locale, translations, err, loading } = this.props;
+    if (loading) {
       return <div />;
     }
 
@@ -41,11 +52,7 @@ class Rooter extends React.Component<Props> {
     }
 
     return (
-      <IntlProvider
-        key={locale}
-        locale={locale}
-        messages={translations[locale]}
-      >
+      <IntlProvider key={locale} locale={locale} messages={translations[locale]}>
         <div>
           <MediaQuery query="(min-device-width: 1224px)">
             <Router>
@@ -65,10 +72,27 @@ class Rooter extends React.Component<Props> {
     );
   }
 }
-const mapStateToProps = ({ locale }) => ({
-  locale: locale.locale,
-  translations: locale.translations,
-  err: locale.err
+
+const mapStateToProps: MapStateToProps<State, OwnProps, StateProps> = (
+  state: State,
+  ownProps: OwnProps
+): StateProps => ({
+  locale: state.locale.locale,
+  translations: state.locale.translations,
+  err: state.locale.err,
+  loading: state.locale.loading,
+  ...ownProps
 });
 
-export default connect(mapStateToProps, { getTranslations })(Rooter);
+const mapDispatchToProps: MapDispatchToProps<Action, OwnProps, DispatchProps> = (
+  dispatch: Dispatch,
+  ownProps: OwnProps
+): DispatchProps => ({
+  getTranslations: () => {
+    dispatch(getTranslations());
+  }
+});
+
+const connector: Connector<OwnProps, Props> = connect(mapStateToProps, mapDispatchToProps);
+
+export default connector(Rooter);

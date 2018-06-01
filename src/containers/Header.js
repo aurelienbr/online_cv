@@ -2,32 +2,58 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import { capitalizeFirstLetter } from '../tools/stringManipulation';
+
 import Button from '../common/Button';
-
-import * as actions from '../actions';
-
 import BUTTONS from '../const/headerConsts';
+import { changeLocale } from '../actions/translations';
 
-const options = [
-  { value: 'fr', label: 'Fr' },
-  { value: 'ru', label: 'Ru' },
-  { value: 'en', label: 'En' }
-];
+import type { translations } from '../type';
+import type { Connector, MapDispatchToProps, MapStateToProps } from 'react-redux';
+import type { Action, Dispatch, State } from '../reducers/reducersType';
 
-type Props = {
-  changeLocale: Function,
-  locale: string,
+type OwnProps = {
   location: any
 };
 
-class Header extends Component<Props> {
+type StateProps = {
+  locale: string,
+  location: any,
+  translations: translations
+};
+
+type DispatchProps = {
+  changeLocale(locale: string): void
+};
+
+type Props = StateProps & DispatchProps;
+
+type StateComponent = {
+  options: Array<{ value: string, label: string }>
+};
+
+class Header extends Component<Props, StateComponent> {
+  state = {
+    options: []
+  };
+  componentWillMount() {
+    // check if this is the best way to deal with it
+    const { translations } = this.props;
+    const options = Object.keys(translations).map(key => ({
+      value: key,
+      label: capitalizeFirstLetter(key)
+    }));
+    this.setState({ options });
+  }
   onSelect = obj => {
     const value = obj.target.value;
     this.props.changeLocale(value);
   };
 
-  render() {
+  render(): React$Element<*> {
     const { location, locale } = this.props;
+    const { options } = this.state;
+
     return (
       <header className="header">
         <div className="headerName">AURELIEN BRACHET</div>
@@ -67,8 +93,24 @@ const styles = {
   }
 };
 
-const mapStateToprops = ({ locale }) => ({
-  locale: locale.locale
+const mapStateToProps: MapStateToProps<State, OwnProps, StateProps> = (
+  state: State,
+  ownProps: OwnProps
+): StateProps => ({
+  locale: state.locale.locale,
+  translations: state.locale.translations,
+  ...ownProps
 });
 
-export default connect(mapStateToprops, actions)(Header);
+const mapDispatchToProps: MapDispatchToProps<Action, OwnProps, DispatchProps> = (
+  dispatch: Dispatch,
+  ownProps: OwnProps
+): DispatchProps => ({
+  changeLocale: (locale: string) => {
+    dispatch(changeLocale(locale));
+  }
+});
+
+const connector: Connector<OwnProps, Props> = connect(mapStateToProps, mapDispatchToProps);
+
+export default connector(Header);

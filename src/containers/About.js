@@ -7,14 +7,23 @@ import AboutMain from './components/AboutMain';
 
 import { connect } from 'react-redux';
 
-type Props = {
-  location: any,
-  locale: string
+import type { Connector, MapStateToProps } from 'react-redux';
+import type { State } from '../reducers/reducersType';
+
+type OwnProps = {
+  location: any
 };
+
+type StateProps = {
+  locale: string
+} & OwnProps;
+
+type Props = StateProps;
 
 class About extends React.Component<Props> {
   downloadCV = () => {
-    switch (this.props.locale) {
+    const { locale } = this.props;
+    switch (locale) {
       case 'fr':
         window.open('https://my-resume-aurelien.herokuapp.com/files/CVFR.pdf');
         break;
@@ -47,8 +56,14 @@ class About extends React.Component<Props> {
   }
 }
 
-const mapStateToprops = ({ locale }) => ({
-  locale: locale.locale
+const mapStateToProps: MapStateToProps<State, OwnProps, StateProps> = (
+  state: State,
+  ownProps: OwnProps
+): StateProps => ({
+  locale: state.locale.locale,
+  ...ownProps
 });
 
-export default connect(mapStateToprops)(About);
+const connector: Connector<OwnProps, Props> = connect(mapStateToProps);
+
+export default connector(About);

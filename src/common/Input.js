@@ -1,12 +1,23 @@
+// @flow
 import React from 'react';
 
+type Props = {
+  styles: Object,
+  spanUpStyle: Object,
+  spanDownStyle: Object,
+  containerInputStyle: Object,
+  textArea: string,
+  handleTextAreaChange(textArea: string): void,
+  handleChangeInput(value: string): void,
+  value: string
+};
+
 const Input = ({
-  textArea,
   styles,
   spanUpStyle,
   spanDownStyle,
   containerInputStyle,
-  textarea,
+  textArea,
   handleTextAreaChange,
   handleChangeInput,
   value
@@ -20,7 +31,7 @@ const Input = ({
       >
         <span style={spanUpStyle}>Message</span>
         <textarea
-          value={textarea}
+          value={textArea}
           onChange={handleTextAreaChange}
           className="input"
           style={styles}

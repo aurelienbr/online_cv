@@ -37,8 +37,4 @@ export type education = {
   __v: number
 };
 
-export type translations = {
-  en: any,
-  fr: any,
-  ru: any
-};
+export type translations = {};

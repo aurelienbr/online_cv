@@ -8,18 +8,20 @@ import FormContact from './FormContact';
 import MyGoogleMap from '../../common/MyGoogleMap';
 
 import type { mapCoords } from '../../type';
+import type { Connector, MapStateToProps } from 'react-redux';
+import type { State } from '../../reducers/reducersType';
+
+type OwnProps = { mobile?: boolean };
 
 type Props = {
-  mobile?: boolean,
-  sendEmail: Function,
-  mapCoords: mapCoords
-};
+  mapCoords: Array<mapCoords>
+} & OwnProps;
 
-type State = {
+type StateComponent = {
   isModalOpen: boolean
 };
 
-class ContactMain extends React.Component<Props, State> {
+class ContactMain extends React.Component<Props, StateComponent> {
   constructor() {
     super();
     this.state = {
@@ -46,7 +48,7 @@ class ContactMain extends React.Component<Props, State> {
   };
 
   render() {
-    const { sendEmail, mapCoords } = this.props;
+    const { mapCoords } = this.props;
 
     const { isModalOpen } = this.state;
 
@@ -59,7 +61,7 @@ class ContactMain extends React.Component<Props, State> {
           defaultZoom={14}
         />
         <MyModal isOpen={isModalOpen} onRequestClose={this.closeModal}>
-          <FormContact sendEmail={sendEmail} />
+          <FormContact />
         </MyModal>
         <ButtonContact onClick={this.openModal}>Contact me</ButtonContact>
       </div>
@@ -78,8 +80,14 @@ const styles = {
   }
 };
 
-const mapDispatchToProps = ({ course }) => ({
-  mapCoords: course.mapCoords
+const mapStateToProps: MapStateToProps<State, OwnProps, Props> = (
+  state: State,
+  ownProps: OwnProps
+): Props => ({
+  mapCoords: state.course.mapCoords,
+  ...ownProps
 });
 
-export default connect(mapDispatchToProps)(ContactMain);
+const connector: Connector<OwnProps, Props> = connect(mapStateToProps);
+
+export default connector(ContactMain);

@@ -8,18 +8,21 @@ import ContactMain from './components/ContactMain';
 import FormContact from './components/FormContact';
 import { sendEmail, getCoords } from '../actions';
 
+import type { Connector, MapDispatchToProps, MapStateToProps } from 'react-redux';
+import type { Action, Dispatch, State } from '../reducers/reducersType';
+
+type OwnProps = { location: any };
+
 type StateProps = {
   name: string,
   email: string,
-  loadingMail: boolean,
-  textarea: string,
-  textAreaMax: number,
-  sendEmail: Function,
-  location: any
-};
+  textArea: string,
+  textAreaMax: number
+} & OwnProps;
 
 type DispatchProps = {
-  getCoords(): void
+  getCoords(): void,
+  sendEmail(name: string, email: string, textArea: string, textAreaMax: number): void
 };
 
 type Props = StateProps & DispatchProps;
@@ -29,9 +32,9 @@ class Contact extends React.Component<Props> {
     this.props.getCoords();
   }
   sendEmail = event => {
-    const { name, email, textarea, textAreaMax, sendEmail } = this.props;
+    const { name, email, textArea, textAreaMax, sendEmail } = this.props;
     event.preventDefault();
-    sendEmail(name, email, textarea, textAreaMax);
+    sendEmail(name, email, textArea, textAreaMax);
   };
 
   render() {
@@ -53,12 +56,30 @@ class Contact extends React.Component<Props> {
   }
 }
 
-const mapStateToProps = ({ formContact }) => ({
-  name: formContact.name,
-  email: formContact.email,
-  textarea: formContact.textArea,
-  textAreaMax: formContact.textArea,
-  error: formContact.error
+const mapStateToProps: MapStateToProps<State, OwnProps, StateProps> = (
+  state: State,
+  ownProps: OwnProps
+): StateProps => ({
+  name: state.formContact.name,
+  email: state.formContact.email,
+  textArea: state.formContact.textArea,
+  textAreaMax: state.formContact.textAreaMax,
+  error: state.formContact.error,
+  ...ownProps
 });
 
-export default connect(mapStateToProps, { sendEmail, getCoords })(Contact);
+const mapDispatchToProps: MapDispatchToProps<Action, OwnProps, DispatchProps> = (
+  dispatch: Dispatch,
+  ownProps: OwnProps
+): DispatchProps => ({
+  sendEmail: (name: string, email: string, textArea: string, textAreaMax: number) => {
+    dispatch(sendEmail(name, email, textArea, textAreaMax));
+  },
+  getCoords: () => {
+    dispatch(getCoords());
+  }
+});
+
+const connector: Connector<OwnProps, Props> = connect(mapStateToProps, mapDispatchToProps);
+
+export default connector(Contact);

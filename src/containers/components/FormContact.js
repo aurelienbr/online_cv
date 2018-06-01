@@ -12,46 +12,53 @@ import errorImg from '../../assets/icons/error.png';
 import githubImg from '../../assets/icons/github-logo.png';
 import linkedinImg from '../../assets/icons/linkedin-logo.png';
 
-import {
-  handleNameChange,
-  handleEmailChange,
-  handleTextAreaChange
-} from '../../actions';
+import { handleNameChange, handleEmailChange, handleTextAreaChange } from '../../actions';
 
-type Props = {
-  loadingMail: boolean,
+import type { Connector, MapDispatchToProps, MapStateToProps } from 'react-redux';
+import type { Action, Dispatch, State } from '../../reducers/reducersType';
+
+type OwnProps = {
   intl: any,
-  sendEmail: Function,
-  handleNameChange: Function,
-  handleEmailChange: Function,
-  handleTextAreaChange: Function,
+  sendEmail(name: string, email: string, textArea: string, textAreaMax: number): void
+};
+
+type StateProps = {
+  loadingMail: boolean,
   name: string,
   email: string,
   emailSuccess: boolean,
-  emailFailure: boolean,
-  textarea: string,
+  errorSendEmail: boolean,
+  errorForm: boolean,
+  textArea: string,
   mobile?: boolean,
   error: Object,
   textAreaMax: number
+} & OwnProps;
+
+type DispatchProps = {
+  handleNameChange(value: string): void,
+  handleEmailChange(value: string): void,
+  handleTextAreaChange(value: string): void
 };
 
-type State = {
+type Props = StateProps & DispatchProps;
+
+type StateComponent = {
   iconChecked: boolean,
   visible: boolean
 };
 
-class FormContact extends React.Component<Props, State> {
+class FormContact extends React.Component<Props, StateComponent> {
   state = {
     iconChecked: false,
-    visible: false,
-    emailFailure: false
+    visible: false
   };
   componentWillMount() {
     Modal.setAppElement('body');
   }
   componentWillReceiveProps(nextProps) {
     if (
-      nextProps.errorSendEmail === true &&
+      nextProps.errorForm === true &&
       nextProps.loadingMail === false &&
       this.props.loadingMail === true
     ) {
@@ -64,8 +71,7 @@ class FormContact extends React.Component<Props, State> {
     }
   }
 
-  setTimeoutForState = (newState, duration) =>
-    setTimeout(() => this.setState(newState), duration);
+  setTimeoutForState = (newState, duration) => setTimeout(() => this.setState(newState), duration);
 
   handleEmailChange = e => this.props.handleEmailChange(e.target.value);
   handleNameChange = e => this.props.handleNameChange(e.target.value);
@@ -76,26 +82,16 @@ class FormContact extends React.Component<Props, State> {
   };
 
   renderButton = () => {
-    const { loadingMail, emailFailure, emailSuccess } = this.props;
+    const { loadingMail, errorSendEmail, emailSuccess } = this.props;
     const { visible } = this.state;
 
     if (emailSuccess) {
-      return (
-        <img
-          className={visible === true ? 'fadeIn' : 'fadeOut'}
-          src={checkedImg}
-          alt="ok"
-        />
-      );
+      return <img className={visible === true ? 'fadeIn' : 'fadeOut'} src={checkedImg} alt="ok" />;
     }
 
-    if (emailFailure) {
+    if (errorSendEmail) {
       return (
-        <img
-          className={visible === true ? 'fadeIn' : 'fadeOut'}
-          src={errorMail}
-          alt="error"
-        />
+        <img className={visible === true ? 'fadeIn' : 'fadeOut'} src={errorMail} alt="error" />
       );
     }
 
@@ -108,26 +104,14 @@ class FormContact extends React.Component<Props, State> {
   };
 
   render() {
-    const {
-      sendEmail,
-      name,
-      email,
-      textarea,
-      mobile,
-      error,
-      textAreaMax
-    } = this.props;
+    const { sendEmail, name, email, textArea, mobile, error, textAreaMax } = this.props;
 
     const { formatMessage } = this.props.intl;
 
     return (
       <form id="Contact" style={styles.formContainer}>
         <div style={mobile && styles.containerCenter}>
-          <Text
-            style={styles.titleContact}
-            size="h3"
-            id="formContact.contactMe"
-          />
+          <Text style={styles.titleContact} size="h3" id="formContact.contactMe" />
         </div>
         <div style={mobile ? styles.inputMainMobile : styles.inputMain}>
           <div className="wrap-input-contact" style={styles.containerInput}>
@@ -182,7 +166,7 @@ class FormContact extends React.Component<Props, State> {
         >
           <Text style={styles.span} size="p" id="formContact.spanTextarea" />
           <textarea
-            value={textarea}
+            value={textArea}
             onChange={this.handleTextAreaChange}
             className="input"
             style={{ ...styles.input, ...styles.textArea }}
@@ -193,7 +177,7 @@ class FormContact extends React.Component<Props, State> {
           />
           <span className="focus-input" style={styles.focusInput} />
           <p style={styles.textareaMax}>{textAreaMax}</p>
-          {error.textarea && (
+          {error.textArea && (
             <div style={styles.errorContainer}>
               <Text style={styles.error} id={error.textarea} size="error" />
               <div>
@@ -327,21 +311,40 @@ const styles = {
   }
 };
 
-const mapStateToprops = ({ formContact }) => ({
-  name: formContact.name,
-  email: formContact.email,
-  textarea: formContact.textArea,
-  error: formContact.error,
-  textAreaMax: formContact.textAreaMax,
-  loadingMail: formContact.loadingMail,
-  emailSuccess: formContact.emailSuccess,
-  emailFailure: formContact.emailFailure
+const mapStateToProps: MapStateToProps<State, OwnProps, StateProps> = (
+  state: State,
+  ownProps: OwnProps
+): StateProps => ({
+  name: state.formContact.name,
+  email: state.formContact.email,
+  textArea: state.formContact.textArea,
+  textAreaMax: state.formContact.textAreaMax,
+  error: state.formContact.error,
+  errorForm: state.formContact.errorForm,
+  loadingMail: state.formContact.loadingMail,
+  emailSuccess: state.formContact.emailSuccess,
+  errorSendEmail: state.formContact.errorSendEmail,
+  ...ownProps
 });
 
-const FormContactConnected = connect(mapStateToprops, {
-  handleNameChange,
-  handleEmailChange,
-  handleTextAreaChange
-})(FormContact);
+const mapDispatchToProps: MapDispatchToProps<Action, OwnProps, DispatchProps> = (
+  dispatch: Dispatch,
+  ownProps: OwnProps
+): DispatchProps => ({
+  handleEmailChange: () => {
+    dispatch(handleEmailChange());
+  },
+  handleNameChange: () => {
+    dispatch(handleNameChange());
+  },
+  handleTextAreaChange: () => {
+    dispatch(handleTextAreaChange());
+  }
+});
+
+const FormContactConnected: Connector<OwnProps, Props> = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(FormContact);
 
 export default injectIntl(FormContactConnected);

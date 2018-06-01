@@ -14,32 +14,39 @@ import mapMobileIcon from '../assets/icons/mapMobile.png';
 import MyModal from './MyModal';
 import MyGoogleMap from './MyGoogleMap';
 
-type Props = {
+import type { Connector, MapStateToProps } from 'react-redux';
+import type { State } from '../reducers/reducersType';
+
+type OwnProps = {
+  isInView?: boolean,
+  mobile?: boolean,
   duree: string,
   description: string,
   lieu: string,
   titre: string,
   href: string,
-  coord: Object,
-  mapCoords: mapCoords,
-  isInView?: boolean,
-  mobile?: boolean
+  coord: { lat: string, lng: string }
 };
 
-type State = {
+type StateProps = {
+  mapCoords: Array<mapCoords>
+} & OwnProps;
+
+type Props = StateProps;
+
+type StateComponent = {
   isModalOpen: boolean,
   isOpen: boolean
 };
 
-class EducationCard extends Component<Props, State> {
+class EducationCard extends Component<Props, StateComponent> {
   state = {
     isModalOpen: false,
     isOpen: false
   };
   handleDescription = () => this.setState({ isOpen: !this.state.isOpen });
 
-  stopPropagation = (e: SyntheticEvent<HTMLButtonElement>) =>
-    e.stopPropagation();
+  stopPropagation = (e: SyntheticEvent<HTMLButtonElement>) => e.stopPropagation();
 
   showMap = (e: SyntheticEvent<HTMLButtonElement>) => {
     e.stopPropagation();
@@ -66,11 +73,7 @@ class EducationCard extends Component<Props, State> {
     }
 
     return (
-      <div
-        onClick={this.handleDescription}
-        className="educationCard"
-        style={styles.container}
-      >
+      <div onClick={this.handleDescription} className="educationCard" style={styles.container}>
         <div style={styles.containerData}>
           <div>
             <Text style={styles.whiteColor} id={titre} size="p" />
@@ -79,11 +82,7 @@ class EducationCard extends Component<Props, State> {
           </div>
           <div style={styles.imgContainer}>
             <a onClick={this.showMap}>
-              <img
-                alt="icon map"
-                src={mobile ? mapMobileIcon : mapIcon}
-                style={styles.mapIcon}
-              />
+              <img alt="icon map" src={mobile ? mapMobileIcon : mapIcon} style={styles.mapIcon} />
             </a>
             <a target="_tab" onClick={this.stopPropagation} href={href}>
               <img alt="link site" src={mobile ? linkMobileIcon : linkIcon} />
@@ -143,8 +142,14 @@ const styles = {
   }
 };
 
-const mapDispatchToProps = ({ course }) => ({
-  mapCoords: course.mapCoords
+const mapStateToProps: MapStateToProps<State, OwnProps, StateProps> = (
+  state: State,
+  ownProps: OwnProps
+): StateProps => ({
+  mapCoords: state.course.mapCoords,
+  ...ownProps
 });
 
-export default connect(mapDispatchToProps)(EducationCard);
+const connector: Connector<OwnProps, Props> = connect(mapStateToProps);
+
+export default connector(EducationCard);

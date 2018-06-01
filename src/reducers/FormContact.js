@@ -5,12 +5,13 @@ export type State = {
   textArea: string,
   textAreaMax: number,
   loadingMail: boolean,
+  errorForm: boolean,
   errorSendEmail: boolean,
   emailSuccess: boolean,
   error: {
     name: string,
     email: string,
-    textarea: string
+    textArea: string
   }
 };
 
@@ -61,12 +62,13 @@ const INITIAL_STATE = {
   textArea: '',
   textAreaMax: 360,
   loadingMail: false,
-  errorSendEmail: false,
+  errorForm: false,
   emailSuccess: false,
+  errorSendEmail: false,
   error: {
     name: '',
     email: '',
-    textarea: ''
+    textArea: ''
   }
 };
 
@@ -94,13 +96,13 @@ export default (state: State = INITIAL_STATE, action: Action): State => {
         textAreaMax: 360 - action.textArea.length
       };
     case 'SEND_EMAIL':
-      return { ...state, errorSendEmail: false, loadingMail: true };
+      return { ...state, errorForm: false, loadingMail: true };
     case 'SEND_EMAIL_FAILURE':
-      return { ...state, emailFailure: true, loadingMail: false };
+      return { ...state, errorSendEmail: true, loadingMail: false };
     case 'SEND_EMAIL_SUCCESS':
       return { ...INITIAL_STATE, emailSuccess: true };
     case 'HANDLE_ERROR':
-      return { ...state, errorSendEmail: true, error: action.payload };
+      return { ...state, errorForm: true, error: action.payload };
     default:
       return state;
   }

@@ -8,13 +8,21 @@ import API_KEY from '../const/googleMapAPI';
 
 import type { mapCoords } from '../type';
 
-type Props = {
+import type { Connector, MapStateToProps } from 'react-redux';
+import type { State } from '../reducers/reducersType';
+
+type OwnProps = {
   defaultCenter: Object,
   defaultZoom: Object,
-  locale: string,
-  style?: Object,
-  mapCoords: Array<mapCoords>
+  mapCoords: Array<mapCoords>,
+  style?: Object
 };
+
+type StateProps = {
+  locale: string
+} & OwnProps;
+
+type Props = StateProps;
 
 class MyGoogleMap extends React.Component<Props> {
   static defaultProps = {
@@ -54,8 +62,14 @@ class MyGoogleMap extends React.Component<Props> {
   }
 }
 
-const mapStateToProps = ({ locale }) => ({
-  locale: locale.locale
+const mapStateToProps: MapStateToProps<State, OwnProps, StateProps> = (
+  state: State,
+  ownProps: OwnProps
+): StateProps => ({
+  locale: state.locale.locale,
+  ...ownProps
 });
 
-export default connect(mapStateToProps)(MyGoogleMap);
+const connector: Connector<OwnProps, Props> = connect(mapStateToProps);
+
+export default connector(MyGoogleMap);

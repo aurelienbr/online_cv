@@ -11,9 +11,7 @@ import type {
   HANDLE_TEXTAREA_CHANGE_ACTION
 } from '../reducers/FormContact';
 
-export const handleEmailChange = (
-  value: string
-): HANDLE_EMAIL_CHANGE_ACTION => ({
+export const handleEmailChange = (value: string): HANDLE_EMAIL_CHANGE_ACTION => ({
   email: value,
   type: 'HANDLE_EMAIL_CHANGE'
 });
@@ -23,9 +21,7 @@ export const handleNameChange = (value: string): HANDLE_NAME_CHANGE_ACTION => ({
   type: 'HANDLE_NAME_CHANGE'
 });
 
-export const handleTextAreaChange = (
-  value: string
-): HANDLE_TEXTAREA_CHANGE_ACTION => ({
+export const handleTextAreaChange = (value: string): HANDLE_TEXTAREA_CHANGE_ACTION => ({
   textArea: value,
   type: 'HANDLE_TEXTAREA_CHANGE'
 });
