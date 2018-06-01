@@ -92,7 +92,7 @@ export default (state: State = INITIAL_STATE, action: Action): State => {
       return {
         ...state,
         textArea: action.textArea,
-        error: { ...state.error, textarea: '' },
+        error: { ...state.error, textArea: '' },
         textAreaMax: 360 - action.textArea.length
       };
     case 'SEND_EMAIL':

@@ -1,11 +1,6 @@
 // @flow
 
-const verifForm = (
-  name: string,
-  email: string,
-  textarea: string,
-  textAreaMax: number
-) => {
+const verifForm = (name: string, email: string, textarea: string, textAreaMax: number) => {
   let error = {};
   if (name.length === 0) {
     error.name = 'error.nameNotProvided';
@@ -20,10 +15,10 @@ const verifForm = (
     error.email = 'error.emailNotProvided';
   }
   if (textAreaMax < 0) {
-    error.textarea = 'error.textareaMax';
+    error.textArea = 'error.textareaMax';
   }
   if (!textarea) {
-    error.textarea = 'error.textareaNotProvided';
+    error.textArea = 'error.textareaNotProvided';
   }
 
   return error;

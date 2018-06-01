@@ -11,7 +11,7 @@ import type { mapCoords } from '../../type';
 import type { Connector, MapStateToProps } from 'react-redux';
 import type { State } from '../../reducers/reducersType';
 
-type OwnProps = { mobile?: boolean };
+type OwnProps = { mobile?: boolean, sendEmail: Function };
 
 type Props = {
   mapCoords: Array<mapCoords>
@@ -48,7 +48,7 @@ class ContactMain extends React.Component<Props, StateComponent> {
   };
 
   render() {
-    const { mapCoords } = this.props;
+    const { mapCoords, sendEmail } = this.props;
 
     const { isModalOpen } = this.state;
 
@@ -61,7 +61,7 @@ class ContactMain extends React.Component<Props, StateComponent> {
           defaultZoom={14}
         />
         <MyModal isOpen={isModalOpen} onRequestClose={this.closeModal}>
-          <FormContact />
+          <FormContact sendEmail={sendEmail} />
         </MyModal>
         <ButtonContact onClick={this.openModal}>Contact me</ButtonContact>
       </div>

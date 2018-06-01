@@ -179,7 +179,7 @@ class FormContact extends React.Component<Props, StateComponent> {
           <p style={styles.textareaMax}>{textAreaMax}</p>
           {error.textArea && (
             <div style={styles.errorContainer}>
-              <Text style={styles.error} id={error.textarea} size="error" />
+              <Text style={styles.error} id={error.textArea} size="error" />
               <div>
                 <img src={errorImg} alt="error" style={styles.imgError} />
               </div>
