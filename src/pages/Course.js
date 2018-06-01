@@ -35,6 +35,9 @@ class Course extends React.Component<Props> {
   }
   render(): React$Element<*> {
     const { education, internships, location, err_internships, err_education } = this.props;
+    if (Object.keys(err_internships).length > 0 || Object.keys(err_education).length > 0) {
+      return <div>Oups something went wrong...</div>; // TODO
+    }
 
     return (
       <div id="Parcours" className="backgroundParcoursContainer">

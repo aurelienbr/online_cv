@@ -2,7 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import ButtonContact from './ButtonContact';
+import ButtonContact from '../common/ButtonContact';
 import MyModal from '../common/MyModal';
 import FormContact from './FormContact';
 import MyGoogleMap from './MyGoogleMap';
