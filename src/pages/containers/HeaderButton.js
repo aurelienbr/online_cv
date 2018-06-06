@@ -1,5 +1,5 @@
 // @flow
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
 import { FormattedMessage } from 'react-intl';
@@ -17,7 +17,7 @@ type State = {
   active: boolean
 };
 
-class Button extends Component<Props, State> {
+class Button extends React.Component<Props, State> {
   state = {
     active: false
   };

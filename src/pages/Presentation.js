@@ -1,5 +1,5 @@
 // @flow
-import React, { Component } from 'react';
+import React from 'react';
 import MediaQuery from 'react-responsive';
 
 import PresentationMain from './containers/PresentationMain';
@@ -14,7 +14,7 @@ type State = {
   slideTitle: boolean
 };
 
-class Presentation extends Component<Props, State> {
+class Presentation extends React.Component<Props, State> {
   constructor() {
     super();
     this.state = {

@@ -6,6 +6,7 @@ import Presentation from '../pages/Presentation';
 import About from '../pages/About';
 import Course from '../pages/Course';
 import Contact from '../pages/Contact';
+import Project from '../pages/Project';
 
 type Props = {};
 
@@ -15,5 +16,6 @@ export default (props: Props): React$Element<*> => (
     <Route path="/about" component={About} />
     <Route path="/course" component={Course} />
     <Route path="/contact" component={Contact} />
+    <Route path="/project" component={Project} />
   </div>
 );

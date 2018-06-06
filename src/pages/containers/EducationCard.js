@@ -1,5 +1,5 @@
 // @flow
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import type { mapCoords } from '../../type';
@@ -39,14 +39,15 @@ type StateComponent = {
   isOpen: boolean
 };
 
-class EducationCard extends Component<Props, StateComponent> {
+class EducationCard extends React.Component<Props, StateComponent> {
   state = {
     isModalOpen: false,
     isOpen: false
   };
   handleDescription = () => this.setState({ isOpen: !this.state.isOpen });
 
-  stopPropagation = (e: SyntheticEvent<HTMLButtonElement>) => e.stopPropagation();
+  stopPropagation = (e: SyntheticEvent<HTMLButtonElement>) =>
+    e.stopPropagation();
 
   showMap = (e: SyntheticEvent<HTMLButtonElement>) => {
     e.stopPropagation();
@@ -73,7 +74,11 @@ class EducationCard extends Component<Props, StateComponent> {
     }
 
     return (
-      <div onClick={this.handleDescription} className="educationCard" style={styles.container}>
+      <div
+        onClick={this.handleDescription}
+        className="educationCard"
+        style={styles.container}
+      >
         <div style={styles.containerData}>
           <div>
             <Text style={styles.whiteColor} id={titre} size="p" />
@@ -82,7 +87,11 @@ class EducationCard extends Component<Props, StateComponent> {
           </div>
           <div style={styles.imgContainer}>
             <a onClick={this.showMap}>
-              <img alt="icon map" src={mobile ? mapMobileIcon : mapIcon} style={styles.mapIcon} />
+              <img
+                alt="icon map"
+                src={mobile ? mapMobileIcon : mapIcon}
+                style={styles.mapIcon}
+              />
             </a>
             <a target="_tab" onClick={this.stopPropagation} href={href}>
               <img alt="link site" src={mobile ? linkMobileIcon : linkIcon} />

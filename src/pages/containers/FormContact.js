@@ -76,9 +76,7 @@ class FormContact extends React.Component<Props, StateComponent> {
   handleEmailChange = e => this.props.handleEmailChange(e.target.value);
   handleNameChange = e => this.props.handleNameChange(e.target.value);
   handleTextAreaChange = e => {
-    if (this.props.textAreaMax > 0) {
-      this.props.handleTextAreaChange(e.target.value);
-    }
+      this.props.handleTextAreaChange(e.target.value.substring(0,360));
   };
 
   renderButton = () => {
@@ -105,6 +103,7 @@ class FormContact extends React.Component<Props, StateComponent> {
 
   render(): React$Element<*> {
     const { sendEmail, name, email, textArea, mobile, error, textAreaMax } = this.props;
+    console.log(name, email, textArea);
 
     const { formatMessage } = this.props.intl;
 
@@ -331,14 +330,14 @@ const mapDispatchToProps: MapDispatchToProps<Action, OwnProps, DispatchProps> = 
   dispatch: Dispatch,
   ownProps: OwnProps
 ): DispatchProps => ({
-  handleEmailChange: () => {
-    dispatch(handleEmailChange());
+  handleEmailChange: (email: string) => {
+    dispatch(handleEmailChange(email));
   },
-  handleNameChange: () => {
-    dispatch(handleNameChange());
+  handleNameChange: (name: string) => {
+    dispatch(handleNameChange(name));
   },
-  handleTextAreaChange: () => {
-    dispatch(handleTextAreaChange());
+  handleTextAreaChange: (textArea: string) => {
+    dispatch(handleTextAreaChange(textArea));
   }
 });
 

@@ -29,11 +29,11 @@ export const handleTextAreaChange = (value: string): HANDLE_TEXTAREA_CHANGE_ACTI
 export const sendEmail = (
   name: string,
   email: string,
-  textarea: string,
+  textArea: string,
   textAreaMax: number
 ): ThunkAction => {
   return (dispatch: Dispatch) => {
-    const error = verifForm(name, email, textarea, textAreaMax);
+    const error = verifForm(name, email, textArea, textAreaMax);
     if (Object.keys(error).length > 0) {
       dispatch({
         type: 'HANDLE_ERROR',
@@ -48,7 +48,7 @@ export const sendEmail = (
         .post(api('mail'), {
           email: email,
           subject: name,
-          text: textarea,
+          text: textArea,
           headers: {
             'Content-type': 'application/x-www-form-urlencoded'
           }
