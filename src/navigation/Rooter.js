@@ -6,14 +6,18 @@ import fr from 'react-intl/locale-data/fr';
 import en from 'react-intl/locale-data/en';
 import ru from 'react-intl/locale-data/ru';
 
-import { getTranslations } from '../actions';
+import { getInitialData } from '../actions';
 
 import { BrowserRouter as Router } from 'react-router-dom';
 import MediaQuery from 'react-responsive';
 import MobileScreenRouter from './MobileScreenRouter';
 import DesktopScreenRouter from './DesktopScreenRouter';
 
-import type { Connector, MapDispatchToProps, MapStateToProps } from 'react-redux';
+import type {
+  Connector,
+  MapDispatchToProps,
+  MapStateToProps
+} from 'react-redux';
 import type { Action, Dispatch, State } from '../reducers/reducersType';
 
 addLocaleData([...fr, ...en, ...ru]);
@@ -26,7 +30,7 @@ type StateProps = {
 };
 
 type DispatchProps = {
-  getTranslations(): void
+  getInitialData(): void
 };
 
 type OwnProps = {
@@ -37,7 +41,7 @@ type Props = StateProps & DispatchProps;
 
 class Rooter extends React.Component<Props> {
   componentDidMount() {
-    this.props.getTranslations();
+    this.props.getInitialData();
   }
   render(): React$Element<*> {
     const { locale, translations, err, loading } = this.props;
@@ -50,7 +54,11 @@ class Rooter extends React.Component<Props> {
     }
 
     return (
-      <IntlProvider key={locale} locale={locale} messages={translations[locale]}>
+      <IntlProvider
+        key={locale}
+        locale={locale}
+        messages={translations[locale]}
+      >
         <div>
           <MediaQuery query="(min-device-width: 1224px)">
             <Router>
@@ -77,15 +85,19 @@ const mapStateToProps: MapStateToProps<State, OwnProps, StateProps> = (
   ...ownProps
 });
 
-const mapDispatchToProps: MapDispatchToProps<Action, OwnProps, DispatchProps> = (
-  dispatch: Dispatch,
-  ownProps: OwnProps
-): DispatchProps => ({
-  getTranslations: () => {
-    dispatch(getTranslations());
+const mapDispatchToProps: MapDispatchToProps<
+  Action,
+  OwnProps,
+  DispatchProps
+> = (dispatch: Dispatch, ownProps: OwnProps): DispatchProps => ({
+  getInitialData: () => {
+    dispatch(getInitialData());
   }
 });
 
-const connector: Connector<OwnProps, Props> = connect(mapStateToProps, mapDispatchToProps);
+const connector: Connector<OwnProps, Props> = connect(
+  mapStateToProps,
+  mapDispatchToProps
+);
 
 export default connector(Rooter);

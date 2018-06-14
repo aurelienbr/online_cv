@@ -9,7 +9,11 @@ import BUTTONS from '../const/headerConsts';
 import { changeLocale } from '../actions/translations';
 
 import type { translations } from '../type';
-import type { Connector, MapDispatchToProps, MapStateToProps } from 'react-redux';
+import type {
+  Connector,
+  MapDispatchToProps,
+  MapStateToProps
+} from 'react-redux';
 import type { Action, Dispatch, State } from '../reducers/reducersType';
 
 type OwnProps = {
@@ -102,15 +106,19 @@ const mapStateToProps: MapStateToProps<State, OwnProps, StateProps> = (
   ...ownProps
 });
 
-const mapDispatchToProps: MapDispatchToProps<Action, OwnProps, DispatchProps> = (
-  dispatch: Dispatch,
-  ownProps: OwnProps
-): DispatchProps => ({
+const mapDispatchToProps: MapDispatchToProps<
+  Action,
+  OwnProps,
+  DispatchProps
+> = (dispatch: Dispatch, ownProps: OwnProps): DispatchProps => ({
   changeLocale: (locale: string) => {
     dispatch(changeLocale(locale));
   }
 });
 
-const connector: Connector<OwnProps, Props> = connect(mapStateToProps, mapDispatchToProps);
+const connector: Connector<OwnProps, Props> = connect(
+  mapStateToProps,
+  mapDispatchToProps
+);
 
 export default connector(Header);

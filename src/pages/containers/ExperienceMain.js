@@ -1,5 +1,6 @@
 // @flow
 import React, { Fragment } from 'react';
+import type { internships, education } from '../../type';
 import Loader from 'react-loader-spinner';
 
 import Text from '../common/Text';
@@ -8,16 +9,21 @@ import WithinView from './WithinView';
 
 type Props = {
   mobile?: boolean,
-  internship: any,
-  education: any
+  internship: Array<internships>,
+  educations: Array<education>
 };
 
-const getContainerStyle = mobile => (mobile === true ? styles.formationMobile : styles.formation);
+const getContainerStyle = mobile =>
+  mobile === true ? styles.formationMobile : styles.formation;
 
-const ExperienceMain = ({ mobile, internship, education }: Props): React$Element<*> => {
+const ExperienceMain = ({
+  mobile,
+  internship,
+  educations
+}: Props): React$Element<*> => {
   return (
     <div style={styles.container} className="main mainCertification">
-      {education.length === 0 ? (
+      {educations.length === 0 ? (
         <div style={styles.loaderContainer}>
           <Loader type="Rings" color="#fff" height="45" width="45" />
         </div>
@@ -25,7 +31,7 @@ const ExperienceMain = ({ mobile, internship, education }: Props): React$Element
         <Text id="education.education" style={styles.whiteColor} size="title" />
       )}
       <div style={getContainerStyle(mobile)}>
-        {education.map(item => (
+        {educations.map(item => (
           <WithinView key={item.duree}>
             <EducationCard
               mobile={mobile}
@@ -39,9 +45,13 @@ const ExperienceMain = ({ mobile, internship, education }: Props): React$Element
           </WithinView>
         ))}
       </div>
-      {internship.length > 0 && education.length > 0 ? (
+      {internship.length > 0 && educations.length > 0 ? (
         <Fragment>
-          <Text id="education.internship" style={styles.whiteColor} size="title" />
+          <Text
+            id="education.internship"
+            style={styles.whiteColor}
+            size="title"
+          />
           <div style={getContainerStyle(mobile)}>
             {internship.map(item => (
               <WithinView key={item.duree}>

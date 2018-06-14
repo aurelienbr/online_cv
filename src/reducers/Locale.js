@@ -1,5 +1,5 @@
 // @flow
-import type { translations } from '../type';
+import type { translations, mapCoords } from '../type';
 
 export type State = {
   locale: string,
@@ -8,9 +8,10 @@ export type State = {
   loading: boolean
 };
 
-export type GET_TRANSLATIONS_ACTION = {
-  type: 'GET_TRANSLATIONS',
-  payload: translations
+export type GET_INITIAL_DATA_ACTION = {
+  type: 'GET_INITIAL_DATA',
+  coords: Array<mapCoords>,
+  translations: translations
 };
 
 export type CHANGE_LOCAL_ACTION = {
@@ -23,7 +24,10 @@ export type GET_TRANSLATIONS_ERROR_ACTION = {
   payload: any
 };
 
-export type Action = GET_TRANSLATIONS_ACTION | CHANGE_LOCAL_ACTION | GET_TRANSLATIONS_ERROR_ACTION;
+export type Action =
+  | GET_INITIAL_DATA_ACTION
+  | CHANGE_LOCAL_ACTION
+  | GET_TRANSLATIONS_ERROR_ACTION;
 
 const INITIAL_STATE = {
   locale: navigator.language.substring(0, 2).toLowerCase() || 'en',
@@ -34,8 +38,8 @@ const INITIAL_STATE = {
 
 export default (state: State = INITIAL_STATE, action: Action): State => {
   switch (action.type) {
-    case 'GET_TRANSLATIONS':
-      return { ...state, translations: action.payload, loading: false };
+    case 'GET_INITIAL_DATA':
+      return { ...state, translations: action.translations, loading: false };
     case 'CHANGE_LOCAL':
       return { ...state, locale: action.payload };
     case 'GET_TRANSLATIONS_ERROR':
