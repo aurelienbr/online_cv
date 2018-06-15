@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import Presentation from '../pages/Presentation';
 import About from '../pages/About';
@@ -11,11 +11,11 @@ import NoMatch from '../pages/common/NoMatch';
 type Props = {};
 
 export default (props: Props): React$Element<*> => (
-  <div>
+  <Switch>
     <Route exact path="/" component={Presentation} />
     <Route path="/about" component={About} />
     <Route path="/course" component={Course} />
     <Route path="/contact" component={Contact} />
     <Route component={NoMatch} />
-  </div>
+  </Switch>
 );
