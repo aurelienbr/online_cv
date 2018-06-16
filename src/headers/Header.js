@@ -1,9 +1,9 @@
 // @flow
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import { capitalizeFirstLetter } from '../tools/stringManipulation';
-
 import HeaderButton from '../pages/containers/HeaderButton';
 import BUTTONS from '../const/headerConsts';
 import { changeLocale } from '../actions/translations';
@@ -17,7 +17,9 @@ import type {
 import type { Action, Dispatch, State } from '../reducers/reducersType';
 
 type OwnProps = {
-  location: any
+  location: any,
+  match: any,
+  history: any
 };
 
 type StateProps = {
@@ -72,7 +74,11 @@ class Header extends Component<Props, StateComponent> {
         </div>
         <div className="headerMenu">
           {BUTTONS.map(button => (
-            <HeaderButton key={button.id} location={location} route={button.to}>
+            <HeaderButton
+              key={button.id}
+              location={location}
+              route={`/${locale}${button.to}`}
+            >
               {button.id}
             </HeaderButton>
           ))}
@@ -121,4 +127,4 @@ const connector: Connector<OwnProps, Props> = connect(
   mapDispatchToProps
 );
 
-export default connector(Header);
+export default withRouter(connector(Header));
