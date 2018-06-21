@@ -74,11 +74,7 @@ class Header extends Component<Props, StateComponent> {
         </div>
         <div className="headerMenu">
           {BUTTONS.map(button => (
-            <HeaderButton
-              key={button.id}
-              location={location}
-              route={`/${locale}${button.to}`}
-            >
+            <HeaderButton key={button.id} location={location} route={button.to}>
               {button.id}
             </HeaderButton>
           ))}
